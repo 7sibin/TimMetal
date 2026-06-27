@@ -1,0 +1,57 @@
+/* ── TimMetal global design tokens ───────────────────────────────
+   Three primaries: industrial steel-black, warm cream canvas, and
+   the sharp accent red. Red is reserved for small, precise markers —
+   index labels, hairline ticks, and interactive hovers. */
+:root {
+  --tm-black: #050506;   /* hero ground */
+  --tm-cream: #F3EFE6;   /* canvas / page */
+  --tm-ink:   #14171A;   /* primary text + wordmark steel */
+  --tm-red:   #C8102E;   /* PRIMARY ACCENT — sharp industrial red */
+  --tm-red-deep: #A20D24;/* pressed / deep accent */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--tm-black);
+  font-family: 'Archivo', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+/* Sticky heading only once the layout is genuinely two columns —
+   prevents a tall pinned header overlapping cards on stacked/mobile. */
+@media (min-width: 1000px) {
+  [data-sticky-col] { position: sticky; top: 100px; align-self: flex-start; }
+}
+
+/* ── Wipe & Reveal ───────────────────────────────────────────────
+   The cream content is a solid lid (z-2) that scrolls up and off;
+   the dark inquiry layer (z-1) sits in normal flow underneath so the
+   WHOLE inquiry + footer is always reachable. Razor-sharp cream->dark
+   edge retained (no gradient). */
+.tm-lid    { position: relative; z-index: 2; background: var(--tm-cream); }
+.tm-reveal { position: relative; z-index: 1; }
+
+/* ── Interactive states ──────────────────────────────────────────
+   Ported from the prototype's style-hover / style-focus attributes. */
+
+/* Red-on-hover text links (nav, card CTAs, footer links) */
+.tm-link { transition: color .3s ease; }
+.tm-link:hover { color: var(--tm-red); }
+
+/* Outlined ink button → red on hover (EXPLORE THE SYSTEM) */
+.tm-btn-ink { transition: color .3s ease, border-color .3s ease; }
+.tm-btn-ink:hover { color: var(--tm-red); border-color: var(--tm-red); }
+
+/* Social-proof logos: dimmed by default, full strength on hover */
+.tm-logo { transition: opacity .45s ease; }
+.tm-logo:hover { opacity: 1; }
+
+/* Underline form fields → red bottom border on focus */
+.tm-field { transition: border-color .3s ease; }
+.tm-field:focus { border-bottom-color: var(--tm-red); }
+
+/* Submit button: fills red on hover */
+.tm-submit { transition: background-color .3s ease, border-color .3s ease; }
+.tm-submit:hover { background-color: var(--tm-red); border-color: var(--tm-red); }
