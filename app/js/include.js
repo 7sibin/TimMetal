@@ -29,9 +29,31 @@
     } else { fn(); }
   }
 
+  // Mark the nav link for the current page as active. Only real subpage
+  // routes qualify (/products, /products/<slug>, /about); the wordmark
+  // and in-page anchor links (/#…) resolve to "/" and are never marked.
+  function markActiveNav() {
+    var nav = document.getElementById('tm-nav');
+    if (!nav) return;
+    // Normalise so it matches whether served clean (/about, on Vercel) or
+    // as a file (/about.html, e.g. a plain local server).
+    var path = location.pathname.replace(/\.html$/, '').replace(/\/index$/, '');
+    path = path.replace(/\/+$/, '') || '/';
+    var links = nav.querySelectorAll('a[href]');
+    Array.prototype.forEach.call(links, function (a) {
+      var linkPath = a.pathname.replace(/\/+$/, '') || '/';
+      if (linkPath === '/') return;
+      if (path === linkPath || path.indexOf(linkPath + '/') === 0) {
+        a.classList.add('tm-nav-active');
+        a.style.color = 'var(--tm-ink)';
+      }
+    });
+  }
+
   ready(function () {
     var slots = Array.prototype.slice.call(document.querySelectorAll('[data-include]'));
     Promise.all(slots.map(inject)).then(function () {
+      markActiveNav();
       // On pages without the hero pour, reveal the nav right away. On the
       // homepage the hero canvas owns the reveal, so leave it hidden.
       if (!document.getElementById('tm-canvas')) {

@@ -40,6 +40,17 @@ input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
 .tm-link { transition: color .3s ease; }
 .tm-link:hover { color: var(--tm-red); }
 
+/* Active nav item — ink text (set inline by include.js) with a red
+   underline tick, matching the prototype's active state. */
+.tm-nav-active { position: relative; }
+.tm-nav-active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: var(--tm-red);
+}
+
 /* Outlined ink button → red on hover (EXPLORE THE SYSTEM) */
 .tm-btn-ink { transition: color .3s ease, border-color .3s ease; }
 .tm-btn-ink:hover { color: var(--tm-red); border-color: var(--tm-red); }
