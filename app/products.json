@@ -1,0 +1,74 @@
+[
+  {
+    "key": "cheese-vat",
+    "num": "01",
+    "cat": "COAGULATION",
+    "name": "Cheese Vat",
+    "tagline": "Precision coagulation & curd cutting.",
+    "blurb": "The core unit of any modern dairy — precise coagulation, controlled thermal processing and automated curd cutting via stainless harp knives, minimising dry-matter loss across every batch.",
+    "tags": ["500–10,000 L", "AISI 316L", "PLC + HMI"],
+    "desc": "The core unit of any modern dairy. Engineered for precise coagulation, controlled thermal processing and automated curd cutting via specialised stainless harp knives — minimising dry-matter loss across every batch.",
+    "specs": [
+      { "label": "CAPACITY", "value": "500 – 10,000 L" },
+      { "label": "MATERIAL", "value": "AISI 316L stainless" },
+      { "label": "HEATING", "value": "Triple-wall, steam / hot water" },
+      { "label": "CUTTING", "value": "Variable-speed harp knives" },
+      { "label": "CONTROL", "value": "PLC + HMI touch panel" },
+      { "label": "DRY-MATTER LOSS", "value": "< 0.4%" }
+    ]
+  },
+  {
+    "key": "milk-tank",
+    "num": "02",
+    "cat": "PROCESSING",
+    "name": "Milk Processing Tank",
+    "tagline": "Pasteurise, ferment, cool — one vessel.",
+    "blurb": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly and prevents scorching at the wall.",
+    "tags": ["300–8,000 L", "2–99 °C", "80 mm PU"],
+    "desc": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly across the surface and prevents scorching at the wall.",
+    "specs": [
+      { "label": "CAPACITY", "value": "300 – 8,000 L" },
+      { "label": "MATERIAL", "value": "AISI 316L / 304" },
+      { "label": "WALL", "value": "Triple-wall pillow-plate" },
+      { "label": "FUNCTIONS", "value": "Pasteurise · ferment · cool" },
+      { "label": "TEMP RANGE", "value": "2 – 99 °C" },
+      { "label": "INSULATION", "value": "80 mm PU, food-grade" }
+    ]
+  },
+  {
+    "key": "pre-press",
+    "num": "03",
+    "cat": "FORMING",
+    "name": "Cheese Pre-press",
+    "tagline": "Continuous self-pressing under whey.",
+    "blurb": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling before final moulding.",
+    "tags": ["Under-whey", "AISI 316L", "Up to 2,500 L"],
+    "desc": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling prior to final moulding, with a perforated false-bottom for controlled drainage.",
+    "specs": [
+      { "label": "FORMAT", "value": "Block / rectangular" },
+      { "label": "MATERIAL", "value": "AISI 316L stainless" },
+      { "label": "PRESSING", "value": "Continuous, under-whey" },
+      { "label": "DRAINAGE", "value": "Perforated false-bottom" },
+      { "label": "CAPACITY", "value": "Up to 2,500 L curd/whey" },
+      { "label": "PROFILE", "value": "Uniform porosity control" }
+    ]
+  },
+  {
+    "key": "press",
+    "num": "04",
+    "cat": "PRESSING",
+    "name": "Cheese Press",
+    "tagline": "Programmable multi-stage moulding.",
+    "blurb": "Pneumatic pressing with multi-stage, programmable pressure control for final shaping and moisture extraction. Adaptable to any mould format with high cycle repeatability.",
+    "tags": ["0.5–6 bar", "2–24 rows", "All moulds"],
+    "desc": "Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mould formats with high cycle repeatability and programmable pressure curves.",
+    "specs": [
+      { "label": "TYPE", "value": "Pneumatic, multi-stage" },
+      { "label": "FRAME", "value": "AISI 304 / 316L contact" },
+      { "label": "PRESSURE", "value": "0.5 – 6 bar, programmable" },
+      { "label": "STATIONS", "value": "2 – 24 mould rows" },
+      { "label": "CYCLE", "value": "Programmable, repeatable" },
+      { "label": "MOULDS", "value": "Adaptable to all formats" }
+    ]
+  }
+]

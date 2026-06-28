@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systems Catalogue — TimMetal</title>
+<meta name="description" content="TimMetal process systems — cheese vat, milk processing tank, cheese pre-press and press, engineered in marine-grade stainless and certified to European dairy standards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div style="position:relative; width:100%; background:var(--tm-cream); color:var(--tm-ink); font-family:'Archivo', system-ui, sans-serif; -webkit-font-smoothing:antialiased;">
+
+  <!-- Fixed nav — shared partial, injected by include.js -->
+  <div data-include="nav"></div>
+
+  <!-- ================= CATALOGUE =================
+       Rows + detail panel are rendered from /products.json by
+       products.js. Edit products in that JSON file — one place. -->
+  <main id="tm-catalog" style="padding:clamp(96px,14vh,150px) clamp(22px,6vw,96px) clamp(130px,17vh,210px);">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span>01 &mdash; SYSTEMS CATALOGUE</div>
+      <h1 style="margin:22px 0 0; font-weight:800; font-size:clamp(36px,6vw,82px); line-height:0.98; letter-spacing:-0.03em; max-width:14ch; text-wrap:balance;">Engineered for the dairy floor.</h1>
+      <p style="margin:28px 0 0; max-width:54ch; font-size:clamp(15px,1.35vw,19px); line-height:1.6; color:#4a4e53;">Four core systems &mdash; from coagulation to final press &mdash; each built in marine-grade stainless and certified to European dairy standards.</p>
+
+      <!-- Catalogue rows — rendered from /products.json by products.js -->
+      <div id="tm-catalog-list" style="margin-top:clamp(52px,8vh,92px); border-top:1px solid rgba(20,23,26,0.14);"></div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- Dark footer layer — shared footer partial sits on the steel ground. -->
+<section class="tm-reveal" style="background:#141414; color:#fff; font-family:'Archivo', system-ui, sans-serif;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 clamp(22px,6vw,96px) clamp(48px,7vh,88px);">
+    <div data-include="footer"></div>
+  </div>
+</section>
+
+<script src="/js/include.js"></script>
+<script src="/js/products.js"></script>
+</body>
+</html>

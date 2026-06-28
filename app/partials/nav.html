@@ -1,0 +1,9 @@
+<!-- Fixed nav — shared across pages. On the homepage it starts hidden
+     (opacity:0) and hero.js fades it in once the pour completes; on pages
+     without the hero canvas, include.js reveals it immediately. -->
+<nav id="tm-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:22px clamp(20px,4vw,52px); opacity:0; transition:opacity .9s ease; pointer-events:none;">
+  <a href="/" style="text-decoration:none; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.34em; color:#14171A; font-weight:700; pointer-events:auto;">TIMMETAL</a>
+  <div style="display:flex; gap:clamp(16px,3vw,40px); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#5a5e63; pointer-events:auto;">
+    <span class="tm-link" style="cursor:pointer;">PRODUCT</span><span class="tm-link" style="cursor:pointer;">PROCESS</span><span class="tm-link" style="cursor:pointer;">CONTACT</span>
+  </div>
+</nav>

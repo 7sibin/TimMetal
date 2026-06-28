@@ -161,7 +161,10 @@
       this.bubbles = []; // clear any in-flight foam so the final white ground is spotless
       this.draw(0);
       document.body.style.overflow = this.prevOverflow || '';
-      if (nav) nav.style.opacity = '1';
+      // Re-query: the nav is injected asynchronously by include.js, so the
+      // reference captured at load time may have been null.
+      var navEl = nav || document.getElementById('tm-nav');
+      if (navEl) navEl.style.opacity = '1';
       if (tagline) { tagline.style.opacity = '1'; tagline.style.transform = 'translateY(0)'; }
       if (hint) hint.style.opacity = '0';
     },

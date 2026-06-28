@@ -13,13 +13,8 @@
 <body>
 <div style="position:relative; width:100%; background:#F3EFE6; font-family:'Archivo', system-ui, sans-serif; -webkit-font-smoothing:antialiased;">
 
-  <!-- Fixed nav — hidden until the pour completes, then fades onto the white ground -->
-  <nav id="tm-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:22px clamp(20px,4vw,52px); opacity:0; transition:opacity .9s ease; pointer-events:none;">
-    <div style="font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.34em; color:#14171A; font-weight:700;">TIMMETAL</div>
-    <div style="display:flex; gap:clamp(16px,3vw,40px); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#5a5e63; pointer-events:auto;">
-      <span class="tm-link" style="cursor:pointer;">PRODUCT</span><span class="tm-link" style="cursor:pointer;">PROCESS</span><span class="tm-link" style="cursor:pointer;">CONTACT</span>
-    </div>
-  </nav>
+  <!-- Fixed nav — shared partial, injected by include.js -->
+  <div data-include="nav"></div>
 
   <!-- Cream lid: hero + main scroll up as one solid layer, wiping to reveal the dark section -->
   <div class="tm-lid">
@@ -169,7 +164,7 @@
   </div>
 
   <!-- SECTION 4 — Inquiry + footer. Dark layer revealed as the cream lid lifts away. -->
-  <section class="tm-reveal" style="background:#141414; color:#fff; font-family:'Archivo', system-ui, sans-serif;">
+  <section id="inquiry" class="tm-reveal" style="background:#141414; color:#fff; font-family:'Archivo', system-ui, sans-serif;">
 
     <div style="max-width:1200px; margin:0 auto; padding:clamp(8px,2vh,28px) clamp(22px,6vw,96px) clamp(48px,7vh,88px);">
 
@@ -204,49 +199,13 @@
         <button type="button" class="tm-submit" style="grid-column:1 / -1; justify-self:start; margin-top:14px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:transparent; border:1px solid rgba(255,255,255,0.32); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.26em; color:#fff; cursor:pointer;">SUBMIT REQUEST <span style="font-size:14px;">&rarr;</span></button>
       </form>
 
-      <!-- Footer -->
-      <div style="margin-top:clamp(64px,10vh,118px); padding-top:clamp(40px,5vh,60px); border-top:1px solid rgba(255,255,255,0.12); display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:clamp(32px,3vw,48px);">
-
-        <!-- Col 1 — brand -->
-        <div>
-          <div style="font-family:'Space Mono', monospace; font-size:15px; letter-spacing:0.34em; color:#fff; font-weight:700;">TIMMETAL</div>
-          <div style="margin-top:16px; font-size:14px; line-height:1.6; color:rgba(255,255,255,0.5);">Industrial Dairy Engineering<br />&copy; 2026 &middot; All rights reserved.</div>
-        </div>
-
-        <!-- Col 2 — navigation -->
-        <div>
-          <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.2em; color:rgba(255,255,255,0.4);">NAVIGATION</div>
-          <div style="margin-top:18px; display:flex; flex-direction:column; gap:11px; font-size:15px;">
-            <a href="#" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">Systems</a>
-            <a href="#" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">Technology</a>
-            <a href="#" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">About</a>
-            <a href="#" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">Contact</a>
-          </div>
-        </div>
-
-        <!-- Col 3 — location -->
-        <div>
-          <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.2em; color:rgba(255,255,255,0.4);">LOCATION</div>
-          <div style="margin-top:18px; font-size:14px; line-height:1.65; color:rgba(255,255,255,0.55);">
-            <div style="color:rgba(255,255,255,0.78);">Headquarters &amp; Workshop</div>
-            Bulevar Industrije 12<br />11000 Beograd, Serbia
-          </div>
-        </div>
-
-        <!-- Col 4 — direct contact -->
-        <div>
-          <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.2em; color:rgba(255,255,255,0.4);">DIRECT</div>
-          <div style="margin-top:18px; display:flex; flex-direction:column; gap:11px; font-size:15px;">
-            <a href="tel:+381110000000" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">+381 11 000 0000</a>
-            <a href="mailto:engineering@timmetal.com" class="tm-link" style="color:rgba(255,255,255,0.62); text-decoration:none;">engineering@timmetal.com</a>
-          </div>
-        </div>
-
-      </div>
+      <!-- Footer — shared partial, injected by include.js -->
+      <div data-include="footer"></div>
     </div>
   </section>
 </div>
 
+<script src="/js/include.js"></script>
 <script src="./js/hero.js"></script>
 </body>
 </html>
