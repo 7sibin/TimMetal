@@ -266,7 +266,7 @@
           <p style="margin:24px 0 0; max-width:48ch; font-size:clamp(15px,1.4vw,19px); line-height:1.6; color:rgba(255,255,255,0.5);" data-i18n="home.rfq.body">Request a technical consultation or a custom machinery quote tailored to your facility's daily capacity.</p>
         </div>
         <!-- Document stamp -->
-        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br><span data-i18n="home.rfq.stamp.response">RESPONSE &middot; &le; 48 H</span><br>LANG &middot; EN / SR / DE</div>
+        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br><span data-i18n="home.rfq.stamp.response">RESPONSE &middot; &le; 48 H</span><br>LANG &middot; EN / SR / HU</div>
       </div>
 
       <form id="tm-rfq-form" style="margin-top:clamp(48px,7vh,84px); display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); column-gap:clamp(28px,3.5vw,56px); row-gap:clamp(30px,4vh,42px);">
@@ -339,42 +339,47 @@
     var CLIENTS = [
       { key: 'P·01', name: 'Noré Dairy',       loc: 'NOVI SAD, RS',     since: 2019,
         note: { en: 'A complete semi-hard cheese line, from milk reception through to pressing.',
-                sr: 'Kompletna linija za polutvrdi sir, od prijema mleka do presovanja.' },
+                sr: 'Kompletna linija za polutvrdi sir, od prijema mleka do presovanja.',
+                hu: 'Teljes félkemény sajtvonal, a tejátvételtől a préselésig.' },
         systems: [
-          { en: 'Cheese Vat — 5 000 L', sr: 'Sirarski kotao — 5.000 L' },
-          { en: 'Pneumatic Cheese Press line', sr: 'Linija pneumatskih presa za sir' },
-          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici' }
+          { en: 'Cheese Vat — 5 000 L', sr: 'Sirarski kotao — 5.000 L', hu: 'Sajtkád — 5 000 L' },
+          { en: 'Pneumatic Cheese Press line', sr: 'Linija pneumatskih presa za sir', hu: 'Pneumatikus sajtprés-vonal' },
+          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici', hu: 'CIP-kész elosztók' }
         ] },
       { key: 'P·02', name: 'Vesta',            loc: 'THESSALONIKI, GR', since: 2021,
         note: { en: 'A capacity expansion built around high-efficiency pillow-plate vessels.',
-                sr: 'Proširenje kapaciteta zasnovano na visokoefikasnim pillow-plate sudovima.' },
+                sr: 'Proširenje kapaciteta zasnovano na visokoefikasnim pillow-plate sudovima.',
+                hu: 'Kapacitásbővítés nagy hatékonyságú pillow-plate edények köré építve.' },
         systems: [
-          { en: 'Triple-wall Processing Tank ×3', sr: 'Troslojni procesni tank ×3' },
-          { en: 'Pillow-plate heat transfer', sr: 'Pillow-plate prenos toplote' },
-          { en: 'Automated temperature control', sr: 'Automatska kontrola temperature' }
+          { en: 'Triple-wall Processing Tank ×3', sr: 'Troslojni procesni tank ×3', hu: 'Háromfalú feldolgozó tartály ×3' },
+          { en: 'Pillow-plate heat transfer', sr: 'Pillow-plate prenos toplote', hu: 'Pillow-plate hőátadás' },
+          { en: 'Automated temperature control', sr: 'Automatska kontrola temperature', hu: 'Automatizált hőmérséklet-szabályozás' }
         ] },
       { key: 'P·03', name: 'Meridian Mlekara', loc: 'SARAJEVO, BA',     since: 2020,
         note: { en: 'A full semi-hard cheese line rated for 12 000 L per day.',
-                sr: 'Kompletna linija za polutvrdi sir kapaciteta 12.000 L dnevno.' },
+                sr: 'Kompletna linija za polutvrdi sir kapaciteta 12.000 L dnevno.',
+                hu: 'Teljes félkemény sajtvonal, napi 12 000 L kapacitással.' },
         systems: [
-          { en: 'Cheese Vat ×2', sr: 'Sirarski kotao ×2' },
-          { en: 'Cheese Pre-press', sr: 'Predpresa za sir' },
-          { en: 'Pneumatic Cheese Press', sr: 'Pneumatska presa za sir' },
-          { en: 'Processing tanks', sr: 'Procesni tankovi' }
+          { en: 'Cheese Vat ×2', sr: 'Sirarski kotao ×2', hu: 'Sajtkád ×2' },
+          { en: 'Cheese Pre-press', sr: 'Predpresa za sir', hu: 'Sajt előprés' },
+          { en: 'Pneumatic Cheese Press', sr: 'Pneumatska presa za sir', hu: 'Pneumatikus sajtprés' },
+          { en: 'Processing tanks', sr: 'Procesni tankovi', hu: 'Feldolgozó tartályok' }
         ] },
       { key: 'P·04', name: 'Planta',           loc: 'VIENNA, AT',       since: 2022,
         note: { en: 'A pre-press and molding station for a boutique block producer.',
-                sr: 'Stanica za predpresovanje i kalupljenje za butik proizvođača blokova.' },
+                sr: 'Stanica za predpresovanje i kalupljenje za butik proizvođača blokova.',
+                hu: 'Előprés- és formázóállomás egy butik blokk-gyártó számára.' },
         systems: [
-          { en: 'Cheese Pre-press', sr: 'Predpresa za sir' },
-          { en: 'Molding & block profiling station', sr: 'Stanica za kalupljenje i profilisanje blokova' }
+          { en: 'Cheese Pre-press', sr: 'Predpresa za sir', hu: 'Sajt előprés' },
+          { en: 'Molding & block profiling station', sr: 'Stanica za kalupljenje i profilisanje blokova', hu: 'Formázó- és blokkprofilozó állomás' }
         ] },
       { key: 'P·05', name: 'Aurelio',          loc: 'BOLOGNA, IT',      since: 2023,
         note: { en: 'Pasteurization and clean-in-place infrastructure for an Italian dairy.',
-                sr: 'Pasterizacija i CIP infrastruktura za jednu italijansku mlekaru.' },
+                sr: 'Pasterizacija i CIP infrastruktura za jednu italijansku mlekaru.',
+                hu: 'Pasztőrözési és clean-in-place infrastruktúra egy olasz tejüzem számára.' },
         systems: [
-          { en: 'Pasteurization vessels', sr: 'Sudovi za pasterizaciju' },
-          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici' }
+          { en: 'Pasteurization vessels', sr: 'Sudovi za pasterizaciju', hu: 'Pasztőröző edények' },
+          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici', hu: 'CIP-kész elosztók' }
         ] }
     ];
 

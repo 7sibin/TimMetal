@@ -10,7 +10,7 @@
 (function () {
   'use strict';
 
-  var SUPPORTED = ['en', 'sr'];   // add 'de','ru' here + a /i18n/<code>.json
+  var SUPPORTED = ['en', 'sr', 'hu'];   // add more here + a /i18n/<code>.json
   var DEFAULT = 'en';
   var STORE_KEY = 'tm-lang';
 
