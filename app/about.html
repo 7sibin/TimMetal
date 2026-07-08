@@ -5,10 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — TimMetal</title>
 <meta name="description" content="TimMetal is an engineering partner for modern dairy production — CAD design, sanitary stainless fabrication and turn-key automation, validated to European standards.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#141414">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TimMetal">
+<meta property="og:title" content="About — TimMetal">
+<meta property="og:description" content="An engineering partner for modern dairy production — CAD design, sanitary stainless fabrication and turn-key automation, validated to European standards.">
+<meta property="og:image" content="/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/og.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<script src="/js/i18n.js"></script>
 <style>
   /* Pillar hover schematics — ghost FIG. drawing brightens, red accent draws in */
   .tm-pillar .tm-fig { opacity: 0.5; transition: opacity .45s ease; }
@@ -32,8 +42,8 @@
 
       <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span style="color:var(--tm-red);">01</span><span style="color:#76797e;">// THE CORE</span></div>
 
-      <div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,72px); align-items:flex-end;">
-        <h1 style="flex:1 1 540px; min-width:300px; margin:0; font-weight:800; font-size:clamp(38px,5.8vw,82px); line-height:0.98; letter-spacing:-0.03em; max-width:15ch; text-wrap:balance;">Where heavy engineering meets dairy science.</h1>
+      <div class="tm-rise" style="margin-top:22px; display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,72px); align-items:flex-end;">
+        <h1 style="flex:1 1 540px; min-width:300px; margin:0; font-weight:800; font-size:clamp(38px,5.8vw,82px); line-height:0.98; letter-spacing:-0.03em; max-width:15ch; text-wrap:balance;">Where heavy engineering meets <span style="color:var(--tm-red-deep);">dairy science</span>.</h1>
         <p style="flex:1 1 340px; min-width:280px; margin:0 0 8px; max-width:46ch; font-size:clamp(15px,1.35vw,19px); line-height:1.62; color:#4a4e53;">TimMetal is not a workshop &mdash; it is an engineering partner. We design, fabricate and integrate high-end processing solutions tailored to the exact demands of modern dairy production, from the first thermal-dynamic calculation to the final mirror-polished weld.</p>
       </div>
 
@@ -47,7 +57,7 @@
       <section style="margin-top:clamp(72px,11vh,150px);">
         <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span style="color:#76797e;">CAPABILITIES &mdash; END TO END</span></div>
 
-        <div style="margin-top:clamp(36px,5vh,56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:1px; background:rgba(20,23,26,0.14); border:1px solid rgba(20,23,26,0.14);">
+        <div class="tm-rise" style="margin-top:clamp(36px,5vh,56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:1px; background:rgba(20,23,26,0.14); border:1px solid rgba(20,23,26,0.14);">
 
           <div class="tm-pillar" style="background:var(--tm-cream); padding:clamp(28px,2.8vw,46px); display:flex; flex-direction:column; min-height:clamp(300px,40vh,420px);">
             <div style="display:flex; align-items:baseline; gap:10px;">
@@ -128,14 +138,14 @@
     <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,5vw,80px);">
 
       <!-- Heading column -->
-      <div data-sticky-col style="flex:1 1 360px; min-width:280px;">
+      <div data-sticky-col class="tm-rise" style="flex:1 1 360px; min-width:280px;">
         <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span><span style="color:var(--tm-red);">02</span><span style="color:rgba(255,255,255,0.5);"> // STANDARDS</span></span></div>
         <h2 style="margin:26px 0 0; font-weight:800; font-size:clamp(40px,5.4vw,76px); line-height:0.98; letter-spacing:-0.03em; max-width:11ch; text-wrap:balance;">Built to Outlast.</h2>
         <p style="margin:24px 0 0; max-width:42ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(255,255,255,0.5);">Every machine that leaves the floor is validated against a fixed set of engineering standards &mdash; no compromise, no exceptions.</p>
       </div>
 
       <!-- Metrics list -->
-      <div style="flex:1.2 1 460px; min-width:300px; align-self:flex-start; border-bottom:1px solid rgba(255,255,255,0.14);">
+      <div class="tm-stagger" style="flex:1.2 1 460px; min-width:300px; align-self:flex-start; border-bottom:1px solid rgba(255,255,255,0.14);">
 
         <div style="display:flex; flex-wrap:wrap; gap:16px 40px; padding:clamp(26px,3.4vh,40px) 0; border-top:1px solid rgba(255,255,255,0.14);">
           <div style="flex:0 0 200px; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:var(--tm-red);">MATERIAL COMPLIANCE</div>
@@ -170,5 +180,6 @@
 </section>
 
 <script src="/js/include.js"></script>
+<script src="/js/motion.js"></script>
 </body>
 </html>
