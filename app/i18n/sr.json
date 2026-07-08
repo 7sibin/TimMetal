@@ -106,5 +106,23 @@
   "products.cat.h1": "Projektovano za <span style=\"color:var(--tm-red-deep);\">proizvodni pogon mlekare</span>.",
   "products.cat.body": "Četiri osnovna sistema — od koagulacije do završnog presovanja — svaki izrađen od nerđajućeg čelika brodske klase i sertifikovan po evropskim standardima za mlekare.",
   "meta.product.title": "Sistem — TimMetal",
-  "meta.product.desc": "TimMetal procesni sistem — tehnička specifikacija i kapacitet, izrađen od nerđajućeg čelika brodske klase."
+  "meta.product.desc": "TimMetal procesni sistem — tehnička specifikacija i kapacitet, izrađen od nerđajućeg čelika brodske klase.",
+
+  "meta.contact.title": "Kontakt — TimMetal",
+  "meta.contact.desc": "Kontaktirajte TimMetal — sedište i radionica u Beogradu (Borča), Srbija. Pošaljite upit za projekat ili nas pronađite na mapi.",
+  "contact.kicker": "// KONTAKT",
+  "contact.hq.label": "SEDIŠTE",
+  "contact.hq.city": "11000 Beograd (Borča)",
+  "contact.hq.country": "Republika Srbija",
+  "contact.prod.label": "PROIZVODNJA",
+  "contact.prod.city": "11000 Beograd (Borča)",
+  "contact.prod.hours": "RADNO VREME / pon–pet 08–17",
+  "contact.gps.label": "GPS KOORDINATE",
+  "contact.form.heading": "POŠALJITE UPIT",
+  "contact.form.name": "Ime / firma",
+  "contact.form.email": "Email adresa",
+  "contact.form.msg": "Kratak opis projekta…",
+  "contact.form.send": "POŠALJI",
+  "contact.form.sent": "POSLATO ✓",
+  "contact.map.badge": "03 / MAPA — TIMMETAL HQ"
 }
