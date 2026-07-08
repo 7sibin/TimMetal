@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TimMetal — Industrial Dairy Engineering</title>
-<meta name="description" content="TimMetal — dairy process machinery engineered in marine-grade stainless steel: cheese vats, processing tanks, pre-press and press systems, designed and built in Belgrade.">
+<title data-i18n="meta.home.title">TimMetal — Industrial Dairy Engineering</title>
+<meta name="description" content="TimMetal — dairy process machinery engineered in marine-grade stainless steel: cheese vats, processing tanks, pre-press and press systems, designed and built in Belgrade." data-i18n-attr="content:meta.home.desc">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TimMetal">
-<meta property="og:title" content="TimMetal — Industrial Dairy Engineering">
-<meta property="og:description" content="Dairy process machinery engineered in marine-grade stainless steel — cheese vats, processing tanks, pre-press and press systems, designed and built in Belgrade.">
+<meta property="og:title" content="TimMetal — Industrial Dairy Engineering" data-i18n-attr="content:meta.home.title">
+<meta property="og:description" content="Dairy process machinery engineered in marine-grade stainless steel — cheese vats, processing tanks, pre-press and press systems, designed and built in Belgrade." data-i18n-attr="content:meta.home.desc">
 <meta property="og:image" content="/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/og.svg">
@@ -55,7 +55,7 @@
        outline, milk pour, inverted wordmark); framed as drawing sheet no. 1 -->
   <section id="tm-hero" style="position:sticky; top:0; width:100%; height:100svh; min-height:560px; overflow:hidden; background:#050506;">
     <canvas id="tm-canvas" style="position:absolute; inset:0; width:100%; height:100%; display:block;"></canvas>
-    <h1 style="position:absolute; width:1px; height:1px; margin:0; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap;">TimMetal &mdash; Industrial Dairy Engineering, Beograd</h1>
+    <h1 style="position:absolute; width:1px; height:1px; margin:0; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap;" data-i18n-html="home.hero.h1">TimMetal &mdash; Industrial Dairy Engineering, Beograd</h1>
 
     <!-- Registration crosshairs, one per corner -->
     <svg width="18" height="18" viewBox="0 0 18 18" style="position:absolute; top:18px; left:18px; color:rgba(120,126,134,0.6);"><line x1="9" y1="0" x2="9" y2="18" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1"></line></svg>
@@ -68,10 +68,10 @@
     <div style="position:absolute; right:48px; bottom:22px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:#6a6f76; pointer-events:none;">BEOGRAD &middot; N 44&deg;49&prime; E 20&deg;27&prime;</div>
 
     <!-- Tagline sits just under the wordmark; fades in once the milk settles -->
-    <div id="tm-tagline" style="position:absolute; left:0; right:0; top:57%; text-align:center; opacity:0; transform:translateY(10px); transition:opacity 1s ease .2s, transform 1s ease .2s; pointer-events:none; font-family:'Space Mono', monospace; font-size:clamp(10px,1.05vw,14px); letter-spacing:0.42em; color:#3c4045;">DAIRY PROCESS MACHINERY &middot; ENGINEERED IN STEEL</div>
+    <div id="tm-tagline" style="position:absolute; left:0; right:0; top:57%; text-align:center; opacity:0; transform:translateY(10px); transition:opacity 1s ease .2s, transform 1s ease .2s; pointer-events:none; font-family:'Space Mono', monospace; font-size:clamp(10px,1.05vw,14px); letter-spacing:0.42em; color:#3c4045;" data-i18n="home.hero.tagline">DAIRY PROCESS MACHINERY &middot; ENGINEERED IN STEEL</div>
 
     <!-- Soft scroll affordance — never a hard lock, scrolling just pours faster -->
-    <div id="tm-hint" style="position:absolute; left:0; right:0; bottom:52px; text-align:center; opacity:0.5; transition:opacity .6s ease; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.34em; color:#6a6f76; pointer-events:none;">SCROLL TO POUR</div>
+    <div id="tm-hint" style="position:absolute; left:0; right:0; bottom:52px; text-align:center; opacity:0.5; transition:opacity .6s ease; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.34em; color:#6a6f76; pointer-events:none;" data-i18n="home.hero.hint">SCROLL TO POUR</div>
   </section>
 
   <!-- Hero is pinned (sticky); everything below is a cream .tm-lid (z-2)
@@ -86,7 +86,7 @@
       <!-- Drawing title block — the sheet's passport -->
       <div style="display:flex; flex-wrap:wrap; gap:1px; border:1px solid rgba(20,23,26,0.3); border-top:none; background:rgba(20,23,26,0.22); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#5a5e63;">
         <div style="display:flex; align-items:center; padding:11px 14px; background:var(--tm-red); color:#fff; font-weight:700; letter-spacing:0.2em;">TM</div>
-        <div style="flex:2 1 auto; min-width:220px; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); color:var(--tm-ink); font-weight:700;">TIMMETAL D.O.O. &mdash; INDUSTRIAL DAIRY ENGINEERING</div>
+        <div style="flex:2 1 auto; min-width:220px; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); color:var(--tm-ink); font-weight:700;" data-i18n="home.titleblock.company">TIMMETAL D.O.O. &mdash; INDUSTRIAL DAIRY ENGINEERING</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">DOC &middot; TM-2026-HP</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">MAT &middot; AISI 316L / 304</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">SCALE &middot; 1:1</div>
@@ -95,25 +95,25 @@
 
       <!-- SECTION 01 — the workshop -->
       <section class="tm-rise" style="padding-top:clamp(84px,13vh,170px);">
-        <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span>01 &mdash; THE WORKSHOP</div>
-        <h2 style="margin:20px 0 0; font-weight:800; font-size:clamp(34px,5.6vw,78px); line-height:1.0; letter-spacing:-0.025em; max-width:15ch; text-wrap:balance;">Steel that turns <span style="color:var(--tm-red-deep);">milk</span> into cheese<span style="color:var(--tm-red);">.</span></h2>
+        <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span data-i18n="home.s01.kicker">01 &mdash; THE WORKSHOP</span></div>
+        <h2 style="margin:20px 0 0; font-weight:800; font-size:clamp(34px,5.6vw,78px); line-height:1.0; letter-spacing:-0.025em; max-width:15ch; text-wrap:balance;" data-i18n-html="home.s01.h2">Steel that turns <span style="color:var(--tm-red-deep);">milk</span> into cheese<span style="color:var(--tm-red);">.</span></h2>
 
         <!-- Dimension line under the headline, drawn like a drafting callout -->
         <div style="margin-top:34px; max-width:560px; display:flex; align-items:center; gap:0; color:rgba(20,23,26,0.45);">
           <span style="width:1px; height:14px; background:currentColor;"></span>
           <span style="flex:1; height:1px; background:currentColor;"></span>
-          <span style="padding:0 14px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.22em; white-space:nowrap; color:#5a5e63;">RECEPTION &rarr; PRESS &middot; ONE SUPPLIER</span>
+          <span style="padding:0 14px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.22em; white-space:nowrap; color:#5a5e63;" data-i18n="home.s01.dimline">RECEPTION &rarr; PRESS &middot; ONE SUPPLIER</span>
           <span style="flex:1; height:1px; background:currentColor;"></span>
           <span style="width:1px; height:14px; background:currentColor;"></span>
         </div>
 
-        <p style="margin:30px 0 0; max-width:48ch; font-size:clamp(15px,1.35vw,19px); line-height:1.6; color:#4a4e53;">One workshop, the whole line: pasteurization, coagulation, pressing &mdash; every vessel designed, TIG-welded and certified under one roof in Belgrade.</p>
-        <a href="/products" class="tm-btn-ink" style="margin-top:44px; display:inline-flex; align-items:center; gap:14px; padding:15px 28px; border:1px solid var(--tm-ink); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.26em; color:var(--tm-ink); text-decoration:none; cursor:pointer;">EXPLORE THE SYSTEMS <span style="font-size:14px;">&rarr;</span></a>
+        <p style="margin:30px 0 0; max-width:48ch; font-size:clamp(15px,1.35vw,19px); line-height:1.6; color:#4a4e53;" data-i18n="home.s01.body">One workshop, the whole line: pasteurization, coagulation, pressing &mdash; every vessel designed, TIG-welded and certified under one roof in Belgrade.</p>
+        <a href="/products" class="tm-btn-ink" style="margin-top:44px; display:inline-flex; align-items:center; gap:14px; padding:15px 28px; border:1px solid var(--tm-ink); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.26em; color:var(--tm-ink); text-decoration:none; cursor:pointer;"><span data-i18n="home.s01.cta">EXPLORE THE SYSTEMS</span> <span style="font-size:14px;">&rarr;</span></a>
       </section>
 
       <!-- SECTION 02 — commissioned plants, shown as a rotating client logo strip -->
       <section id="plants" style="margin-top:clamp(96px,17vh,210px); padding-top:clamp(40px,6vh,72px); border-top:1px solid rgba(20,23,26,0.1);">
-        <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span>02 &mdash; COMMISSIONED PLANTS</div>
+        <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span data-i18n="home.s02.kicker">02 &mdash; COMMISSIONED PLANTS</span></div>
 
         <!-- Infinite logo marquee. The track holds the 5 client logos TWICE;
              the animation slides it -50% for a seamless loop. The second set
@@ -145,21 +145,21 @@
       <section id="systems" class="tm-rise" style="margin-top:clamp(96px,17vh,210px); padding-top:clamp(40px,6vh,72px); border-top:1px solid rgba(20,23,26,0.1); display:flex; flex-wrap:wrap; gap:clamp(40px,5vw,76px);">
 
         <div data-sticky-col style="flex:1 1 300px; min-width:260px;">
-          <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span>03 &mdash; PROCESS SYSTEMS</div>
-          <h2 style="margin:26px 0 0; font-weight:800; font-size:clamp(30px,3.4vw,52px); line-height:1.03; letter-spacing:-0.025em; max-width:12ch; text-wrap:balance; color:var(--tm-ink);">Engineering for the <span style="color:var(--tm-red-deep);">Dairy</span> Industry<span style="color:var(--tm-red);">.</span></h2>
+          <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em; color:var(--tm-red);"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span data-i18n="home.s03.kicker">03 &mdash; PROCESS SYSTEMS</span></div>
+          <h2 style="margin:26px 0 0; font-weight:800; font-size:clamp(30px,3.4vw,52px); line-height:1.03; letter-spacing:-0.025em; max-width:12ch; text-wrap:balance; color:var(--tm-ink);" data-i18n-html="home.s03.h2">Engineering for the <span style="color:var(--tm-red-deep);">Dairy</span> Industry<span style="color:var(--tm-red);">.</span></h2>
 
           <div style="margin-top:clamp(34px,4.5vh,56px); max-width:340px; border-bottom:1px solid rgba(20,23,26,0.12);">
             <div style="padding:17px 0; border-top:1px solid rgba(20,23,26,0.12);">
-              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);">AISI 316L / 304 STAINLESS</div>
-              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;">Marine &amp; food-grade steel for absolute hygiene and chemical resistance.</div>
+              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);" data-i18n="home.s03.feat1.t">AISI 316L / 304 STAINLESS</div>
+              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;" data-i18n="home.s03.feat1.d">Marine &amp; food-grade steel for absolute hygiene and chemical resistance.</div>
             </div>
             <div style="padding:17px 0; border-top:1px solid rgba(20,23,26,0.12);">
-              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);">TIG / WIG ARGON WELDING</div>
-              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;">Masterfully executed welds in a protective argon atmosphere, ensuring zero porosity.</div>
+              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);" data-i18n="home.s03.feat2.t">TIG / WIG ARGON WELDING</div>
+              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;" data-i18n="home.s03.feat2.d">Masterfully executed welds in a protective argon atmosphere, ensuring zero porosity.</div>
             </div>
             <div style="padding:17px 0; border-top:1px solid rgba(20,23,26,0.12);">
-              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);">EN 10204 3.1 CERTIFIED</div>
-              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;">Full material traceability and compliance with European dairy equipment standards.</div>
+              <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em; color:var(--tm-ink);" data-i18n="home.s03.feat3.t">EN 10204 3.1 CERTIFIED</div>
+              <div style="margin-top:7px; font-size:13px; line-height:1.55; color:#76797e;" data-i18n="home.s03.feat3.d">Full material traceability and compliance with European dairy equipment standards.</div>
             </div>
           </div>
         </div>
@@ -170,14 +170,14 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">01 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);">Cheese Vat</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card1.name">Cheese Vat</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 01</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
               <svg width="60%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><line x1="60" y1="9" x2="60" y2="42" stroke="currentColor" stroke-width="1.6"></line><line x1="47" y1="42" x2="73" y2="42" stroke="currentColor" stroke-width="1.6"></line><line x1="22" y1="33" x2="98" y2="33" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"></line></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;">The core unit of any modern dairy. Engineered for precise coagulation, thermal processing, and automated curd cutting via specialized stainless steel knives, minimizing dry matter loss.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card1.body">The core unit of any modern dairy. Engineered for precise coagulation, thermal processing, and automated curd cutting via specialized stainless steel knives, minimizing dry matter loss.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-01</div>
@@ -191,14 +191,14 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">02 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);">Milk Processing Tank</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card2.name">Milk Processing Tank</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 02</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
               <svg width="60%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="60" y1="4" x2="60" y2="12" stroke="currentColor" stroke-width="1.6"></line><rect x="44" y="12" width="32" height="44" rx="7" stroke="currentColor" stroke-width="1.6"></rect><line x1="44" y1="24" x2="76" y2="24" stroke="currentColor" stroke-width="1.2"></line><line x1="44" y1="44" x2="76" y2="44" stroke="currentColor" stroke-width="1.2"></line><line x1="50" y1="56" x2="48" y2="66" stroke="currentColor" stroke-width="1.6"></line><line x1="70" y1="56" x2="72" y2="66" stroke="currentColor" stroke-width="1.6"></line></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;">A multi-purpose, triple-wall insulated process vessel for pasteurization, boiling, fermentation, and cooling. Highly efficient heat transfer via pillow-plate technology prevents burning.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card2.body">A multi-purpose, triple-wall insulated process vessel for pasteurization, boiling, fermentation, and cooling. Highly efficient heat transfer via pillow-plate technology prevents burning.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-02</div>
@@ -212,14 +212,14 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">03 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);">Cheese Pre-press</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card3.name">Cheese Pre-press</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 03</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
               <svg width="62%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><path d="M16 16 H104 L90 52 H30 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><line x1="34" y1="30" x2="86" y2="30" stroke="currentColor" stroke-width="1.2"></line><rect x="46" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"></rect><rect x="62" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"></rect></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;">An engineered system for continuous self-pressing and curd block formation under whey. Ensures uniform porosity and perfect block profiling prior to final molding.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card3.body">An engineered system for continuous self-pressing and curd block formation under whey. Ensures uniform porosity and perfect block profiling prior to final molding.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-03</div>
@@ -233,14 +233,14 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">04 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);">Cheese Press</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card4.name">Cheese Press</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 04</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
               <svg width="58%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="34" y1="10" x2="34" y2="60" stroke="currentColor" stroke-width="1.6"></line><line x1="86" y1="10" x2="86" y2="60" stroke="currentColor" stroke-width="1.6"></line><line x1="30" y1="12" x2="90" y2="12" stroke="currentColor" stroke-width="1.6"></line><line x1="60" y1="12" x2="60" y2="30" stroke="currentColor" stroke-width="1.6"></line><rect x="46" y="30" width="28" height="12" stroke="currentColor" stroke-width="1.6"></rect><rect x="40" y="48" width="40" height="12" stroke="currentColor" stroke-width="1.4"></rect></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;">Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mold formats with high cycle repeatability.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card4.body">Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mold formats with high cycle repeatability.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-04</div>
@@ -261,37 +261,37 @@
 
       <div class="tm-rise" style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:24px;">
         <div>
-          <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span><span style="color:var(--tm-red);">04</span><span style="color:rgba(255,255,255,0.5);"> &mdash; REQUEST FOR QUOTATION</span></span></div>
-          <h2 style="margin:26px 0 0; font-weight:800; font-size:clamp(32px,4.6vw,68px); line-height:1.0; letter-spacing:-0.03em; max-width:14ch; text-wrap:balance; color:#fff;">Ready to scale your production<span style="color:var(--tm-red);">?</span></h2>
-          <p style="margin:24px 0 0; max-width:48ch; font-size:clamp(15px,1.4vw,19px); line-height:1.6; color:rgba(255,255,255,0.5);">Request a technical consultation or a custom machinery quote tailored to your facility's daily capacity.</p>
+          <div style="display:flex; align-items:center; gap:14px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.3em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span data-i18n-html="home.rfq.kicker"><span style="color:var(--tm-red);">04</span><span style="color:rgba(255,255,255,0.5);"> &mdash; REQUEST FOR QUOTATION</span></span></div>
+          <h2 style="margin:26px 0 0; font-weight:800; font-size:clamp(32px,4.6vw,68px); line-height:1.0; letter-spacing:-0.03em; max-width:14ch; text-wrap:balance; color:#fff;" data-i18n-html="home.rfq.h2">Ready to scale your production<span style="color:var(--tm-red);">?</span></h2>
+          <p style="margin:24px 0 0; max-width:48ch; font-size:clamp(15px,1.4vw,19px); line-height:1.6; color:rgba(255,255,255,0.5);" data-i18n="home.rfq.body">Request a technical consultation or a custom machinery quote tailored to your facility's daily capacity.</p>
         </div>
         <!-- Document stamp -->
-        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br>RESPONSE &middot; &le; 48 H<br>LANG &middot; EN / SR / DE</div>
+        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br><span data-i18n="home.rfq.stamp.response">RESPONSE &middot; &le; 48 H</span><br>LANG &middot; EN / SR / DE</div>
       </div>
 
       <form id="tm-rfq-form" style="margin-top:clamp(48px,7vh,84px); display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); column-gap:clamp(28px,3.5vw,56px); row-gap:clamp(30px,4vh,42px);">
 
         <div style="grid-column:1 / -1; display:flex; flex-direction:column; gap:11px;">
-          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);"><span style="color:var(--tm-red);">01</span> &middot; FULL NAME / COMPANY NAME</label>
-          <input type="text" name="name" placeholder="Jane Doe, Acme Dairy Co." class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
+          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);" data-i18n-html="home.rfq.f1"><span style="color:var(--tm-red);">01</span> &middot; FULL NAME / COMPANY NAME</label>
+          <input type="text" name="name" placeholder="Jane Doe, Acme Dairy Co." data-i18n-attr="placeholder:home.rfq.f1.ph" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
         </div>
 
         <div style="display:flex; flex-direction:column; gap:11px;">
-          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);"><span style="color:var(--tm-red);">02</span> &middot; EMAIL ADDRESS</label>
-          <input type="email" name="email" placeholder="name@company.com" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
+          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);" data-i18n-html="home.rfq.f2"><span style="color:var(--tm-red);">02</span> &middot; EMAIL ADDRESS</label>
+          <input type="email" name="email" placeholder="name@company.com" data-i18n-attr="placeholder:home.rfq.f2.ph" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
         </div>
 
         <div style="display:flex; flex-direction:column; gap:11px;">
-          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);"><span style="color:var(--tm-red);">03</span> &middot; PLANNED DAILY MILK VOLUME</label>
-          <input type="text" name="volume" placeholder="e.g. 1000L, 5000L" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
+          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);" data-i18n-html="home.rfq.f3"><span style="color:var(--tm-red);">03</span> &middot; PLANNED DAILY MILK VOLUME</label>
+          <input type="text" name="volume" placeholder="e.g. 1000L, 5000L" data-i18n-attr="placeholder:home.rfq.f3.ph" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none;" />
         </div>
 
         <div style="grid-column:1 / -1; display:flex; flex-direction:column; gap:11px;">
-          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);"><span style="color:var(--tm-red);">04</span> &middot; MESSAGE / SYSTEM REQUIREMENTS</label>
-          <textarea name="message" rows="3" placeholder="Tell us about your facility, target output, and the systems you need." class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none; resize:vertical;"></textarea>
+          <label style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.45);" data-i18n-html="home.rfq.f4"><span style="color:var(--tm-red);">04</span> &middot; MESSAGE / SYSTEM REQUIREMENTS</label>
+          <textarea name="message" rows="3" placeholder="Tell us about your facility, target output, and the systems you need." data-i18n-attr="placeholder:home.rfq.f4.ph" class="tm-field" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.22); color:#fff; font-family:'Archivo', sans-serif; font-size:clamp(15px,1.3vw,17px); padding:12px 0; outline:none; resize:vertical;"></textarea>
         </div>
 
-        <button type="submit" class="tm-rfq-submit" style="grid-column:1 / -1; justify-self:start; margin-top:14px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:var(--tm-red); border:1px solid var(--tm-red); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.26em; color:#fff; cursor:pointer;"><span data-btn-label>SUBMIT RFQ</span> <span style="font-size:14px;">&rarr;</span></button>
+        <button type="submit" class="tm-rfq-submit" style="grid-column:1 / -1; justify-self:start; margin-top:14px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:var(--tm-red); border:1px solid var(--tm-red); font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.26em; color:#fff; cursor:pointer;"><span data-btn-label data-i18n="home.rfq.submit">SUBMIT RFQ</span> <span style="font-size:14px;">&rarr;</span></button>
       </form>
 
       <!-- Footer — shared partial, injected by include.js -->
@@ -324,7 +324,7 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var label = form.querySelector('[data-btn-label]');
-        if (label) label.textContent = 'SUBMITTED ✓';
+        if (label) label.textContent = (window.tmI18n ? window.tmI18n.t('home.rfq.submitted', 'SUBMITTED ✓') : 'SUBMITTED ✓');
         form.reset();
       });
     }
@@ -338,21 +338,54 @@
     var MONO = "'Space Mono', monospace";
     var CLIENTS = [
       { key: 'P·01', name: 'Noré Dairy',       loc: 'NOVI SAD, RS',     since: 2019,
-        note: 'A complete semi-hard cheese line, from milk reception through to pressing.',
-        systems: ['Cheese Vat — 5 000 L', 'Pneumatic Cheese Press line', 'CIP-ready manifolds'] },
+        note: { en: 'A complete semi-hard cheese line, from milk reception through to pressing.',
+                sr: 'Kompletna linija za polutvrdi sir, od prijema mleka do presovanja.' },
+        systems: [
+          { en: 'Cheese Vat — 5 000 L', sr: 'Sirarski kotao — 5.000 L' },
+          { en: 'Pneumatic Cheese Press line', sr: 'Linija pneumatskih presa za sir' },
+          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici' }
+        ] },
       { key: 'P·02', name: 'Vesta',            loc: 'THESSALONIKI, GR', since: 2021,
-        note: 'A capacity expansion built around high-efficiency pillow-plate vessels.',
-        systems: ['Triple-wall Processing Tank ×3', 'Pillow-plate heat transfer', 'Automated temperature control'] },
+        note: { en: 'A capacity expansion built around high-efficiency pillow-plate vessels.',
+                sr: 'Proširenje kapaciteta zasnovano na visokoefikasnim pillow-plate sudovima.' },
+        systems: [
+          { en: 'Triple-wall Processing Tank ×3', sr: 'Troslojni procesni tank ×3' },
+          { en: 'Pillow-plate heat transfer', sr: 'Pillow-plate prenos toplote' },
+          { en: 'Automated temperature control', sr: 'Automatska kontrola temperature' }
+        ] },
       { key: 'P·03', name: 'Meridian Mlekara', loc: 'SARAJEVO, BA',     since: 2020,
-        note: 'A full semi-hard cheese line rated for 12 000 L per day.',
-        systems: ['Cheese Vat ×2', 'Cheese Pre-press', 'Pneumatic Cheese Press', 'Processing tanks'] },
+        note: { en: 'A full semi-hard cheese line rated for 12 000 L per day.',
+                sr: 'Kompletna linija za polutvrdi sir kapaciteta 12.000 L dnevno.' },
+        systems: [
+          { en: 'Cheese Vat ×2', sr: 'Sirarski kotao ×2' },
+          { en: 'Cheese Pre-press', sr: 'Predpresa za sir' },
+          { en: 'Pneumatic Cheese Press', sr: 'Pneumatska presa za sir' },
+          { en: 'Processing tanks', sr: 'Procesni tankovi' }
+        ] },
       { key: 'P·04', name: 'Planta',           loc: 'VIENNA, AT',       since: 2022,
-        note: 'A pre-press and molding station for a boutique block producer.',
-        systems: ['Cheese Pre-press', 'Molding & block profiling station'] },
+        note: { en: 'A pre-press and molding station for a boutique block producer.',
+                sr: 'Stanica za predpresovanje i kalupljenje za butik proizvođača blokova.' },
+        systems: [
+          { en: 'Cheese Pre-press', sr: 'Predpresa za sir' },
+          { en: 'Molding & block profiling station', sr: 'Stanica za kalupljenje i profilisanje blokova' }
+        ] },
       { key: 'P·05', name: 'Aurelio',          loc: 'BOLOGNA, IT',      since: 2023,
-        note: 'Pasteurization and clean-in-place infrastructure for an Italian dairy.',
-        systems: ['Pasteurization vessels', 'CIP-ready manifolds'] }
+        note: { en: 'Pasteurization and clean-in-place infrastructure for an Italian dairy.',
+                sr: 'Pasterizacija i CIP infrastruktura za jednu italijansku mlekaru.' },
+        systems: [
+          { en: 'Pasteurization vessels', sr: 'Sudovi za pasterizaciju' },
+          { en: 'CIP-ready manifolds', sr: 'CIP-spremni razvodnici' }
+        ] }
     ];
+
+    function pick(v) {
+      if (v && typeof v === 'object' && !Array.isArray(v)) {
+        var l = (window.tmI18n && window.tmI18n.lang) || 'en';
+        return (v[l] != null) ? v[l] : v.en;
+      }
+      return v;
+    }
+    function t(key, en) { return window.tmI18n ? window.tmI18n.t(key, en) : en; }
 
     var detail = document.getElementById('tm-plant-detail');
     var track = document.querySelector('.tm-marquee-track');
@@ -363,24 +396,26 @@
       return list.map(function (s, k) {
         return '<div style="display:flex; align-items:baseline; gap:14px; padding:12px 0; border-top:1px solid rgba(20,23,26,0.12);">' +
           '<span style="font-family:' + MONO + '; font-size:12px; color:var(--tm-red); flex-shrink:0;">' + (k + 1 < 10 ? '0' : '') + (k + 1) + '</span>' +
-          '<span style="font-size:15px; line-height:1.4; color:var(--tm-ink);">' + s + '</span>' +
+          '<span style="font-size:15px; line-height:1.4; color:var(--tm-ink);">' + pick(s) + '</span>' +
         '</div>';
       }).join('');
     }
 
+    var current = 0;
     function render(i) {
       var c = CLIENTS[i];
       if (!c) return;
+      current = i;
       detail.innerHTML =
         '<div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,72px); border-top:1px solid rgba(20,23,26,0.14); padding-top:clamp(28px,4vh,46px);">' +
           '<div style="flex:1 1 320px; min-width:260px;">' +
             '<div style="display:flex; align-items:center; gap:12px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.22em; color:var(--tm-red);"><span>' + c.key + '</span><span style="color:#76797e;">' + c.loc + '</span></div>' +
             '<h3 style="margin:16px 0 0; font-weight:800; font-size:clamp(28px,3.2vw,46px); line-height:1.02; letter-spacing:-0.025em; color:var(--tm-ink);">' + c.name + '<span style="color:var(--tm-red-deep);">.</span></h3>' +
-            '<div style="margin-top:16px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.14em; color:#76797e;">PARTNER SINCE <span style="color:var(--tm-ink);">' + c.since + '</span></div>' +
-            '<p style="margin:20px 0 0; max-width:42ch; font-size:clamp(14px,1.15vw,16px); line-height:1.62; color:#4a4e53;">' + c.note + '</p>' +
+            '<div style="margin-top:16px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.14em; color:#76797e;">' + t('home.plants.since', 'PARTNER SINCE') + ' <span style="color:var(--tm-ink);">' + c.since + '</span></div>' +
+            '<p style="margin:20px 0 0; max-width:42ch; font-size:clamp(14px,1.15vw,16px); line-height:1.62; color:#4a4e53;">' + pick(c.note) + '</p>' +
           '</div>' +
           '<div style="flex:1 1 320px; min-width:260px;">' +
-            '<div style="font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; color:var(--tm-red-deep);">SYSTEMS DELIVERED</div>' +
+            '<div style="font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; color:var(--tm-red-deep);">' + t('home.plants.delivered', 'SYSTEMS DELIVERED') + '</div>' +
             '<div style="margin-top:14px; border-bottom:1px solid rgba(20,23,26,0.12);">' + systemsRows(c.systems) + '</div>' +
           '</div>' +
         '</div>';
@@ -398,7 +433,11 @@
     });
 
     // Show the first partner by default so the section is never empty.
-    render(0);
+    // Wait for the dictionary so the labels render in the active language.
+    (window.tmI18n ? window.tmI18n.ready : Promise.resolve()).then(function () { render(0); });
+
+    // Redraw the open partner in the chosen language when it changes.
+    document.addEventListener('tm:langchange', function () { render(current); });
   })();
 </script>
 </body>
