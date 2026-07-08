@@ -88,5 +88,23 @@
   "about.std.m2.d": "Clean-in-Place inženjering u celom sistemu, sa spojevima bez pora za potpunu sanitarnu ispravnost.",
   "about.std.m3.k": "FLEKSIBILNOST",
   "about.std.m3.t": "Dimenzije po meri.",
-  "about.std.m3.d": "Svaki sistem se projektuje prema rasporedu vašeg postojećeg pogona — a ne obrnuto."
+  "about.std.m3.d": "Svaki sistem se projektuje prema rasporedu vašeg postojećeg pogona — a ne obrnuto.",
+
+  "products.view": "Pogledaj sistem",
+  "products.all": "SVI SISTEMI",
+  "products.specs": "SPECIFIKACIJE",
+  "products.quote": "ZATRAŽI PONUDU",
+  "products.leadtime": "Moguće konfiguracije po meri · rok isporuke 4–8 nedelja.",
+  "products.prev": "PRETHODNO",
+  "products.next": "SLEDEĆE",
+  "products.detail": "DETALJ",
+  "products.nf.title": "Sistem nije pronađen.",
+  "products.nf.body": "Taj proizvod ne postoji (ili je preimenovan). Pogledajte ceo katalog.",
+  "meta.products.title": "Katalog sistema — TimMetal",
+  "meta.products.desc": "TimMetal procesni sistemi — sirarski kotao, tank za preradu mleka, predpresa i presa za sir, izrađeni od nerđajućeg čelika brodske klase i sertifikovani po evropskim standardima za mlekare.",
+  "products.cat.kicker": "01 — KATALOG SISTEMA",
+  "products.cat.h1": "Projektovano za <span style=\"color:var(--tm-red-deep);\">proizvodni pogon mlekare</span>.",
+  "products.cat.body": "Četiri osnovna sistema — od koagulacije do završnog presovanja — svaki izrađen od nerđajućeg čelika brodske klase i sertifikovan po evropskim standardima za mlekare.",
+  "meta.product.title": "Sistem — TimMetal",
+  "meta.product.desc": "TimMetal procesni sistem — tehnička specifikacija i kapacitet, izrađen od nerđajućeg čelika brodske klase."
 }
