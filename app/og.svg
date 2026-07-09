@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Arial, Helvetica, sans-serif">
+  <!-- ground -->
+  <rect width="1200" height="630" fill="#F3EFE6"/>
+  <!-- drafting dot grid -->
+  <defs>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.1" fill="rgba(20,23,26,0.10)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- registration crosshairs -->
+  <g stroke="#787E86" stroke-width="1.2" opacity="0.55">
+    <line x1="37" y1="26" x2="37" y2="48"/><line x1="26" y1="37" x2="48" y2="37"/>
+    <line x1="1163" y1="26" x2="1163" y2="48"/><line x1="1152" y1="37" x2="1174" y2="37"/>
+    <line x1="37" y1="582" x2="37" y2="604"/><line x1="26" y1="593" x2="48" y2="593"/>
+    <line x1="1163" y1="582" x2="1163" y2="604"/><line x1="1152" y1="593" x2="1174" y2="593"/>
+  </g>
+
+  <!-- wordmark -->
+  <rect x="74" y="63" width="15" height="15" fill="#C8102E"/>
+  <text x="103" y="76" font-size="22" font-weight="700" letter-spacing="7" fill="#14171A" font-family="'Courier New', monospace">TIMMETAL</text>
+
+  <!-- eyebrow -->
+  <rect x="74" y="272" width="40" height="2" fill="#C8102E"/>
+  <text x="128" y="279" font-size="17" font-weight="700" letter-spacing="5" fill="#C8102E" font-family="'Courier New', monospace">INDUSTRIAL DAIRY ENGINEERING</text>
+
+  <!-- headline -->
+  <text x="72" y="382" font-size="104" font-weight="900" letter-spacing="-3" fill="#14171A">Steel that turns milk</text>
+  <text x="72" y="486" font-size="104" font-weight="900" letter-spacing="-3" fill="#14171A">into cheese<tspan fill="#C8102E">.</tspan></text>
+
+  <!-- title-block strip -->
+  <g font-family="'Courier New', monospace" font-size="15" letter-spacing="1.2">
+    <rect x="74" y="536" width="60" height="40" fill="#C8102E"/>
+    <text x="104" y="561" font-weight="700" letter-spacing="3" fill="#ffffff" text-anchor="middle">TM</text>
+    <rect x="135" y="536" width="200" height="40" fill="none" stroke="rgba(20,23,26,0.28)"/>
+    <text x="151" y="561" fill="#14171A">BEOGRAD · SRBIJA</text>
+    <rect x="336" y="536" width="230" height="40" fill="none" stroke="rgba(20,23,26,0.28)"/>
+    <text x="352" y="561" fill="#14171A">MAT · AISI 316L / 304</text>
+    <rect x="567" y="536" width="150" height="40" fill="none" stroke="rgba(20,23,26,0.28)"/>
+    <text x="583" y="561" fill="#C8102E">EN 10204 3.1</text>
+  </g>
+</svg>

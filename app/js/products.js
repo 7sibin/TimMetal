@@ -8,11 +8,12 @@
                               slug in the URL.
 
    Edit products in /products.json — names, copy, specs, capacities —
-   that is the single source of truth. The `key` field doubles as the
-   URL slug (e.g. /products/cheese-vat). The line-art icons below are
-   presentation-only, keyed by `key`; a product with no matching icon
-   shows an empty figure box, so you can add products to the JSON
-   without drawing an icon first. */
+   that is the single source of truth. Translatable prose fields there are
+   bilingual objects ({en, sr}); pick() selects the active language and
+   plain strings (codes/units) pass through unchanged. The `key` field
+   doubles as the URL slug (e.g. /products/cheese-vat). The line-art icons
+   below are presentation-only, keyed by `key`; a product with no matching
+   icon shows an empty figure box. The view re-renders on tm:langchange. */
 (function () {
   'use strict';
 
@@ -26,6 +27,17 @@
 
   var HAIR = 'rgba(20,23,26,0.14)';
   var MONO = "'Space Mono', monospace";
+
+  // Pick the active-language variant of a bilingual field; pass plain
+  // strings (codes/units) through unchanged.
+  function pick(v) {
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      var l = (window.tmI18n && window.tmI18n.lang) || 'en';
+      return (v[l] != null) ? v[l] : v.en;
+    }
+    return v;
+  }
+  function t(key, en) { return window.tmI18n ? window.tmI18n.t(key, en) : en; }
 
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -54,16 +66,16 @@
   // Each row is an anchor to the product's own route.
   function catalogRow(p, i) {
     var reverse = (i % 2 === 1) ? ' flex-direction:row-reverse;' : '';
-    var tags = (p.tags || []).map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
+    var tags = (p.tags || []).map(function (tag) { return '<span>' + esc(pick(tag)) + '</span>'; }).join('');
     return '' +
-      '<a href="' + routeOf(p) + '" style="display:flex; flex-wrap:wrap;' + reverse + ' gap:clamp(28px,4vw,64px); align-items:center; padding:clamp(36px,5.5vh,68px) 0; border-bottom:1px solid ' + HAIR + '; text-decoration:none; color:inherit;">' +
+      '<a href="' + routeOf(p) + '" class="tm-row tm-rise" style="display:flex; flex-wrap:wrap;' + reverse + ' gap:clamp(28px,4vw,64px); align-items:center; padding:clamp(36px,5.5vh,68px) 0; border-bottom:1px solid ' + HAIR + '; text-decoration:none; color:inherit;">' +
         '<div style="flex:1 1 380px; min-width:280px;">' + figure(p, 'clamp(240px,34vh,360px)', '42%') + '</div>' +
         '<div style="flex:1 1 380px; min-width:280px;">' +
-          '<div style="display:flex; align-items:center; gap:14px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em;"><span style="color:var(--tm-red);">' + esc(p.num) + '</span><span style="color:#76797e;">' + esc(p.cat) + '</span></div>' +
-          '<h3 style="margin:16px 0 0; font-weight:800; font-size:clamp(28px,3.4vw,46px); line-height:1.0; letter-spacing:-0.025em;">' + esc(p.name) + '</h3>' +
-          '<p style="margin:18px 0 0; max-width:46ch; font-size:clamp(14px,1.1vw,16px); line-height:1.62; color:#4a4e53;">' + esc(p.blurb) + '</p>' +
+          '<div style="display:flex; align-items:center; gap:14px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em;"><span style="color:var(--tm-red);">' + esc(p.num) + '</span><span style="color:#76797e;">' + esc(pick(p.cat)) + '</span></div>' +
+          '<h3 style="margin:16px 0 0; font-weight:800; font-size:clamp(28px,3.4vw,46px); line-height:1.0; letter-spacing:-0.025em;">' + esc(pick(p.name)) + '</h3>' +
+          '<p style="margin:18px 0 0; max-width:46ch; font-size:clamp(14px,1.1vw,16px); line-height:1.62; color:#4a4e53;">' + esc(pick(p.blurb)) + '</p>' +
           '<div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:26px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.12em; color:#76797e;">' + tags + '</div>' +
-          '<span class="tm-link" style="margin-top:26px; display:inline-flex; align-items:center; gap:9px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.16em; color:#14171A;">View system <span>&rarr;</span></span>' +
+          '<span class="tm-link" style="margin-top:26px; display:inline-flex; align-items:center; gap:9px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.16em; color:#14171A;">' + t('products.view', 'View system') + ' <span class="tm-arrow">&rarr;</span></span>' +
         '</div>' +
       '</a>';
   }
@@ -72,8 +84,8 @@
   function specRow(s) {
     return '' +
       '<div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:14px 0; border-bottom:1px solid rgba(20,23,26,0.12);">' +
-        '<span style="font-family:' + MONO + '; font-size:11px; letter-spacing:0.14em; color:#76797e; white-space:nowrap;">' + esc(s.label) + '</span>' +
-        '<span style="font-weight:600; font-size:14px; color:#14171A; text-align:right;">' + esc(s.value) + '</span>' +
+        '<span style="font-family:' + MONO + '; font-size:11px; letter-spacing:0.14em; color:#76797e; white-space:nowrap;">' + esc(pick(s.label)) + '</span>' +
+        '<span style="font-weight:600; font-size:14px; color:#14171A; text-align:right;">' + esc(pick(s.value)) + '</span>' +
       '</div>';
   }
 
@@ -82,38 +94,38 @@
     var prev = list[(i + list.length - 1) % list.length];
     var next = list[(i + 1) % list.length];
     return '' +
-      '<div style="max-width:1200px; margin:0 auto;">' +
+      '<div class="tm-rise" style="max-width:1200px; margin:0 auto;">' +
 
-        '<a href="/products" class="tm-link" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.18em; color:#76797e;"><span>&larr;</span> ALL SYSTEMS</a>' +
+        '<a href="/products" class="tm-link" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.18em; color:#76797e;"><span>&larr;</span> ' + t('products.all', 'ALL SYSTEMS') + '</a>' +
 
-        '<div style="margin-top:clamp(26px,4vh,46px); display:flex; align-items:center; gap:12px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.2em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span style="color:var(--tm-red);">' + esc(p.num) + '</span><span style="color:#76797e;">// ' + esc(p.cat) + '</span></div>' +
-        '<h1 style="margin:18px 0 0; font-weight:800; font-size:clamp(38px,6vw,84px); line-height:0.96; letter-spacing:-0.03em; max-width:14ch; text-wrap:balance;">' + esc(p.name) + '</h1>' +
-        '<p style="margin:18px 0 0; font-family:' + MONO + '; font-size:clamp(12px,1.1vw,14px); letter-spacing:0.06em; color:#4a4e53;">' + esc(p.tagline) + '</p>' +
+        '<div style="margin-top:clamp(26px,4vh,46px); display:flex; align-items:center; gap:12px; font-family:' + MONO + '; font-size:12px; letter-spacing:0.2em;"><span style="width:28px; height:2px; background:var(--tm-red);"></span><span style="color:var(--tm-red);">' + esc(p.num) + '</span><span style="color:#76797e;">// ' + esc(pick(p.cat)) + '</span></div>' +
+        '<h1 style="margin:18px 0 0; font-weight:800; font-size:clamp(38px,6vw,84px); line-height:0.96; letter-spacing:-0.03em; max-width:14ch; text-wrap:balance;">' + esc(pick(p.name)) + '</h1>' +
+        '<p style="margin:18px 0 0; font-family:' + MONO + '; font-size:clamp(12px,1.1vw,14px); letter-spacing:0.06em; color:#4a4e53;">' + esc(pick(p.tagline)) + '</p>' +
 
         '<div style="margin-top:clamp(40px,6vh,72px); display:flex; flex-wrap:wrap; gap:clamp(36px,5vw,76px); align-items:flex-start;">' +
 
           '<div style="flex:1.4 1 460px; min-width:300px;">' +
             figure(p, 'clamp(300px,46vh,460px)', '44%') +
             '<div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">' +
-              plainBox('DETAIL', 'clamp(90px,12vh,120px)') +
-              plainBox('DETAIL', 'clamp(90px,12vh,120px)') +
-              plainBox('DETAIL', 'clamp(90px,12vh,120px)') +
+              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
+              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
+              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
             '</div>' +
           '</div>' +
 
           '<div data-sticky-col style="flex:1 1 340px; min-width:280px;">' +
-            '<p style="margin:0; font-size:clamp(15px,1.25vw,17px); line-height:1.66; color:#4a4e53;">' + esc(p.desc) + '</p>' +
-            '<div style="margin-top:clamp(30px,4vh,44px); font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; color:#14171A;">SPECIFICATIONS</div>' +
+            '<p style="margin:0; font-size:clamp(15px,1.25vw,17px); line-height:1.66; color:#4a4e53;">' + esc(pick(p.desc)) + '</p>' +
+            '<div style="margin-top:clamp(30px,4vh,44px); font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; color:var(--tm-red-deep);">' + t('products.specs', 'SPECIFICATIONS') + '</div>' +
             '<div style="margin-top:16px; border-top:1px solid rgba(20,23,26,0.14);">' + (p.specs || []).map(specRow).join('') + '</div>' +
-            '<a href="/#inquiry" class="tm-submit" style="margin-top:32px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:#14171A; border:1px solid #14171A; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.24em; color:#fff;">REQUEST A QUOTE <span style="font-size:14px;">&rarr;</span></a>' +
-            '<p style="margin:16px 0 0; font-size:12px; line-height:1.55; color:#9a9da1;">Custom configurations available &middot; 4&ndash;8 week lead time.</p>' +
+            '<a href="/#rfq" class="tm-submit" style="margin-top:32px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:#14171A; border:1px solid #14171A; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.24em; color:#fff;">' + t('products.quote', 'REQUEST A QUOTE') + ' <span style="font-size:14px;">&rarr;</span></a>' +
+            '<p style="margin:16px 0 0; font-size:12px; line-height:1.55; color:#9a9da1;">' + t('products.leadtime', 'Custom configurations available &middot; 4&ndash;8 week lead time.') + '</p>' +
           '</div>' +
 
         '</div>' +
 
         '<div style="margin-top:clamp(56px,9vh,110px); padding-top:clamp(28px,4vh,44px); border-top:1px solid rgba(20,23,26,0.14); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;">' +
-          '<a href="' + routeOf(prev) + '" class="tm-link" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; text-align:left; font-family:\'Archivo\', sans-serif; color:#14171A;"><span style="font-size:18px;">&larr;</span><span><span style="display:block; font-family:' + MONO + '; font-size:10px; letter-spacing:0.2em; color:#9a9da1;">PREVIOUS</span><span style="display:block; margin-top:4px; font-weight:800; font-size:18px; letter-spacing:-0.01em;">' + esc(prev.name) + '</span></span></a>' +
-          '<a href="' + routeOf(next) + '" class="tm-link" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; text-align:right; font-family:\'Archivo\', sans-serif; color:#14171A;"><span><span style="display:block; font-family:' + MONO + '; font-size:10px; letter-spacing:0.2em; color:#9a9da1;">NEXT</span><span style="display:block; margin-top:4px; font-weight:800; font-size:18px; letter-spacing:-0.01em;">' + esc(next.name) + '</span></span><span style="font-size:18px;">&rarr;</span></a>' +
+          '<a href="' + routeOf(prev) + '" class="tm-link" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; text-align:left; font-family:\'Archivo\', sans-serif; color:#14171A;"><span style="font-size:18px;">&larr;</span><span><span style="display:block; font-family:' + MONO + '; font-size:10px; letter-spacing:0.2em; color:#9a9da1;">' + t('products.prev', 'PREVIOUS') + '</span><span style="display:block; margin-top:4px; font-weight:800; font-size:18px; letter-spacing:-0.01em;">' + esc(pick(prev.name)) + '</span></span></a>' +
+          '<a href="' + routeOf(next) + '" class="tm-link" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; text-align:right; font-family:\'Archivo\', sans-serif; color:#14171A;"><span><span style="display:block; font-family:' + MONO + '; font-size:10px; letter-spacing:0.2em; color:#9a9da1;">' + t('products.next', 'NEXT') + '</span><span style="display:block; margin-top:4px; font-weight:800; font-size:18px; letter-spacing:-0.01em;">' + esc(pick(next.name)) + '</span></span><span style="font-size:18px;">&rarr;</span></a>' +
         '</div>' +
 
       '</div>';
@@ -121,9 +133,9 @@
 
   function notFoundHTML() {
     return '<div style="max-width:1200px; margin:0 auto;">' +
-      '<a href="/products" class="tm-link" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.18em; color:#76797e;"><span>&larr;</span> ALL SYSTEMS</a>' +
-      '<h1 style="margin:clamp(26px,4vh,46px) 0 0; font-weight:800; font-size:clamp(34px,5vw,64px); line-height:1.0; letter-spacing:-0.03em;">System not found.</h1>' +
-      '<p style="margin:20px 0 0; font-size:clamp(15px,1.25vw,17px); color:#4a4e53;">That product does not exist (or was renamed). Browse the full catalogue instead.</p>' +
+      '<a href="/products" class="tm-link" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.18em; color:#76797e;"><span>&larr;</span> ' + t('products.all', 'ALL SYSTEMS') + '</a>' +
+      '<h1 style="margin:clamp(26px,4vh,46px) 0 0; font-weight:800; font-size:clamp(34px,5vw,64px); line-height:1.0; letter-spacing:-0.03em;">' + t('products.nf.title', 'System not found.') + '</h1>' +
+      '<p style="margin:20px 0 0; font-size:clamp(15px,1.25vw,17px); color:#4a4e53;">' + t('products.nf.body', 'That product does not exist (or was renamed). Browse the full catalogue instead.') + '</p>' +
       '</div>';
   }
 
@@ -150,29 +162,43 @@
     var detailRoot = document.getElementById('tm-detail-root');
     if (!catalogList && !detailRoot) return;
 
+    var PRODUCTS = null;
+
+    function render() {
+      if (!PRODUCTS) return;
+      if (catalogList) {
+        catalogList.innerHTML = PRODUCTS.map(catalogRow).join('');
+      }
+      if (detailRoot) {
+        var slug = getSlug();
+        var i = -1;
+        for (var k = 0; k < PRODUCTS.length; k++) {
+          if (PRODUCTS[k].key === slug) { i = k; break; }
+        }
+        if (i === -1) {
+          detailRoot.innerHTML = notFoundHTML();
+        } else {
+          detailRoot.innerHTML = detailHTML(PRODUCTS, i);
+          document.title = pick(PRODUCTS[i].name) + ' — TimMetal';
+        }
+      }
+      // Register the freshly injected rows / detail with the reveal observer.
+      if (window.TMMotion) window.TMMotion.scan();
+    }
+
     fetch('/products.json')
       .then(function (res) {
         if (!res.ok) throw new Error('products.json → ' + res.status);
         return res.json();
       })
-      .then(function (PRODUCTS) {
-        if (catalogList) {
-          catalogList.innerHTML = PRODUCTS.map(catalogRow).join('');
-        }
-        if (detailRoot) {
-          var slug = getSlug();
-          var i = -1;
-          for (var k = 0; k < PRODUCTS.length; k++) {
-            if (PRODUCTS[k].key === slug) { i = k; break; }
-          }
-          if (i === -1) {
-            detailRoot.innerHTML = notFoundHTML();
-          } else {
-            detailRoot.innerHTML = detailHTML(PRODUCTS, i);
-            document.title = PRODUCTS[i].name + ' — TimMetal';
-          }
-        }
+      .then(function (data) {
+        PRODUCTS = data;
+        // Render once i18n has resolved so labels use the active language.
+        (window.tmI18n ? window.tmI18n.ready : Promise.resolve()).then(render);
       })
       .catch(function (err) { console.error('[products]', err); });
+
+    // Re-render when the language changes.
+    document.addEventListener('tm:langchange', render);
   });
 })();

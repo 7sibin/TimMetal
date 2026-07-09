@@ -2,73 +2,89 @@
   {
     "key": "cheese-vat",
     "num": "01",
-    "cat": "COAGULATION",
-    "name": "Cheese Vat",
-    "tagline": "Precision coagulation & curd cutting.",
-    "blurb": "The core unit of any modern dairy — precise coagulation, controlled thermal processing and automated curd cutting via stainless harp knives, minimising dry-matter loss across every batch.",
-    "tags": ["500–10,000 L", "AISI 316L", "PLC + HMI"],
-    "desc": "The core unit of any modern dairy. Engineered for precise coagulation, controlled thermal processing and automated curd cutting via specialised stainless harp knives — minimising dry-matter loss across every batch.",
+    "cat": { "en": "COAGULATION", "sr": "KOAGULACIJA", "hu": "ALVASZTÁS" },
+    "name": { "en": "Cheese Vat", "sr": "Sirarski kotao", "hu": "Sajtkád" },
+    "tagline": { "en": "Precision coagulation & curd cutting.", "sr": "Precizna koagulacija i sečenje gruša.", "hu": "Precíz alvasztás és alvadékvágás." },
+    "blurb": { "en": "The core unit of any modern dairy — precise coagulation, controlled thermal processing and automated curd cutting via stainless harp knives, minimising dry-matter loss across every batch.", "sr": "Osnovna jedinica svake moderne mlekare — precizna koagulacija, kontrolisana termička obrada i automatsko sečenje gruša harfastim noževima od nerđajućeg čelika, uz minimalan gubitak suve materije u svakoj šarži.", "hu": "Minden modern tejüzem alapegysége — precíz alvasztás, szabályozott hőkezelés és az alvadék rozsdamentes hárfakésekkel történő automatikus vágása, minimális szárazanyag-veszteséggel minden tételnél." },
+    "tags": [
+      { "en": "500–10,000 L", "sr": "500–10.000 L", "hu": "500–10 000 L" },
+      "AISI 316L",
+      "PLC + HMI"
+    ],
+    "desc": { "en": "The core unit of any modern dairy. Engineered for precise coagulation, controlled thermal processing and automated curd cutting via specialised stainless harp knives — minimising dry-matter loss across every batch.", "sr": "Osnovna jedinica svake moderne mlekare. Projektovan za preciznu koagulaciju, kontrolisanu termičku obradu i automatsko sečenje gruša specijalnim harfastim noževima od nerđajućeg čelika — uz minimalan gubitak suve materije u svakoj šarži.", "hu": "Minden modern tejüzem alapegysége. Precíz alvasztásra, szabályozott hőkezelésre és az alvadék speciális rozsdamentes hárfakésekkel történő automatikus vágására tervezve — minimális szárazanyag-veszteséggel minden tételnél." },
     "specs": [
-      { "label": "CAPACITY", "value": "500 – 10,000 L" },
-      { "label": "MATERIAL", "value": "AISI 316L stainless" },
-      { "label": "HEATING", "value": "Triple-wall, steam / hot water" },
-      { "label": "CUTTING", "value": "Variable-speed harp knives" },
-      { "label": "CONTROL", "value": "PLC + HMI touch panel" },
-      { "label": "DRY-MATTER LOSS", "value": "< 0.4%" }
+      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "500 – 10,000 L", "sr": "500 – 10.000 L", "hu": "500 – 10 000 L" } },
+      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": { "en": "AISI 316L stainless", "sr": "AISI 316L nerđajući", "hu": "AISI 316L rozsdamentes" } },
+      { "label": { "en": "HEATING", "sr": "GREJANJE", "hu": "FŰTÉS" }, "value": { "en": "Triple-wall, steam / hot water", "sr": "Troslojno, para / topla voda", "hu": "Háromfalú, gőz / forró víz" } },
+      { "label": { "en": "CUTTING", "sr": "SEČENJE", "hu": "VÁGÁS" }, "value": { "en": "Variable-speed harp knives", "sr": "Harfasti noževi promenljive brzine", "hu": "Változtatható sebességű hárfakések" } },
+      { "label": { "en": "CONTROL", "sr": "UPRAVLJANJE", "hu": "VEZÉRLÉS" }, "value": { "en": "PLC + HMI touch panel", "sr": "PLC + HMI panel na dodir", "hu": "PLC + HMI érintőpanel" } },
+      { "label": { "en": "DRY-MATTER LOSS", "sr": "GUBITAK SUVE MATERIJE", "hu": "SZÁRAZANYAG-VESZTESÉG" }, "value": { "en": "< 0.4%", "sr": "< 0,4%", "hu": "< 0,4%" } }
     ]
   },
   {
     "key": "milk-tank",
     "num": "02",
-    "cat": "PROCESSING",
-    "name": "Milk Processing Tank",
-    "tagline": "Pasteurise, ferment, cool — one vessel.",
-    "blurb": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly and prevents scorching at the wall.",
-    "tags": ["300–8,000 L", "2–99 °C", "80 mm PU"],
-    "desc": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly across the surface and prevents scorching at the wall.",
+    "cat": { "en": "PROCESSING", "sr": "PRERADA", "hu": "FELDOLGOZÁS" },
+    "name": { "en": "Milk Processing Tank", "sr": "Tank za preradu mleka", "hu": "Tejfeldolgozó tartály" },
+    "tagline": { "en": "Pasteurise, ferment, cool — one vessel.", "sr": "Pasterizacija, fermentacija, hlađenje — jedan sud.", "hu": "Pasztőrözés, erjesztés, hűtés — egy edényben." },
+    "blurb": { "en": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly and prevents scorching at the wall.", "sr": "Višenamenski, troslojno izolovan procesni sud za pasterizaciju, kuvanje, fermentaciju i hlađenje. Pillow-plate prenos toplote ravnomerno raspoređuje temperaturu i sprečava zagorevanje uz zid.", "hu": "Többcélú, háromfalú szigetelt feldolgozó edény pasztőrözéshez, forraláshoz, erjesztéshez és hűtéshez. A pillow-plate hőátadás egyenletesen osztja el a hőmérsékletet és megakadályozza a falon való leégést." },
+    "tags": [
+      { "en": "300–8,000 L", "sr": "300–8.000 L", "hu": "300–8 000 L" },
+      "2–99 °C",
+      "80 mm PU"
+    ],
+    "desc": { "en": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly across the surface and prevents scorching at the wall.", "sr": "Višenamenski, troslojno izolovan procesni sud za pasterizaciju, kuvanje, fermentaciju i hlađenje. Pillow-plate prenos toplote ravnomerno raspoređuje temperaturu po celoj površini i sprečava zagorevanje uz zid.", "hu": "Többcélú, háromfalú szigetelt feldolgozó edény pasztőrözéshez, forraláshoz, erjesztéshez és hűtéshez. A pillow-plate hőátadás egyenletesen osztja el a hőmérsékletet a teljes felületen, és megakadályozza a falon való leégést." },
     "specs": [
-      { "label": "CAPACITY", "value": "300 – 8,000 L" },
-      { "label": "MATERIAL", "value": "AISI 316L / 304" },
-      { "label": "WALL", "value": "Triple-wall pillow-plate" },
-      { "label": "FUNCTIONS", "value": "Pasteurise · ferment · cool" },
-      { "label": "TEMP RANGE", "value": "2 – 99 °C" },
-      { "label": "INSULATION", "value": "80 mm PU, food-grade" }
+      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "300 – 8,000 L", "sr": "300 – 8.000 L", "hu": "300 – 8 000 L" } },
+      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": "AISI 316L / 304" },
+      { "label": { "en": "WALL", "sr": "ZID", "hu": "FAL" }, "value": { "en": "Triple-wall pillow-plate", "sr": "Troslojni pillow-plate", "hu": "Háromfalú pillow-plate" } },
+      { "label": { "en": "FUNCTIONS", "sr": "FUNKCIJE", "hu": "FUNKCIÓK" }, "value": { "en": "Pasteurise · ferment · cool", "sr": "Pasterizacija · fermentacija · hlađenje", "hu": "Pasztőrözés · erjesztés · hűtés" } },
+      { "label": { "en": "TEMP RANGE", "sr": "OPSEG TEMPERATURE", "hu": "HŐMÉRSÉKLET-TARTOMÁNY" }, "value": "2 – 99 °C" },
+      { "label": { "en": "INSULATION", "sr": "IZOLACIJA", "hu": "SZIGETELÉS" }, "value": { "en": "80 mm PU, food-grade", "sr": "80 mm PU, prehrambena klasa", "hu": "80 mm PU, élelmiszer-ipari" } }
     ]
   },
   {
     "key": "pre-press",
     "num": "03",
-    "cat": "FORMING",
-    "name": "Cheese Pre-press",
-    "tagline": "Continuous self-pressing under whey.",
-    "blurb": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling before final moulding.",
-    "tags": ["Under-whey", "AISI 316L", "Up to 2,500 L"],
-    "desc": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling prior to final moulding, with a perforated false-bottom for controlled drainage.",
+    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS" },
+    "name": { "en": "Cheese Pre-press", "sr": "Predpresa za sir", "hu": "Sajt előprés" },
+    "tagline": { "en": "Continuous self-pressing under whey.", "sr": "Kontinualno samopresovanje pod surutkom.", "hu": "Folyamatos önpréselés savó alatt." },
+    "blurb": { "en": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling before final moulding.", "sr": "Inženjerski sistem za kontinualno samopresovanje i formiranje blokova gruša pod surutkom. Obezbeđuje ujednačenu poroznost i precizno profilisanje bloka pre završnog kalupljenja.", "hu": "Mérnöki rendszer a folyamatos önpréseléshez és az alvadékblokk savó alatti kialakításához. Egyenletes porozitást és precíz blokkprofilozást biztosít a végső formázás előtt." },
+    "tags": [
+      { "en": "Under-whey", "sr": "Pod surutkom", "hu": "Savó alatt" },
+      "AISI 316L",
+      { "en": "Up to 2,500 L", "sr": "Do 2.500 L", "hu": "Max. 2 500 L" }
+    ],
+    "desc": { "en": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling prior to final moulding, with a perforated false-bottom for controlled drainage.", "sr": "Inženjerski sistem za kontinualno samopresovanje i formiranje blokova gruša pod surutkom. Obezbeđuje ujednačenu poroznost i precizno profilisanje bloka pre završnog kalupljenja, sa perforiranim duplim dnom za kontrolisan odvod.", "hu": "Mérnöki rendszer a folyamatos önpréseléshez és az alvadékblokk savó alatti kialakításához. Egyenletes porozitást és precíz blokkprofilozást biztosít a végső formázás előtt, perforált álfenékkel a szabályozott elvezetéshez." },
     "specs": [
-      { "label": "FORMAT", "value": "Block / rectangular" },
-      { "label": "MATERIAL", "value": "AISI 316L stainless" },
-      { "label": "PRESSING", "value": "Continuous, under-whey" },
-      { "label": "DRAINAGE", "value": "Perforated false-bottom" },
-      { "label": "CAPACITY", "value": "Up to 2,500 L curd/whey" },
-      { "label": "PROFILE", "value": "Uniform porosity control" }
+      { "label": { "en": "FORMAT", "sr": "FORMAT", "hu": "FORMÁTUM" }, "value": { "en": "Block / rectangular", "sr": "Blok / pravougaoni", "hu": "Blokk / téglalap" } },
+      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": { "en": "AISI 316L stainless", "sr": "AISI 316L nerđajući", "hu": "AISI 316L rozsdamentes" } },
+      { "label": { "en": "PRESSING", "sr": "PRESOVANJE", "hu": "PRÉSELÉS" }, "value": { "en": "Continuous, under-whey", "sr": "Kontinualno, pod surutkom", "hu": "Folyamatos, savó alatt" } },
+      { "label": { "en": "DRAINAGE", "sr": "ODVOD", "hu": "ELVEZETÉS" }, "value": { "en": "Perforated false-bottom", "sr": "Perforirano duplo dno", "hu": "Perforált álfenék" } },
+      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "Up to 2,500 L curd/whey", "sr": "Do 2.500 L gruš/surutka", "hu": "Max. 2 500 L alvadék/savó" } },
+      { "label": { "en": "PROFILE", "sr": "PROFIL", "hu": "PROFIL" }, "value": { "en": "Uniform porosity control", "sr": "Kontrola ujednačene poroznosti", "hu": "Egyenletes porozitás-szabályozás" } }
     ]
   },
   {
     "key": "press",
     "num": "04",
-    "cat": "PRESSING",
-    "name": "Cheese Press",
-    "tagline": "Programmable multi-stage moulding.",
-    "blurb": "Pneumatic pressing with multi-stage, programmable pressure control for final shaping and moisture extraction. Adaptable to any mould format with high cycle repeatability.",
-    "tags": ["0.5–6 bar", "2–24 rows", "All moulds"],
-    "desc": "Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mould formats with high cycle repeatability and programmable pressure curves.",
+    "cat": { "en": "PRESSING", "sr": "PRESOVANJE", "hu": "PRÉSELÉS" },
+    "name": { "en": "Cheese Press", "sr": "Presa za sir", "hu": "Sajtprés" },
+    "tagline": { "en": "Programmable multi-stage moulding.", "sr": "Programabilno višestepeno kalupljenje.", "hu": "Programozható többlépcsős formázás." },
+    "blurb": { "en": "Pneumatic pressing with multi-stage, programmable pressure control for final shaping and moisture extraction. Adaptable to any mould format with high cycle repeatability.", "sr": "Pneumatsko presovanje sa višestepenom, programabilnom kontrolom pritiska za završno oblikovanje i izdvajanje vlage. Prilagodljivo svakom formatu kalupa uz visoku ponovljivost ciklusa.", "hu": "Pneumatikus préselés többlépcsős, programozható nyomásszabályozással a végső formázáshoz és a nedvesség eltávolításához. Bármely formaformátumhoz alkalmazkodik, nagy ciklusismételhetőséggel." },
+    "tags": [
+      "0.5–6 bar",
+      { "en": "2–24 rows", "sr": "2–24 reda", "hu": "2–24 sor" },
+      { "en": "All moulds", "sr": "Svi kalupi", "hu": "Minden forma" }
+    ],
+    "desc": { "en": "Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mould formats with high cycle repeatability and programmable pressure curves.", "sr": "Pneumatski sistemi presovanja sa višestepenom, preciznom kontrolom pritiska za završno oblikovanje i izdvajanje vlage. Potpuno prilagodljivi različitim formatima kalupa uz visoku ponovljivost ciklusa i programabilne krive pritiska.", "hu": "Pneumatikus présrendszerek többlépcsős, precíz nyomásszabályozással a végső formázáshoz és a nedvesség eltávolításához. Teljesen alkalmazkodik a különböző formaformátumokhoz, nagy ciklusismételhetőséggel és programozható nyomásgörbékkel." },
     "specs": [
-      { "label": "TYPE", "value": "Pneumatic, multi-stage" },
-      { "label": "FRAME", "value": "AISI 304 / 316L contact" },
-      { "label": "PRESSURE", "value": "0.5 – 6 bar, programmable" },
-      { "label": "STATIONS", "value": "2 – 24 mould rows" },
-      { "label": "CYCLE", "value": "Programmable, repeatable" },
-      { "label": "MOULDS", "value": "Adaptable to all formats" }
+      { "label": { "en": "TYPE", "sr": "TIP", "hu": "TÍPUS" }, "value": { "en": "Pneumatic, multi-stage", "sr": "Pneumatsko, višestepeno", "hu": "Pneumatikus, többlépcsős" } },
+      { "label": { "en": "FRAME", "sr": "RAM", "hu": "VÁZ" }, "value": { "en": "AISI 304 / 316L contact", "sr": "AISI 304 / 316L kontakt", "hu": "AISI 304 / 316L érintkezés" } },
+      { "label": { "en": "PRESSURE", "sr": "PRITISAK", "hu": "NYOMÁS" }, "value": { "en": "0.5 – 6 bar, programmable", "sr": "0,5 – 6 bar, programabilno", "hu": "0,5 – 6 bar, programozható" } },
+      { "label": { "en": "STATIONS", "sr": "STANICE", "hu": "ÁLLOMÁSOK" }, "value": { "en": "2 – 24 mould rows", "sr": "2 – 24 reda kalupa", "hu": "2 – 24 formasor" } },
+      { "label": { "en": "CYCLE", "sr": "CIKLUS", "hu": "CIKLUS" }, "value": { "en": "Programmable, repeatable", "sr": "Programabilno, ponovljivo", "hu": "Programozható, ismételhető" } },
+      { "label": { "en": "MOULDS", "sr": "KALUPI", "hu": "FORMÁK" }, "value": { "en": "Adaptable to all formats", "sr": "Prilagodljivo svim formatima", "hu": "Minden formátumhoz alkalmazkodik" } }
     ]
   }
 ]
