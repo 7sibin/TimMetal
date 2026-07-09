@@ -30,6 +30,13 @@
 
       this.setup();
 
+      // Play the pour only on the first landing of a browser session. When the
+      // visitor returns to the homepage (e.g. via the nav logo) we skip straight
+      // to the finished frame so they never sit through the animation again.
+      var seen = false;
+      try { seen = sessionStorage.getItem('tm-hero-seen') === '1'; } catch (e) {}
+      if (seen) { this.skip(); return; }
+
       // ---- listeners ----
       var self = this;
       this.onResize = function () { self.setup(); if (self.complete) self.draw(0); };
@@ -86,6 +93,36 @@
     },
 
     hideHint: function () { if (hint) hint.style.opacity = '0'; },
+
+    // Fast-forward to the completed state without animating — used on repeat
+    // visits within a session. Paints the frozen "full" frame and reveals the
+    // same chrome finish() would, but never locks scroll or binds pour input.
+    skip: function () {
+      var self = this;
+      this.complete = true;
+      this.p = 1; this.lastP = 1; this.amp = 0;
+      this.draw(0);
+
+      // Keep the frozen frame crisp once the heavy wordmark loads, and on resize.
+      if (document.fonts && document.fonts.load) {
+        document.fonts.load('900 120px Archivo').then(function () {
+          self.fontReady = true; self.setup(); self.draw(0);
+        });
+      }
+      addEventListener('resize', function () { self.setup(); self.draw(0); });
+
+      // Reveal the nav/tagline the pour would normally unveil. The nav is
+      // injected asynchronously by include.js, so reveal now if it's already
+      // present and again once the partials land.
+      function reveal() {
+        var navEl = document.getElementById('tm-nav');
+        if (navEl) navEl.style.opacity = '1';
+        if (tagline) { tagline.style.opacity = '1'; tagline.style.transform = 'translateY(0)'; }
+        if (hint) hint.style.opacity = '0';
+      }
+      reveal();
+      document.addEventListener('partials:loaded', reveal);
+    },
 
     // ---- sizing + DPR-aware canvas backing store ----
     setup: function () {
@@ -157,6 +194,8 @@
 
     finish: function () {
       this.complete = true;
+      // Remember the pour ran so returning to home this session skips it.
+      try { sessionStorage.setItem('tm-hero-seen', '1'); } catch (e) {}
       this.p = 1; this.amp = 0;
       this.bubbles = []; // clear any in-flight foam so the final white ground is spotless
       this.draw(0);
@@ -220,9 +259,9 @@
       // 2) Ghost wordmark — faint steel outline, the "empty" state.
       ctx.lineJoin = 'round';
       ctx.lineWidth = Math.max(1.1, this.fontSize * 0.012);
-      ctx.fillStyle = 'rgba(255,255,255,0.015)';
+      ctx.fillStyle = 'rgba(255,255,255,0.022)';
       ctx.fillText('TimMetal', cx, cy);
-      ctx.strokeStyle = 'rgba(120,126,134,0.55)';
+      ctx.strokeStyle = 'rgba(126,132,140,0.66)';
       ctx.strokeText('TimMetal', cx, cy);
 
       // 3) Build the wavy milk region once; reuse it for the fill AND the text clip
