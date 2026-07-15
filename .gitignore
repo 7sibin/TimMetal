@@ -1,0 +1,8 @@
+# Claude Code lokalni fajlovi i radni materijal
+.claude/
+docs/superpowers/
+
+# OS / editor smeće
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.contact.title">Contact — TimMetal</title>
-<meta name="description" content="Get in touch with TimMetal — headquarters and workshop in Belgrade (Borča), Serbia. Send a project enquiry or find us on the map." data-i18n-attr="content:meta.contact.desc">
+<meta name="description" content="Get in touch with TimMetal — headquarters and workshop near Kragujevac, Serbia. Send a project enquiry or find us on the map." data-i18n-attr="content:meta.contact.desc">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TimMetal">
 <meta property="og:title" content="Contact — TimMetal" data-i18n-attr="content:meta.contact.title">
-<meta property="og:description" content="Headquarters and workshop in Belgrade (Borča), Serbia. Send a project enquiry or find us on the map." data-i18n-attr="content:meta.contact.desc">
+<meta property="og:description" content="Headquarters and workshop near Kragujevac, Serbia. Send a project enquiry or find us on the map." data-i18n-attr="content:meta.contact.desc">
 <meta property="og:image" content="/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/og.svg">
@@ -42,6 +42,21 @@
     .tm-map{ min-height:60vh; order:2; }
     .tm-side{ order:1; }
   }
+  /* This page's nav floats over the map + dark sidebar. Once the page scrolls,
+     the top cream strip slides off and the transparent nav leaves the mono
+     links unreadable over the map — so give the nav a permanent cream bar,
+     mirroring the mobile nav. Scoped to this page (styles live in-page). */
+  #tm-nav { background:var(--tm-cream); box-shadow:0 1px 0 rgba(20,23,26,0.06); }
+  /* The bar is always cream now, so cancel the over-dark (#141414 footer)
+     white inversion that would otherwise render the chrome white-on-cream. */
+  @media (min-width:641px){
+    #tm-nav.tm-nav-invert .tm-wordmark { color:var(--tm-ink) !important; }
+    #tm-nav.tm-nav-invert #tm-nav-menu,
+    #tm-nav.tm-nav-invert #tm-nav-menu a { color:#5a5e63 !important; }
+    #tm-nav.tm-nav-invert #tm-nav-menu a.tm-nav-active { color:var(--tm-ink) !important; }
+    #tm-nav.tm-nav-invert .tm-lang.is-active { color:var(--tm-ink) !important; }
+    #tm-nav.tm-nav-invert .tm-nav-toggle span { background:var(--tm-ink) !important; }
+  }
 </style>
 </head>
 <body>
@@ -65,8 +80,8 @@
         </div>
         <div>
           <div style="font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:var(--tm-red);" data-i18n="contact.hq.label">HEADQUARTERS</div>
-          <div style="margin-top:8px; font-size:14px; line-height:1.55; color:rgba(255,255,255,0.72);">Bulevar Industrije 12<br /><span data-i18n="contact.hq.city">11000 Belgrade (Borča)</span><br /><span data-i18n="contact.hq.country">Republic of Serbia</span></div>
-          <div style="margin-top:10px; font-size:13px; line-height:1.7; color:rgba(255,255,255,0.5); font-family:'Space Mono', monospace;">T / <a href="tel:+381110000000" class="tm-link" style="color:rgba(255,255,255,0.5); text-decoration:none;">+381 11 000 0000</a><br />E / <a href="mailto:engineering@timmetal.com" class="tm-link" style="color:rgba(255,255,255,0.5); text-decoration:none;">engineering@timmetal.com</a></div>
+          <div style="margin-top:8px; font-size:14px; line-height:1.55; color:rgba(255,255,255,0.72);">Tome Vučića Perišića 10, Vučkovica<br /><span data-i18n="contact.hq.city">34240 Knić</span><br /><span data-i18n="contact.hq.country">Republic of Serbia</span></div>
+          <div style="margin-top:10px; font-size:13px; line-height:1.7; color:rgba(255,255,255,0.5); font-family:'Space Mono', monospace;">T / <a href="tel:+381638897157" class="tm-link" style="color:rgba(255,255,255,0.5); text-decoration:none;">+381 63 889 7157</a><br />E / <a href="mailto:zoranmetalac73@gmail.com" class="tm-link" style="color:rgba(255,255,255,0.5); text-decoration:none;">zoranmetalac73@gmail.com</a></div>
         </div>
       </div>
 
@@ -77,7 +92,7 @@
         </div>
         <div>
           <div style="font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:var(--tm-red);" data-i18n="contact.prod.label">PRODUCTION</div>
-          <div style="margin-top:8px; font-size:14px; line-height:1.55; color:rgba(255,255,255,0.72);">Ovčanski put 14m<br /><span data-i18n="contact.prod.city">11000 Belgrade (Borča)</span></div>
+          <div style="margin-top:8px; font-size:14px; line-height:1.55; color:rgba(255,255,255,0.72);">Tome Vučića Perišića 10, Vučkovica<br /><span data-i18n="contact.prod.city">34240 Knić</span></div>
           <div style="margin-top:10px; font-size:13px; line-height:1.4; color:rgba(255,255,255,0.5); font-family:'Space Mono', monospace;" data-i18n="contact.prod.hours">HOURS / Mon&ndash;Fri 08&ndash;17</div>
         </div>
       </div>
@@ -89,7 +104,7 @@
         </div>
         <div>
           <div style="font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:var(--tm-red);" data-i18n="contact.gps.label">GPS COORDINATES</div>
-          <div style="margin-top:8px; font-size:15px; font-family:'Space Mono', monospace; color:rgba(255,255,255,0.72);">44.84210, 20.46120</div>
+          <div style="margin-top:8px; font-size:15px; font-family:'Space Mono', monospace; color:rgba(255,255,255,0.72);">43.94744, 20.79419</div>
         </div>
       </div>
 
@@ -108,7 +123,11 @@
     </aside>
 
     <!-- REAL MAP -->
-    <div class="tm-map" style="position:relative; min-height:100%;">
+    <!-- No inline min-height: on desktop the grid row (100vh) stretches this
+         cell; on mobile the .tm-map media rule (min-height:60vh) sizes it.
+         An inline min-height:100% would beat that rule and collapse to 0 once
+         the shell switches to height:auto ≤900px, hiding the map. -->
+    <div class="tm-map" style="position:relative;">
       <div id="tm-map" class="tm-leaflet" style="position:absolute; inset:0;"></div>
       <div style="position:absolute; z-index:1000; top:16px; left:16px; pointer-events:none; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:#14171A; background:rgba(243,239,230,0.82); padding:6px 10px; border:1px solid rgba(20,23,26,0.14);" data-i18n="contact.map.badge">03 / MAP &mdash; TIMMETAL HQ</div>
     </div>
@@ -139,14 +158,14 @@
       });
     }
 
-    // Leaflet map — TimMetal HQ, Belgrade (Borča).
+    // Leaflet map — TimMetal HQ, Knić (near Kragujevac).
     function initMap() {
       var el = document.getElementById('tm-map');
       if (!window.L || !el) return;
-      var coords = [44.8421, 20.4612];
+      var coords = [43.94744, 20.79419];
       var map = L.map(el, {
         center: coords,
-        zoom: 13,
+        zoom: 16,
         zoomControl: false,
         scrollWheelZoom: false,
         attributionControl: true

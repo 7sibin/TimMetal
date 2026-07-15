@@ -10,8 +10,9 @@
 (function () {
   'use strict';
 
-  var SUPPORTED = ['en', 'sr', 'hu'];   // add more here + a /i18n/<code>.json
-  var DEFAULT = 'en';
+  var SUPPORTED = ['en', 'sr', 'hu', 'mk'];   // add more here + a /i18n/<code>.json
+  var BASE = 'en';      // language written INLINE in the HTML (source of truth) — never fetched/translated
+  var DEFAULT = 'sr';   // active language on first visit + the "clean URL" (no ?lang) language
   var STORE_KEY = 'tm-lang';
 
   function resolveLang() {
@@ -31,7 +32,7 @@
   var warned = {};
 
   function translate(key) {
-    if (lang === DEFAULT) return null;                 // english = cached inline
+    if (lang === BASE) return null;                    // base language = cached inline HTML
     if (Object.prototype.hasOwnProperty.call(dict, key)) return dict[key];
     if (!warned[key]) { warned[key] = 1; console.warn('[i18n] missing "' + lang + '" key: ' + key); }
     return null;
@@ -82,12 +83,26 @@
   }
 
   function loadDict() {
-    if (lang === DEFAULT) { dict = {}; return Promise.resolve(dict); }
-    return fetch('/i18n/' + lang + '.json', { cache: 'no-cache' })
-      .then(function (r) { if (!r.ok) throw new Error('i18n ' + lang + ' → ' + r.status); return r.json(); })
-      .then(function (json) { dict = json || {}; return dict; })
-      .catch(function (err) { console.error('[i18n]', err); dict = {}; return dict; });
-  }
+    if (lang === BASE) {                 // base language lives inline — nothing to fetch
+        dict = {};
+        return Promise.resolve(dict);
+    }
+    var url = '/i18n/' + lang + '.json';
+    return fetch(url, { cache: 'no-cache' })
+        .then(function (r) {
+            if (!r.ok) throw new Error('i18n ' + lang + ' → ' + r.status);
+            return r.json();
+        })
+        .then(function (json) {
+            dict = json || {};
+            return dict;
+        })
+        .catch(function (err) {
+            console.error('[i18n]', err);
+            dict = {};
+            return dict;
+        });
+}
 
   function setLang(next) {
     if (SUPPORTED.indexOf(next) === -1 || next === lang) { markSwitcher(); return; }

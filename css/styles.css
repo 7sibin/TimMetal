@@ -49,7 +49,15 @@ input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
 .tm-nav-toggle { display: none; }
 
 @media (max-width: 640px) {
-  #tm-nav { padding: 16px 20px !important; }
+  /* Solid cream bar at all mobile widths so the nav is never a transparent
+     strip — same ground as the dropdown panel for one cohesive surface. The
+     scroll-invert (white chrome over dark sections) is desktop-only below, so
+     the wordmark + hamburger keep their inline ink colour here. */
+  #tm-nav {
+    padding: 16px 20px !important;
+    background: var(--tm-cream);
+    box-shadow: 0 1px 0 rgba(20, 23, 26, 0.06);
+  }
 
   .tm-nav-toggle {
     display: inline-flex; flex-direction: column; justify-content: center;
@@ -117,17 +125,18 @@ input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
    inline, so these overrides need !important to win. */
 #tm-nav .tm-wordmark { transition: color .35s ease; }
 #tm-nav .tm-nav-toggle span { transition: background .35s ease, transform .3s ease, opacity .2s ease; }
-/* Always safe to invert: the wordmark and (mobile) hamburger sit directly
-   on the page ground. */
-#tm-nav.tm-nav-invert .tm-wordmark { color: #fff !important; }
-#tm-nav.tm-nav-invert .tm-nav-toggle span { background: #fff !important; }
-/* The inline nav links only sit on the page ground at desktop widths; below
-   640px they live in a cream dropdown panel, which stays dark-on-cream. */
+/* Invert is desktop-only: at ≤640px the nav is a solid cream bar (see the
+   max-width:640px block), so the wordmark, hamburger and links all stay
+   dark-on-cream. On desktop the bar is transparent, so the chrome flips to
+   white wherever a dark section sits behind it. */
 @media (min-width: 641px) {
+  #tm-nav.tm-nav-invert .tm-wordmark { color: #fff !important; }
+  #tm-nav.tm-nav-invert .tm-nav-toggle span { background: #fff !important; }
   #tm-nav.tm-nav-invert #tm-nav-menu,
   #tm-nav.tm-nav-invert #tm-nav-menu a { color: rgba(255,255,255,0.78) !important; }
   #tm-nav.tm-nav-invert #tm-nav-menu a.tm-nav-active { color: #fff !important; }
   #tm-nav.tm-nav-invert #tm-nav-menu a:hover { color: var(--tm-red) !important; }
+  #tm-nav.tm-nav-invert .tm-lang.is-active { color: #fff; }
 }
 
 /* Outlined ink button → red on hover (EXPLORE THE SYSTEM) */
@@ -200,5 +209,6 @@ input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
 .tm-lang { background: none; border: 0; padding: 0; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.22em; color: inherit; opacity: 0.5; transition: opacity .25s ease, color .25s ease; }
 .tm-lang:hover { opacity: 0.85; }
 .tm-lang.is-active { opacity: 1; color: var(--tm-ink); }
-.tm-nav-invert .tm-lang.is-active { color: #fff; }
+/* .tm-nav-invert override for the active lang is desktop-only (see the
+   min-width:641px block) — on mobile the cream bar keeps it dark. */
 .tm-lang-sep { opacity: 0.35; font-family: 'Space Mono', monospace; font-size: 12px; }
