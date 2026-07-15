@@ -1,0 +1,214 @@
+/* ── TimMetal global design tokens ───────────────────────────────
+   Three primaries: industrial steel-black, warm cream canvas, and
+   the sharp accent red. Red is reserved for small, precise markers —
+   index labels, hairline ticks, and interactive hovers. */
+:root {
+  --tm-black: #050506;   /* hero ground */
+  --tm-cream: #F3EFE6;   /* canvas / page */
+  --tm-ink:   #14171A;   /* primary text + wordmark steel */
+  --tm-red:   #C8102E;   /* PRIMARY ACCENT — sharp industrial red */
+  --tm-red-deep: #A20D24;/* pressed / deep accent */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--tm-black);
+  font-family: 'Archivo', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+/* Sticky heading only once the layout is genuinely two columns —
+   prevents a tall pinned header overlapping cards on stacked/mobile. */
+@media (min-width: 1000px) {
+  [data-sticky-col] { position: sticky; top: 100px; align-self: flex-start; }
+}
+
+/* ── Wipe & Reveal ───────────────────────────────────────────────
+   The cream content is a solid lid (z-2) that scrolls up and off;
+   the dark inquiry layer (z-1) sits in normal flow underneath so the
+   WHOLE inquiry + footer is always reachable. Razor-sharp cream->dark
+   edge retained (no gradient). */
+.tm-lid    { position: relative; z-index: 2; background: var(--tm-cream); }
+.tm-reveal { position: relative; z-index: 1; }
+
+/* Dark band that contains ONLY the footer (products, product, contact). The
+   footer partial carries a large top margin to separate it from the content
+   above it (home RFQ form, about standards); with nothing above, that margin
+   renders as an empty black block. Cancel it so the dark band starts cleanly
+   at the footer's own top border — the footer keeps its internal padding. */
+.tm-foot-only > :first-child { margin-top: 0 !important; }
+
+/* ── Mobile nav ──────────────────────────────────────────────────
+   The four mono links sit in one row next to the wordmark on desktop.
+   Below 640px they don't fit, so they collapse behind a hamburger and
+   drop down as a cream panel (readable over any page background). The
+   nav partial carries inline styles, so the mobile overrides need
+   !important to win. */
+.tm-nav-toggle { display: none; }
+
+@media (max-width: 640px) {
+  /* Solid cream bar at all mobile widths so the nav is never a transparent
+     strip — same ground as the dropdown panel for one cohesive surface. The
+     scroll-invert (white chrome over dark sections) is desktop-only below, so
+     the wordmark + hamburger keep their inline ink colour here. */
+  #tm-nav {
+    padding: 16px 20px !important;
+    background: var(--tm-cream);
+    box-shadow: 0 1px 0 rgba(20, 23, 26, 0.06);
+  }
+
+  .tm-nav-toggle {
+    display: inline-flex; flex-direction: column; justify-content: center;
+    gap: 5px; width: 24px; height: 24px; box-sizing: content-box; padding: 8px;
+    margin: -8px -8px -8px 0;              /* generous hit area, flush right */
+    background: none; border: 0; cursor: pointer; pointer-events: auto;
+  }
+  .tm-nav-toggle span {
+    display: block; height: 2px; width: 100%; border-radius: 2px;
+    background: var(--tm-ink);
+    transition: transform .3s ease, opacity .2s ease;
+  }
+  .tm-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .tm-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .tm-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .tm-nav-links {
+    position: absolute !important;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 4px clamp(20px,5vw,28px) 14px !important;
+    background: var(--tm-cream);
+    border-top: 1px solid rgba(20, 23, 26, 0.12);
+    box-shadow: 0 26px 44px -30px rgba(20, 23, 26, 0.55);
+    /* collapsed by default */
+    max-height: 0; overflow: hidden;
+    opacity: 0; visibility: hidden;
+    transition: max-height .35s ease, opacity .3s ease, visibility .3s ease;
+  }
+  .tm-nav-links.is-open {
+    max-height: 70vh; opacity: 1; visibility: visible;
+  }
+  .tm-nav-links a {
+    padding: 15px 2px !important;
+    font-size: 13px !important;
+    border-top: 1px solid rgba(20, 23, 26, 0.1);
+  }
+  .tm-nav-links a:first-child { border-top: 0; }
+}
+
+/* ── Interactive states ──────────────────────────────────────────
+   Ported from the prototype's style-hover / style-focus attributes. */
+
+/* Red-on-hover text links (nav, card CTAs, footer links) */
+.tm-link { transition: color .3s ease; }
+.tm-link:hover { color: var(--tm-red); }
+
+/* Active nav item — ink text (set inline by include.js) with a red
+   underline tick, matching the prototype's active state. */
+.tm-nav-active { position: relative; }
+.tm-nav-active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: var(--tm-red);
+}
+
+/* Nav-over-dark inversion — include.js adds .tm-nav-invert while a dark
+   section (the #141414 RFQ/footer) sits behind the fixed nav, so the mono
+   links stay legible instead of vanishing. The nav partial sets its colours
+   inline, so these overrides need !important to win. */
+#tm-nav .tm-wordmark { transition: color .35s ease; }
+#tm-nav .tm-nav-toggle span { transition: background .35s ease, transform .3s ease, opacity .2s ease; }
+/* Invert is desktop-only: at ≤640px the nav is a solid cream bar (see the
+   max-width:640px block), so the wordmark, hamburger and links all stay
+   dark-on-cream. On desktop the bar is transparent, so the chrome flips to
+   white wherever a dark section sits behind it. */
+@media (min-width: 641px) {
+  #tm-nav.tm-nav-invert .tm-wordmark { color: #fff !important; }
+  #tm-nav.tm-nav-invert .tm-nav-toggle span { background: #fff !important; }
+  #tm-nav.tm-nav-invert #tm-nav-menu,
+  #tm-nav.tm-nav-invert #tm-nav-menu a { color: rgba(255,255,255,0.78) !important; }
+  #tm-nav.tm-nav-invert #tm-nav-menu a.tm-nav-active { color: #fff !important; }
+  #tm-nav.tm-nav-invert #tm-nav-menu a:hover { color: var(--tm-red) !important; }
+  #tm-nav.tm-nav-invert .tm-lang.is-active { color: #fff; }
+}
+
+/* Outlined ink button → red on hover (EXPLORE THE SYSTEM) */
+.tm-btn-ink { transition: color .3s ease, border-color .3s ease; }
+.tm-btn-ink:hover { color: var(--tm-red); border-color: var(--tm-red); }
+
+/* Social-proof logos: dimmed by default, full strength on hover */
+.tm-logo { transition: opacity .45s ease; }
+.tm-logo:hover { opacity: 1; }
+
+/* Underline form fields → red bottom border on focus */
+.tm-field { transition: border-color .3s ease; }
+.tm-field:focus { border-bottom-color: var(--tm-red); }
+
+/* Submit button: fills red on hover */
+.tm-submit { transition: background-color .3s ease, border-color .3s ease; }
+.tm-submit:hover { background-color: var(--tm-red); border-color: var(--tm-red); }
+
+/* ── Scroll reveal ───────────────────────────────────────────────
+   Content lifts + fades in as it enters the viewport. Progressive
+   enhancement: the hidden state is scoped under .tm-motion, which
+   motion.js adds to <html> only when JS runs — so with no JS the
+   page renders fully visible. IntersectionObserver adds .is-in.
+
+   .tm-rise    — reveal a single block.
+   .tm-stagger — reveal a group; its direct children cascade in. */
+.tm-motion .tm-rise {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .6, .2, 1);
+}
+.tm-motion .tm-rise.is-in { opacity: 1; transform: none; }
+
+.tm-motion .tm-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.2, .6, .2, 1);
+}
+.tm-motion .tm-stagger.is-in > * { opacity: 1; transform: none; }
+.tm-motion .tm-stagger.is-in > *:nth-child(1) { transition-delay: 0s; }
+.tm-motion .tm-stagger.is-in > *:nth-child(2) { transition-delay: .07s; }
+.tm-motion .tm-stagger.is-in > *:nth-child(3) { transition-delay: .14s; }
+.tm-motion .tm-stagger.is-in > *:nth-child(4) { transition-delay: .21s; }
+.tm-motion .tm-stagger.is-in > *:nth-child(5) { transition-delay: .28s; }
+.tm-motion .tm-stagger.is-in > *:nth-child(6) { transition-delay: .35s; }
+
+/* Honour reduced-motion: reveal instantly, no travel. */
+@media (prefers-reduced-motion: reduce) {
+  .tm-motion .tm-rise,
+  .tm-motion .tm-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Card & row hover ────────────────────────────────────────────
+   Quiet lift on the home system cards; on catalogue rows the arrow
+   slides and the label reddens. The bold moment is the hero pour —
+   everything here stays restrained. */
+.tm-card { transition: transform .4s cubic-bezier(.2, .6, .2, 1), box-shadow .4s ease; }
+.tm-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px -26px rgba(20, 23, 26, 0.55); }
+
+.tm-arrow { display: inline-block; transition: transform .35s cubic-bezier(.2, .6, .2, 1); }
+.tm-row:hover .tm-arrow { transform: translateX(7px); }
+.tm-row:hover .tm-link { color: var(--tm-red); }
+
+/* Language switcher in the nav — mono, matches the .tm-link scale. */
+.tm-langswitch { display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; }
+.tm-lang { background: none; border: 0; padding: 0; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.22em; color: inherit; opacity: 0.5; transition: opacity .25s ease, color .25s ease; }
+.tm-lang:hover { opacity: 0.85; }
+.tm-lang.is-active { opacity: 1; color: var(--tm-ink); }
+/* .tm-nav-invert override for the active lang is desktop-only (see the
+   min-width:641px block) — on mobile the cream bar keeps it dark. */
+.tm-lang-sep { opacity: 0.35; font-family: 'Space Mono', monospace; font-size: 12px; }
