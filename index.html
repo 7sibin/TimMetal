@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="meta.home.title">TimMetal — Industrial Dairy Engineering</title>
-<meta name="description" content="TimMetal — dairy process machinery engineered in marine-grade inox: cheese vats, processing tanks, pre-press and press systems, designed and built near Kragujevac." data-i18n-attr="content:meta.home.desc">
+<title data-i18n="meta.home.title">Tim Metal — Industrial Dairy Engineering</title>
+<meta name="description" content="Tim Metal — dairy process machinery engineered in marine-grade inox for the complete cheesemaking line, designed and built near Kragujevac." data-i18n-attr="content:meta.home.desc">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="TimMetal">
-<meta property="og:title" content="TimMetal — Industrial Dairy Engineering" data-i18n-attr="content:meta.home.title">
-<meta property="og:description" content="Dairy process machinery engineered in marine-grade inox — cheese vats, processing tanks, pre-press and press systems, designed and built near Kragujevac." data-i18n-attr="content:meta.home.desc">
+<meta property="og:site_name" content="Tim Metal">
+<meta property="og:title" content="Tim Metal — Industrial Dairy Engineering" data-i18n-attr="content:meta.home.title">
+<meta property="og:description" content="Dairy process machinery engineered in marine-grade inox for the complete cheesemaking line, designed and built near Kragujevac." data-i18n-attr="content:meta.home.desc">
 <meta property="og:image" content="/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/og.svg">
@@ -29,23 +29,18 @@
   .tm-plant-row:hover { background-color: rgba(20,23,26,0.03); }
   .tm-rfq-submit { transition: filter .3s ease; }
   .tm-rfq-submit:hover { filter: brightness(1.35); }
-  /* Client logo marquee — seamless -50% loop, greyscale on the cream sheet;
-     the whole strip pauses on hover, each logo reveals its colour on hover. */
+  /* Client logo marquee — seamless -50% loop, full-colour on the cream sheet;
+     the whole strip pauses on hover. */
   .tm-marquee { position:relative; overflow:hidden; padding:clamp(30px,4.5vh,48px) 0; border-top:1px solid rgba(20,23,26,0.14); border-bottom:1px solid rgba(20,23,26,0.14); -webkit-mask-image:linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-image:linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
   .tm-marquee-track { display:flex; width:max-content; align-items:center; animation:tm-marquee-scroll 34s linear infinite; }
   .tm-marquee:hover .tm-marquee-track { animation-play-state:paused; }
   /* Every logo gets the SAME fixed box (width × height) and is scaled to fit
      inside it — square marks fill the height, wide wordmarks fill the width,
      so no logo dominates and none reads as tiny regardless of its aspect. */
-  .tm-logo { flex:none; display:flex; align-items:center; justify-content:center; width:clamp(124px,15vw,172px); height:clamp(56px,7vw,80px); background:none; border:0; padding:0; margin:0 clamp(8px,1.8vw,30px); line-height:0; cursor:pointer; -webkit-tap-highlight-color:transparent; }
-  .tm-logo img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; filter:grayscale(1); opacity:0.45; transition:opacity .35s ease, filter .35s ease; }
-  .tm-logo:hover img, .tm-logo:focus-visible img, .tm-logo.is-active img { filter:grayscale(0); opacity:1; }
-  .tm-logo:focus-visible { outline:1px solid var(--tm-red); outline-offset:6px; }
+  .tm-logo { flex:none; display:flex; align-items:center; justify-content:center; width:clamp(124px,15vw,172px); height:clamp(56px,7vw,80px); margin:0 clamp(8px,1.8vw,30px); line-height:0; }
+  .tm-logo img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
   @keyframes tm-marquee-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .tm-marquee-track { animation:none; } }
-  /* Collaboration detail — collapses to nothing until a logo is chosen. */
-  .tm-plant-detail { max-height:0; overflow:hidden; opacity:0; transform:translateY(6px); transition:max-height .55s ease, opacity .4s ease, transform .4s ease, margin-top .55s ease; }
-  .tm-plant-detail.is-open { margin-top:0; max-height:640px; opacity:1; transform:translateY(0); }
 </style>
 </head>
 <body>
@@ -58,7 +53,7 @@
        outline, milk pour, inverted wordmark); framed as drawing sheet no. 1 -->
   <section id="tm-hero" style="position:sticky; top:0; width:100%; height:100svh; min-height:560px; overflow:hidden; background:#050506;">
     <canvas id="tm-canvas" style="position:absolute; inset:0; width:100%; height:100%; display:block;"></canvas>
-    <h1 style="position:absolute; width:1px; height:1px; margin:0; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap;" data-i18n-html="home.hero.h1">TimMetal &mdash; Industrial Dairy Engineering, near Kragujevac</h1>
+    <h1 style="position:absolute; width:1px; height:1px; margin:0; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap;" data-i18n-html="home.hero.h1">Tim Metal &mdash; Industrial Dairy Engineering, near Kragujevac</h1>
 
     <!-- Registration crosshairs, one per corner -->
     <svg width="18" height="18" viewBox="0 0 18 18" style="position:absolute; top:18px; left:18px; color:rgba(120,126,134,0.6);"><line x1="9" y1="0" x2="9" y2="18" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1"></line></svg>
@@ -71,7 +66,7 @@
     <div style="position:absolute; right:48px; bottom:22px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.2em; color:#6a6f76; pointer-events:none;">KNIĆ &middot; N 43&deg;55&prime; E 20&deg;43&prime;</div>
 
     <!-- Tagline sits just under the wordmark; fades in once the milk settles -->
-    <div id="tm-tagline" style="position:absolute; left:0; right:0; top:57%; text-align:center; opacity:0; transform:translateY(10px); transition:opacity 1s ease .2s, transform 1s ease .2s; pointer-events:none; font-family:'Space Mono', monospace; font-size:clamp(10px,1.05vw,14px); letter-spacing:0.42em; color:#3c4045;" data-i18n="home.hero.tagline">DAIRY PROCESS MACHINERY &middot; ENGINEERED IN INOX</div>
+    <div id="tm-tagline" style="position:absolute; left:0; right:0; top:57%; text-align:center; opacity:0; transform:translateY(10px); transition:opacity 1s ease .2s, transform 1s ease .2s; pointer-events:none; font-family:'Space Mono', monospace; font-size:clamp(10px,1.05vw,14px); letter-spacing:0.42em; color:#3c4045;" data-i18n="home.hero.tagline">DAIRY PROCESS MACHINERY &middot; ENGINEERED FROM INOX</div>
 
     <!-- Soft scroll affordance — never a hard lock, scrolling just pours faster -->
     <div id="tm-hint" style="position:absolute; left:0; right:0; bottom:52px; text-align:center; opacity:0.5; transition:opacity .6s ease; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.34em; color:#6a6f76; pointer-events:none;" data-i18n="home.hero.hint">SCROLL TO POUR</div>
@@ -89,7 +84,7 @@
       <!-- Drawing title block — the sheet's passport -->
       <div style="display:flex; flex-wrap:wrap; gap:1px; border:1px solid rgba(20,23,26,0.3); border-top:none; background:rgba(20,23,26,0.22); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#5a5e63;">
         <div style="display:flex; align-items:center; padding:11px 14px; background:var(--tm-red); color:#fff; font-weight:700; letter-spacing:0.2em;">TM</div>
-        <div style="flex:2 1 auto; min-width:220px; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); color:var(--tm-ink); font-weight:700;" data-i18n="home.titleblock.company">TIMMETAL &mdash; INDUSTRIAL DAIRY ENGINEERING</div>
+        <div style="flex:2 1 auto; min-width:220px; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); color:var(--tm-ink); font-weight:700;" data-i18n="home.titleblock.company">TIM METAL &mdash; INDUSTRIAL DAIRY ENGINEERING</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">DOC &middot; TM-2026-HP</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">MAT &middot; AISI 316L / 304</div>
         <div style="flex:1 0 auto; display:flex; align-items:center; padding:11px 16px; background:var(--tm-cream); white-space:nowrap;">SCALE &middot; 1:1</div>
@@ -121,15 +116,10 @@
         <!-- Infinite logo marquee. The track is built by the script at the
              foot of the page from the COMPANIES array (one /logos/<name>.svg
              per client), then duplicated once so the -50% CSS loop is
-             seamless. Each logo is a button — clicking it reveals the company
-             name in the detail panel below. -->
+             seamless. -->
         <div class="tm-marquee tm-rise" role="group" aria-label="Client dairies" style="margin-top:clamp(40px,6vh,64px);">
           <div class="tm-marquee-track"></div>
         </div>
-
-        <!-- Collaboration detail — populated by the inline script when a logo
-             is clicked; the first partner is shown by default. -->
-        <div id="tm-plant-detail" class="tm-plant-detail" aria-live="polite"></div>
       </section>
 
       <!-- SECTION 03 — process systems as drawing sheets -->
@@ -161,19 +151,19 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">01 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card1.name">Cheese Vat</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card1.name">Duplicator</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 01</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
-              <svg width="60%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><line x1="60" y1="9" x2="60" y2="42" stroke="currentColor" stroke-width="1.6"></line><line x1="47" y1="42" x2="73" y2="42" stroke="currentColor" stroke-width="1.6"></line><line x1="22" y1="33" x2="98" y2="33" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"></line></svg>
+              <svg width="52%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="60" y1="6" x2="60" y2="20" stroke="currentColor" stroke-width="1.6"></line><ellipse cx="60" cy="22" rx="30" ry="8" stroke="currentColor" stroke-width="1.6"></ellipse><path d="M30 22 V34 a30 20 0 0 0 60 0 V22" stroke="currentColor" stroke-width="1.6" fill="none"></path><path d="M24 22 V32 a36 24 0 0 0 72 0 V22" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4" fill="none"></path><line x1="60" y1="14" x2="52" y2="22" stroke="currentColor" stroke-width="1.2"></line><line x1="60" y1="14" x2="68" y2="22" stroke="currentColor" stroke-width="1.2"></line></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card1.body">The core unit of any modern dairy. Engineered for precise coagulation, thermal processing, and automated curd cutting via specialized inox knives, minimizing dry matter loss.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card1.body">Multipurpose double-jacketed tank for pasteurising, heating and cooling milk, with an integrated agitator and automatic temperature control.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-01</div>
                 <div style="padding:8px 10px; white-space:nowrap;">1:10</div>
-                <a href="/products/cheese-vat" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
+                <a href="/products/duplicator" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
               </div>
             </div>
           </div>
@@ -182,19 +172,19 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">02 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card2.name">Milk Processing Tank</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card2.name">Cutter</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 02</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
-              <svg width="60%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="60" y1="4" x2="60" y2="12" stroke="currentColor" stroke-width="1.6"></line><rect x="44" y="12" width="32" height="44" rx="7" stroke="currentColor" stroke-width="1.6"></rect><line x1="44" y1="24" x2="76" y2="24" stroke="currentColor" stroke-width="1.2"></line><line x1="44" y1="44" x2="76" y2="44" stroke="currentColor" stroke-width="1.2"></line><line x1="50" y1="56" x2="48" y2="66" stroke="currentColor" stroke-width="1.6"></line><line x1="70" y1="56" x2="72" y2="66" stroke="currentColor" stroke-width="1.6"></line></svg>
+              <svg width="60%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><ellipse cx="60" cy="30" rx="34" ry="9" stroke="currentColor" stroke-width="1.6"></ellipse><path d="M26 30 a34 20 0 0 0 68 0" stroke="currentColor" stroke-width="1.6" fill="none"></path><circle cx="60" cy="32" r="4" stroke="currentColor" stroke-width="1.4"></circle><path d="M60 32 L44 26 M60 32 L76 26 M60 32 L60 46" stroke="currentColor" stroke-width="1.2"></path></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card2.body">A multi-purpose, triple-wall insulated process vessel for pasteurization, boiling, fermentation, and cooling. Highly efficient heat transfer via pillow-plate technology prevents burning.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card2.body">High-speed process machine that cuts, homogenises and emulsifies cheese masses, with direct steam heating and vacuum operation.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-02</div>
                 <div style="padding:8px 10px; white-space:nowrap;">1:10</div>
-                <a href="/products/milk-tank" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
+                <a href="/products/cutter" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
               </div>
             </div>
           </div>
@@ -203,19 +193,19 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">03 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card3.name">Cheese Pre-press</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card3.name">Kačkavalj Machine TM350</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 03</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
-              <svg width="62%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><path d="M16 16 H104 L90 52 H30 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><line x1="34" y1="30" x2="86" y2="30" stroke="currentColor" stroke-width="1.2"></line><rect x="46" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"></rect><rect x="62" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"></rect></svg>
+              <svg width="62%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><rect x="24" y="20" width="40" height="30" rx="4" stroke="currentColor" stroke-width="1.6"></rect><path d="M64 34 h22 a6 6 0 0 1 6 6 v4" stroke="currentColor" stroke-width="1.6" fill="none"></path><circle cx="92" cy="48" r="5" stroke="currentColor" stroke-width="1.4"></circle><line x1="32" y1="20" x2="32" y2="12" stroke="currentColor" stroke-width="1.6"></line><line x1="56" y1="20" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"></line><line x1="32" y1="12" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"></line><line x1="30" y1="34" x2="58" y2="34" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"></line><line x1="30" y1="50" x2="30" y2="56" stroke="currentColor" stroke-width="1.6"></line><line x1="58" y1="50" x2="58" y2="56" stroke="currentColor" stroke-width="1.6"></line></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card3.body">An engineered system for continuous self-pressing and curd block formation under whey. Ensures uniform porosity and perfect block profiling prior to final molding.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card3.body">Industrial machine for steaming, kneading and stretching pasta-filata curd, with continuous operation and precise steam and water dosing.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-03</div>
                 <div style="padding:8px 10px; white-space:nowrap;">1:12</div>
-                <a href="/products/pre-press" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
+                <a href="/products/kackavalj-machine-tm350" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
               </div>
             </div>
           </div>
@@ -224,19 +214,19 @@
           <div class="tm-card" style="background:var(--tm-cream); padding:clamp(24px,2.6vw,40px); display:flex; flex-direction:column;">
             <div style="display:flex; align-items:baseline; gap:10px;">
               <span style="font-family:'Space Mono', monospace; color:var(--tm-red); font-size:13px; letter-spacing:0.06em; white-space:nowrap; flex-shrink:0;">04 //</span>
-              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card4.name">Cheese Press</span>
+              <span style="font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(18px,1.5vw,23px); letter-spacing:-0.01em; color:var(--tm-ink);" data-i18n="home.card4.name">Cup Packaging Machine</span>
             </div>
             <div style="position:relative; margin-top:22px; height:clamp(148px,16vh,196px); display:flex; align-items:center; justify-content:center; border:1px solid rgba(20,23,26,0.12); background:#EFEAE0;">
               <span style="position:absolute; top:10px; left:12px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. 04</span>
               <svg width="14" height="14" viewBox="0 0 14 14" style="position:absolute; bottom:8px; right:8px; color:rgba(20,23,26,0.3);"><line x1="7" y1="0" x2="7" y2="14" stroke="currentColor" stroke-width="1"></line><line x1="0" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1"></line></svg>
-              <svg width="58%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="34" y1="10" x2="34" y2="60" stroke="currentColor" stroke-width="1.6"></line><line x1="86" y1="10" x2="86" y2="60" stroke="currentColor" stroke-width="1.6"></line><line x1="30" y1="12" x2="90" y2="12" stroke="currentColor" stroke-width="1.6"></line><line x1="60" y1="12" x2="60" y2="30" stroke="currentColor" stroke-width="1.6"></line><rect x="46" y="30" width="28" height="12" stroke="currentColor" stroke-width="1.6"></rect><rect x="40" y="48" width="40" height="12" stroke="currentColor" stroke-width="1.4"></rect></svg>
+              <svg width="62%" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;"><line x1="24" y1="20" x2="96" y2="20" stroke="currentColor" stroke-width="1.6"></line><line x1="40" y1="20" x2="40" y2="28" stroke="currentColor" stroke-width="1.2"></line><line x1="60" y1="20" x2="60" y2="28" stroke="currentColor" stroke-width="1.2"></line><line x1="80" y1="20" x2="80" y2="28" stroke="currentColor" stroke-width="1.2"></line><path d="M34 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M54 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M74 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
             </div>
-            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card4.body">Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mold formats with high cycle repeatability.</p>
+            <p style="margin:22px 0 0; font-size:14px; line-height:1.62; color:#4a4e53;" data-i18n="home.card4.body">Automatic machine for filling liquid and pasty dairy products into plastic cups — placing, dosing, foil sealing and lidding in one line.</p>
             <div style="margin-top:auto; padding-top:24px;">
               <div style="display:flex; flex-wrap:wrap; align-items:stretch; border:1px solid rgba(20,23,26,0.2); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; color:#5a5e63;">
                 <div style="padding:8px 10px; border-right:1px solid rgba(20,23,26,0.2); white-space:nowrap;">DWG TM-03-04</div>
                 <div style="padding:8px 10px; white-space:nowrap;">1:8</div>
-                <a href="/products/press" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
+                <a href="/products/cup-packaging-machine" class="tm-link" style="margin-left:auto; display:flex; align-items:center; gap:8px; padding:8px 12px; border-left:1px solid rgba(20,23,26,0.2); color:var(--tm-ink); text-decoration:none; letter-spacing:0.14em;">SPEC &rarr;</a>
               </div>
             </div>
           </div>
@@ -257,7 +247,7 @@
           <p style="margin:24px 0 0; max-width:48ch; font-size:clamp(15px,1.4vw,19px); line-height:1.6; color:rgba(255,255,255,0.5);" data-i18n="home.rfq.body">Request a technical consultation or a custom machinery quote tailored to your facility's daily capacity.</p>
         </div>
         <!-- Document stamp -->
-        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br><span data-i18n="home.rfq.stamp.response">RESPONSE &middot; &le; 48 H</span><br>LANG &middot; EN / SR / HU</div>
+        <div style="border:1.5px solid var(--tm-red); padding:14px 18px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(255,255,255,0.55); line-height:2; transform:rotate(-1.5deg);"><span style="color:var(--tm-red); font-weight:700;">FORM &middot; TM-RFQ-26</span><br><span data-i18n="home.rfq.stamp.response">RESPONSE &middot; &le; 48 H</span><br>LANG &middot; EN / SR / HU / MK</div>
       </div>
 
       <form id="tm-rfq-form" style="margin-top:clamp(48px,7vh,84px); display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); column-gap:clamp(28px,3.5vw,56px); row-gap:clamp(30px,4vh,42px);">
@@ -321,14 +311,12 @@
     }
   })();
 
-  // ── Client dairies — real logos + click-to-reveal company name ──
-  // One entry per client: the /logos SVG file and the display name (the
-  // file's base name). The marquee track and its seamless aria-hidden
-  // duplicate are built from this list; clicking a logo shows that
-  // company's name in the panel below. To add a client, drop its SVG in
-  // /logos and add a { file, name } row here.
+  // ── Client dairies — full-colour logo marquee (display only) ──
+  // One entry per client: the /logos SVG file and the display name (used
+  // only as the image alt text). The marquee track and its seamless
+  // aria-hidden duplicate are built from this list. To add a client, drop
+  // its SVG in /logos and add a { file, name } row here.
   (function () {
-    var MONO = "'Space Mono', monospace";
     var COMPANIES = [
       { file: 'euroline.svg',           name: 'Euroline' },
       { file: 'Agro Maja.svg',          name: 'Agro Maja' },
@@ -344,67 +332,28 @@
       { file: 'Đi-Mi.svg',              name: 'Đi-Mi' }
     ];
 
-    function t(key, en) { return window.tmI18n ? window.tmI18n.t(key, en) : en; }
-
-    var detail = document.getElementById('tm-plant-detail');
     var track = document.querySelector('.tm-marquee-track');
-    if (!detail || !track) return;
+    if (!track) return;
 
-    // Build the marquee: the real, focusable set followed by an
-    // aria-hidden visual duplicate so the -50% CSS loop is seamless.
-    function logoButton(c, i, dup) {
-      var b = document.createElement('button');
-      b.className = 'tm-logo';
-      b.type = 'button';
-      b.setAttribute('data-client', i);
+    // Build the marquee: the real set followed by an aria-hidden visual
+    // duplicate so the -50% CSS loop is seamless. Logos are non-interactive.
+    function logoItem(c, dup) {
+      var el = document.createElement('span');
+      el.className = 'tm-logo';
       var img = document.createElement('img');
       img.src = '/logos/' + encodeURIComponent(c.file);
       img.loading = 'lazy';
       if (dup) {
-        b.tabIndex = -1;
-        b.setAttribute('aria-hidden', 'true');
+        el.setAttribute('aria-hidden', 'true');
         img.alt = '';
       } else {
-        b.setAttribute('aria-label', c.name);
         img.alt = c.name;
       }
-      b.appendChild(img);
-      return b;
+      el.appendChild(img);
+      return el;
     }
-    COMPANIES.forEach(function (c, i) { track.appendChild(logoButton(c, i, false)); });
-    COMPANIES.forEach(function (c, i) { track.appendChild(logoButton(c, i, true)); });
-    var buttons = track.querySelectorAll('.tm-logo');
-
-    var current = 0;
-    function render(i) {
-      var c = COMPANIES[i];
-      if (!c) return;
-      current = i;
-      var num = (i + 1 < 10 ? '0' : '') + (i + 1);
-      detail.innerHTML =
-        '<div style="padding-top:clamp(28px,4vh,46px);">' +
-          '<div style="display:flex; align-items:center; gap:12px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.22em; color:var(--tm-red);"><span>' + num + '</span><span style="color:#76797e;">' + t('home.plants.client', 'CLIENT') + '</span></div>' +
-          '<h3 style="margin:16px 0 0; font-weight:800; font-size:clamp(28px,3.4vw,50px); line-height:1.02; letter-spacing:-0.025em; color:var(--tm-ink);">' + c.name + '<span style="color:var(--tm-red-deep);">.</span></h3>' +
-        '</div>';
-
-      Array.prototype.forEach.call(buttons, function (b) {
-        b.classList.toggle('is-active', b.getAttribute('data-client') === String(i));
-      });
-      detail.classList.add('is-open');
-    }
-
-    Array.prototype.forEach.call(buttons, function (b) {
-      b.addEventListener('click', function () {
-        render(parseInt(b.getAttribute('data-client'), 10));
-      });
-    });
-
-    // Show the first client by default so the section is never empty.
-    // Wait for the dictionary so the label renders in the active language.
-    (window.tmI18n ? window.tmI18n.ready : Promise.resolve()).then(function () { render(0); });
-
-    // Redraw the open client's label in the chosen language when it changes.
-    document.addEventListener('tm:langchange', function () { render(current); });
+    COMPANIES.forEach(function (c) { track.appendChild(logoItem(c, false)); });
+    COMPANIES.forEach(function (c) { track.appendChild(logoItem(c, true)); });
   })();
 </script>
 </body>

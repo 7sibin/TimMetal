@@ -144,7 +144,7 @@
       var ctx = this.ctx; if (!ctx) return;
       ctx.font = '900 100px Archivo, system-ui, sans-serif';
       try { ctx.letterSpacing = '-0.015em'; } catch (e) {}
-      var w100 = ctx.measureText('TimMetal').width || 480;
+      var w100 = ctx.measureText('Tim Metal').width || 480;
       var target = Math.min(this.W * 0.82, 1060);
       var fs = 100 * (target / w100);
       fs = Math.min(fs, this.H * 0.32, 240);
@@ -260,9 +260,9 @@
       ctx.lineJoin = 'round';
       ctx.lineWidth = Math.max(1.1, this.fontSize * 0.012);
       ctx.fillStyle = 'rgba(255,255,255,0.022)';
-      ctx.fillText('TimMetal', cx, cy);
+      ctx.fillText('Tim Metal', cx, cy);
       ctx.strokeStyle = 'rgba(126,132,140,0.66)';
-      ctx.strokeText('TimMetal', cx, cy);
+      ctx.strokeText('Tim Metal', cx, cy);
 
       // 3) Build the wavy milk region once; reuse it for the fill AND the text clip
       //    so the inverted-text boundary tracks the fluid edge exactly (razor sharp).
@@ -307,7 +307,7 @@
       tg.addColorStop(0, '#0b0d10');
       tg.addColorStop(1, '#1b2026');
       ctx.fillStyle = tg;
-      ctx.fillText('TimMetal', cx, cy);
+      ctx.fillText('Tim Metal', cx, cy);
       ctx.restore();
     }
   };

@@ -1,90 +1,226 @@
 [
   {
-    "key": "cheese-vat",
+    "key": "kackavalj-moulds",
     "num": "01",
-    "cat": { "en": "COAGULATION", "sr": "KOAGULACIJA", "hu": "ALVASZTÁS" },
-    "name": { "en": "Cheese Vat", "sr": "Sirarski kotao", "hu": "Sajtkád" },
-    "tagline": { "en": "Precision coagulation & curd cutting.", "sr": "Precizna koagulacija i sečenje gruša.", "hu": "Precíz alvasztás és alvadékvágás." },
-    "blurb": { "en": "The core unit of any modern dairy — precise coagulation, controlled thermal processing and automated curd cutting via inox harp knives, minimising dry-matter loss across every batch.", "sr": "Osnovna jedinica svake moderne mlekare — precizna koagulacija, kontrolisana termička obrada i automatsko sečenje gruša harfastim noževima od inoxa, uz minimalan gubitak suve materije u svakoj šarži.", "hu": "Minden modern tejüzem alapegysége — precíz alvasztás, szabályozott hőkezelés és az alvadék inox hárfakésekkel történő automatikus vágása, minimális szárazanyag-veszteséggel minden tételnél." },
-    "tags": [
-      { "en": "500–10,000 L", "sr": "500–10.000 L", "hu": "500–10 000 L" },
-      "AISI 316L",
-      "PLC + HMI"
-    ],
-    "desc": { "en": "The core unit of any modern dairy. Engineered for precise coagulation, controlled thermal processing and automated curd cutting via specialised inox harp knives — minimising dry-matter loss across every batch.", "sr": "Osnovna jedinica svake moderne mlekare. Projektovan za preciznu koagulaciju, kontrolisanu termičku obradu i automatsko sečenje gruša specijalnim harfastim noževima od inoxa — uz minimalan gubitak suve materije u svakoj šarži.", "hu": "Minden modern tejüzem alapegysége. Precíz alvasztásra, szabályozott hőkezelésre és az alvadék speciális inox hárfakésekkel történő automatikus vágására tervezve — minimális szárazanyag-veszteséggel minden tételnél." },
-    "specs": [
-      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "500 – 10,000 L", "sr": "500 – 10.000 L", "hu": "500 – 10 000 L" } },
-      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": { "en": "AISI 316L inox", "sr": "AISI 316L inox", "hu": "AISI 316L inox" } },
-      { "label": { "en": "HEATING", "sr": "GREJANJE", "hu": "FŰTÉS" }, "value": { "en": "Triple-wall, steam / hot water", "sr": "Troslojno, para / topla voda", "hu": "Háromfalú, gőz / forró víz" } },
-      { "label": { "en": "CUTTING", "sr": "SEČENJE", "hu": "VÁGÁS" }, "value": { "en": "Variable-speed harp knives", "sr": "Harfasti noževi promenljive brzine", "hu": "Változtatható sebességű hárfakések" } },
-      { "label": { "en": "CONTROL", "sr": "UPRAVLJANJE", "hu": "VEZÉRLÉS" }, "value": { "en": "PLC + HMI touch panel", "sr": "PLC + HMI panel na dodir", "hu": "PLC + HMI érintőpanel" } },
-      { "label": { "en": "DRY-MATTER LOSS", "sr": "GUBITAK SUVE MATERIJE", "hu": "SZÁRAZANYAG-VESZTESÉG" }, "value": { "en": "< 0.4%", "sr": "< 0,4%", "hu": "< 0,4%" } }
-    ]
+    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS", "mk": "ФОРМИРАЊЕ" },
+    "name": { "en": "Kačkavalj Moulds", "sr": "Kalupi za kačkavalj", "hu": "Kaskaval formák", "mk": "Калапи за кашкавал" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "Professional moulds made of high-quality food-grade plastic or perforated stainless steel, resistant to high temperatures and aggressive cleaning agents. Engineered for optimal whey drainage and precise forming of the cheese geometry.",
+      "sr": "Profesionalni kalupi izrađeni od visokokvalitetne prehrambene plastike ili perforiranog prohroma, otporni na visoke temperature i agresivna sredstva za pranje. Projektovani za optimalno odvođenje surutke i pravilno formiranje geometrije sira.",
+      "hu": "Professzionális formák kiváló minőségű élelmiszer-ipari műanyagból vagy perforált inoxból, ellenállók a magas hőmérséklettel és az agresszív tisztítószerekkel szemben. Az optimális savóelvezetésre és a sajt geometriájának pontos kialakítására tervezve.",
+      "mk": "Професионални калапи изработени од висококвалитетна прехранбена пластика или перфориран инокс, отпорни на високи температури и агресивни средства за перење. Дизајнирани за оптимално одведување на сурутката и правилно формирање на геометријата на сирењето."
+    },
+    "specs": []
   },
   {
-    "key": "milk-tank",
+    "key": "duplicator",
     "num": "02",
-    "cat": { "en": "PROCESSING", "sr": "PRERADA", "hu": "FELDOLGOZÁS" },
-    "name": { "en": "Milk Processing Tank", "sr": "Tank za preradu mleka", "hu": "Tejfeldolgozó tartály" },
-    "tagline": { "en": "Pasteurise, ferment, cool — one vessel.", "sr": "Pasterizacija, fermentacija, hlađenje — jedan sud.", "hu": "Pasztőrözés, erjesztés, hűtés — egy edényben." },
-    "blurb": { "en": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly and prevents scorching at the wall.", "sr": "Višenamenski, troslojno izolovan procesni sud za pasterizaciju, kuvanje, fermentaciju i hlađenje. Pillow-plate prenos toplote ravnomerno raspoređuje temperaturu i sprečava zagorevanje uz zid.", "hu": "Többcélú, háromfalú szigetelt feldolgozó edény pasztőrözéshez, forraláshoz, erjesztéshez és hűtéshez. A pillow-plate hőátadás egyenletesen osztja el a hőmérsékletet és megakadályozza a falon való leégést." },
-    "tags": [
-      { "en": "300–8,000 L", "sr": "300–8.000 L", "hu": "300–8 000 L" },
-      "2–99 °C",
-      "80 mm PU"
-    ],
-    "desc": { "en": "A multi-purpose, triple-wall insulated process vessel for pasteurisation, boiling, fermentation and cooling. Pillow-plate heat transfer distributes temperature evenly across the surface and prevents scorching at the wall.", "sr": "Višenamenski, troslojno izolovan procesni sud za pasterizaciju, kuvanje, fermentaciju i hlađenje. Pillow-plate prenos toplote ravnomerno raspoređuje temperaturu po celoj površini i sprečava zagorevanje uz zid.", "hu": "Többcélú, háromfalú szigetelt feldolgozó edény pasztőrözéshez, forraláshoz, erjesztéshez és hűtéshez. A pillow-plate hőátadás egyenletesen osztja el a hőmérsékletet a teljes felületen, és megakadályozza a falon való leégést." },
-    "specs": [
-      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "300 – 8,000 L", "sr": "300 – 8.000 L", "hu": "300 – 8 000 L" } },
-      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": "AISI 316L / 304" },
-      { "label": { "en": "WALL", "sr": "ZID", "hu": "FAL" }, "value": { "en": "Triple-wall pillow-plate", "sr": "Troslojni pillow-plate", "hu": "Háromfalú pillow-plate" } },
-      { "label": { "en": "FUNCTIONS", "sr": "FUNKCIJE", "hu": "FUNKCIÓK" }, "value": { "en": "Pasteurise · ferment · cool", "sr": "Pasterizacija · fermentacija · hlađenje", "hu": "Pasztőrözés · erjesztés · hűtés" } },
-      { "label": { "en": "TEMP RANGE", "sr": "OPSEG TEMPERATURE", "hu": "HŐMÉRSÉKLET-TARTOMÁNY" }, "value": "2 – 99 °C" },
-      { "label": { "en": "INSULATION", "sr": "IZOLACIJA", "hu": "SZIGETELÉS" }, "value": { "en": "80 mm PU, food-grade", "sr": "80 mm PU, prehrambena klasa", "hu": "80 mm PU, élelmiszer-ipari" } }
-    ]
+    "cat": { "en": "PROCESSING", "sr": "PRERADA", "hu": "FELDOLGOZÁS", "mk": "ПРЕРАБОТКА" },
+    "name": { "en": "Duplicator", "sr": "Duplikator", "hu": "Duplikátor", "mk": "Дупликатор" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A multipurpose double-jacketed process tank for pasteurisation, heat treatment, cooling and controlled heating of milk and dairy products. Built from acid-resistant stainless steel (AISI 304/316) with an integrated agitator, insulation and a precise system for automatic temperature monitoring.",
+      "sr": "Višenamenski procesni tank sa duplim plaštom, namenjen za pasterizaciju, termičku obradu, hlađenje i kontrolisano zagrevanje mleka i mlečnih proizvoda. Izrađen od kiselootpornog nerđajućeg čelika (AISI 304/316) sa integrisanom mešalicom, izolacijom i preciznim sistemom za automatsko praćenje temperature.",
+      "hu": "Többcélú, duplaköpenyes feldolgozótartály tej és tejtermékek pasztőrözésére, hőkezelésére, hűtésére és szabályozott melegítésére. Saválló rozsdamentes acélból (AISI 304/316) készül, beépített keverővel, szigeteléssel és precíz automatikus hőmérséklet-felügyeleti rendszerrel.",
+      "mk": "Повеќенаменски процесен сад со двоен плашт, наменет за пастеризација, термичка обработка, ладење и контролирано загревање на млеко и млечни производи. Изработен од киселоотпорен нерѓосувачки челик (AISI 304/316) со интегрирана мешалка, изолација и прецизен систем за автоматско следење на температурата."
+    },
+    "specs": []
   },
   {
-    "key": "pre-press",
+    "key": "homogeniser",
     "num": "03",
-    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS" },
-    "name": { "en": "Cheese Pre-press", "sr": "Predpresa za sir", "hu": "Sajt előprés" },
-    "tagline": { "en": "Continuous self-pressing under whey.", "sr": "Kontinualno samopresovanje pod surutkom.", "hu": "Folyamatos önpréselés savó alatt." },
-    "blurb": { "en": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling before final moulding.", "sr": "Inženjerski sistem za kontinualno samopresovanje i formiranje blokova gruša pod surutkom. Obezbeđuje ujednačenu poroznost i precizno profilisanje bloka pre završnog kalupljenja.", "hu": "Mérnöki rendszer a folyamatos önpréseléshez és az alvadékblokk savó alatti kialakításához. Egyenletes porozitást és precíz blokkprofilozást biztosít a végső formázás előtt." },
-    "tags": [
-      { "en": "Under-whey", "sr": "Pod surutkom", "hu": "Savó alatt" },
-      "AISI 316L",
-      { "en": "Up to 2,500 L", "sr": "Do 2.500 L", "hu": "Max. 2 500 L" }
-    ],
-    "desc": { "en": "An engineered system for continuous self-pressing and curd-block formation under whey. Ensures uniform porosity and precise block profiling prior to final moulding, with a perforated false-bottom for controlled drainage.", "sr": "Inženjerski sistem za kontinualno samopresovanje i formiranje blokova gruša pod surutkom. Obezbeđuje ujednačenu poroznost i precizno profilisanje bloka pre završnog kalupljenja, sa perforiranim duplim dnom za kontrolisan odvod.", "hu": "Mérnöki rendszer a folyamatos önpréseléshez és az alvadékblokk savó alatti kialakításához. Egyenletes porozitást és precíz blokkprofilozást biztosít a végső formázás előtt, perforált álfenékkel a szabályozott elvezetéshez." },
-    "specs": [
-      { "label": { "en": "FORMAT", "sr": "FORMAT", "hu": "FORMÁTUM" }, "value": { "en": "Block / rectangular", "sr": "Blok / pravougaoni", "hu": "Blokk / téglalap" } },
-      { "label": { "en": "MATERIAL", "sr": "MATERIJAL", "hu": "ANYAG" }, "value": { "en": "AISI 316L inox", "sr": "AISI 316L inox", "hu": "AISI 316L inox" } },
-      { "label": { "en": "PRESSING", "sr": "PRESOVANJE", "hu": "PRÉSELÉS" }, "value": { "en": "Continuous, under-whey", "sr": "Kontinualno, pod surutkom", "hu": "Folyamatos, savó alatt" } },
-      { "label": { "en": "DRAINAGE", "sr": "ODVOD", "hu": "ELVEZETÉS" }, "value": { "en": "Perforated false-bottom", "sr": "Perforirano duplo dno", "hu": "Perforált álfenék" } },
-      { "label": { "en": "CAPACITY", "sr": "KAPACITET", "hu": "KAPACITÁS" }, "value": { "en": "Up to 2,500 L curd/whey", "sr": "Do 2.500 L gruš/surutka", "hu": "Max. 2 500 L alvadék/savó" } },
-      { "label": { "en": "PROFILE", "sr": "PROFIL", "hu": "PROFIL" }, "value": { "en": "Uniform porosity control", "sr": "Kontrola ujednačene poroznosti", "hu": "Egyenletes porozitás-szabályozás" } }
-    ]
+    "cat": { "en": "PROCESSING", "sr": "PRERADA", "hu": "FELDOLGOZÁS", "mk": "ПРЕРАБОТКА" },
+    "name": { "en": "Homogeniser", "sr": "Homogenizator", "hu": "Homogenizátor", "mk": "Хомогенизатор" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A high-pressure pump designed to stabilise the milk emulsion and reduce the size of fat globules under high pressure. It ensures a uniform composition, prevents fat separation and significantly improves the viscosity and texture of the final dairy products.",
+      "sr": "Visokopritisna pumpa konstruisana za stabilizaciju mlečne emulzije i smanjenje veličine masnih kuglica pod visokim pritiskom. Obezbeđuje uniforman sastav, sprečava izdvajanje masnoće i značajno poboljšava viskozitet i teksturu finalnih mlečnih proizvoda.",
+      "hu": "Nagynyomású szivattyú, amelyet a tejemulzió stabilizálására és a zsírgömböcskék méretének nagynyomású csökkentésére terveztek. Egyenletes összetételt biztosít, megakadályozza a zsírkiválást, és jelentősen javítja a végtermékek viszkozitását és állagát.",
+      "mk": "Пумпа со висок притисок конструирана за стабилизација на млечната емулзија и намалување на големината на масните топчиња под висок притисок. Обезбедува униформен состав, спречува издвојување на маснотијата и значително ги подобрува вискозноста и текстурата на финалните млечни производи."
+    },
+    "specs": []
   },
   {
-    "key": "press",
+    "key": "cheese-tables",
     "num": "04",
-    "cat": { "en": "PRESSING", "sr": "PRESOVANJE", "hu": "PRÉSELÉS" },
-    "name": { "en": "Cheese Press", "sr": "Presa za sir", "hu": "Sajtprés" },
-    "tagline": { "en": "Programmable multi-stage moulding.", "sr": "Programabilno višestepeno kalupljenje.", "hu": "Programozható többlépcsős formázás." },
-    "blurb": { "en": "Pneumatic pressing with multi-stage, programmable pressure control for final shaping and moisture extraction. Adaptable to any mould format with high cycle repeatability.", "sr": "Pneumatsko presovanje sa višestepenom, programabilnom kontrolom pritiska za završno oblikovanje i izdvajanje vlage. Prilagodljivo svakom formatu kalupa uz visoku ponovljivost ciklusa.", "hu": "Pneumatikus préselés többlépcsős, programozható nyomásszabályozással a végső formázáshoz és a nedvesség eltávolításához. Bármely formaformátumhoz alkalmazkodik, nagy ciklusismételhetőséggel." },
-    "tags": [
-      "0.5–6 bar",
-      { "en": "2–24 rows", "sr": "2–24 reda", "hu": "2–24 sor" },
-      { "en": "All moulds", "sr": "Svi kalupi", "hu": "Minden forma" }
-    ],
-    "desc": { "en": "Pneumatic pressing systems with multi-stage, precise pressure control for final shaping and moisture extraction. Fully adaptable to various mould formats with high cycle repeatability and programmable pressure curves.", "sr": "Pneumatski sistemi presovanja sa višestepenom, preciznom kontrolom pritiska za završno oblikovanje i izdvajanje vlage. Potpuno prilagodljivi različitim formatima kalupa uz visoku ponovljivost ciklusa i programabilne krive pritiska.", "hu": "Pneumatikus présrendszerek többlépcsős, precíz nyomásszabályozással a végső formázáshoz és a nedvesség eltávolításához. Teljesen alkalmazkodik a különböző formaformátumokhoz, nagy ciklusismételhetőséggel és programozható nyomásgörbékkel." },
-    "specs": [
-      { "label": { "en": "TYPE", "sr": "TIP", "hu": "TÍPUS" }, "value": { "en": "Pneumatic, multi-stage", "sr": "Pneumatsko, višestepeno", "hu": "Pneumatikus, többlépcsős" } },
-      { "label": { "en": "FRAME", "sr": "RAM", "hu": "VÁZ" }, "value": { "en": "AISI 304 / 316L contact", "sr": "AISI 304 / 316L kontakt", "hu": "AISI 304 / 316L érintkezés" } },
-      { "label": { "en": "PRESSURE", "sr": "PRITISAK", "hu": "NYOMÁS" }, "value": { "en": "0.5 – 6 bar, programmable", "sr": "0,5 – 6 bar, programabilno", "hu": "0,5 – 6 bar, programozható" } },
-      { "label": { "en": "STATIONS", "sr": "STANICE", "hu": "ÁLLOMÁSOK" }, "value": { "en": "2 – 24 mould rows", "sr": "2 – 24 reda kalupa", "hu": "2 – 24 formasor" } },
-      { "label": { "en": "CYCLE", "sr": "CIKLUS", "hu": "CIKLUS" }, "value": { "en": "Programmable, repeatable", "sr": "Programabilno, ponovljivo", "hu": "Programozható, ismételhető" } },
-      { "label": { "en": "MOULDS", "sr": "KALUPI", "hu": "FORMÁK" }, "value": { "en": "Adaptable to all formats", "sr": "Prilagodljivo svim formatima", "hu": "Minden formátumhoz alkalmazkodik" } }
-    ]
+    "cat": { "en": "DRAINING", "sr": "OCEĐIVANJE", "hu": "CSEPEGTETÉS", "mk": "ЦЕДЕЊЕ" },
+    "name": { "en": "Cheese Tables", "sr": "Sirarski stolovi", "hu": "Sajtasztalok", "mk": "Сирарски маси" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "Technological tables in stainless steel with perforated surfaces or channels for whey drainage. They are used for filling moulds with curd, manual cheese handling and preparation for the subsequent pressing process, while ensuring the highest hygienic standards.",
+      "sr": "Tehnološki stolovi od prohroma sa perforiranim površinama ili kanalima za oceđivanje surutke. Koriste se za punjenje kalupa grušom, ručnu obradu sira i pripremu za dalji proces presovanja, uz obezbeđene najviše higijenske standarde.",
+      "hu": "Technológiai asztalok inoxból, perforált felületekkel vagy a savó elvezetésére szolgáló csatornákkal. A formák alvadékkal való töltésére, a sajt kézi kezelésére és a préselési folyamatra való előkészítésre szolgálnak, a legmagasabb higiéniai szabványok betartása mellett.",
+      "mk": "Технолошки маси од инокс со перфорирани површини или канали за цедење на сурутката. Се користат за полнење на калапите со грутка, рачна обработка на сирењето и подготовка за понатамошниот процес на пресување, со обезбедени највисоки хигиенски стандарди."
+    },
+    "specs": []
+  },
+  {
+    "key": "cutter",
+    "num": "05",
+    "cat": { "en": "PROCESSING", "sr": "PRERADA", "hu": "FELDOLGOZÁS", "mk": "ПРЕРАБОТКА" },
+    "name": { "en": "Cutter", "sr": "Kuter", "hu": "Kutter", "mk": "Кутер" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A high-efficiency process machine with high-speed rotating blades, intended for cutting, homogenising and emulsifying cheese masses (production of processed and cream cheeses). It allows heat treatment by direct steam injection and operation under vacuum.",
+      "sr": "Visokoefikasna procesna mašina sa rotirajućim noževima velike brzine, namenjena za usitnjavanje, homogenizaciju i emulgovanje sirnih masa (proizvodnja topljenih i krem sireva). Omogućava termičku obradu direktnim ubrizgavanjem pare i rad pod vakuumom.",
+      "hu": "Nagy hatékonyságú feldolgozógép nagy sebességű forgó késekkel, sajtmasszák aprítására, homogenizálására és emulgeálására (ömlesztett és krémsajtok gyártása). Lehetővé teszi a közvetlen gőzbefúvásos hőkezelést és a vákuum alatti működést.",
+      "mk": "Високоефикасна процесна машина со ротирачки ножеви со голема брзина, наменета за уситнување, хомогенизација и емулгирање на сирните маси (производство на топени и крем сирења). Овозможува термичка обработка со директно вбризгување пареа и работа под вакуум."
+    },
+    "specs": []
+  },
+  {
+    "key": "kackavalj-moulder",
+    "num": "06",
+    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS", "mk": "ФОРМИРАЊЕ" },
+    "name": { "en": "Kačkavalj Moulding Machine", "sr": "Kalupirka za kačkavalj", "hu": "Kaskaval formázó gép", "mk": "Калапирка за кашкавал" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A semi-automatic or automatic machine for precise dosing, shaping and pneumatic pressing of the cheese mass into kačkavalj moulds, achieving a consistent weight and a compact structure of the finished product.",
+      "sr": "Poluautomatska ili automatska mašina za precizno doziranje, oblikovanje i pneumatsko utiskivanje sirne mase u kalupe za kačkavalj, čime se postiže ujednačena gramaža i kompaktna struktura gotovog proizvoda.",
+      "hu": "Fél-automata vagy automata gép a sajtmassza pontos adagolására, formázására és pneumatikus kaskaval-formákba préselésére, egyenletes súlyt és a késztermék kompakt szerkezetét biztosítva.",
+      "mk": "Полуавтоматска или автоматска машина за прецизно дозирање, обликување и пневматско втиснување на сирната маса во калапи за кашкавал, со што се постигнува израмнета грамажа и компактна структура на готовиот производ."
+    },
+    "specs": []
+  },
+  {
+    "key": "mozzarella-moulder",
+    "num": "07",
+    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS", "mk": "ФОРМИРАЊЕ" },
+    "name": { "en": "Mozzarella Moulding Machine", "sr": "Kalupirka za mocarelu", "hu": "Mozzarella formázó gép", "mk": "Калапирка за моцарела" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A specialised machine for forming and cooling mozzarella balls or similar cheeses. It uses a system of rotating rollers with moulds of various dimensions that ensure a perfect spherical shape and a smooth cheese surface.",
+      "sr": "Specijalizovana mašina za formiranje i hlađenje kuglica mocarele ili sličnih sireva. Koristi sistem rotirajućih valjaka sa kalupima različitih dimenzija koji obezbeđuju savršen sferni oblik i glatku površinu sira.",
+      "hu": "Speciális gép mozzarella-golyók vagy hasonló sajtok formázására és hűtésére. Különböző méretű formákkal ellátott forgó hengerek rendszerét használja, amelyek tökéletes gömb alakot és sima sajtfelületet biztosítanak.",
+      "mk": "Специјализирана машина за формирање и ладење на топчиња моцарела или слични сирења. Користи систем на ротирачки валјаци со калапи со различни димензии кои обезбедуваат совршена сферична форма и мазна површина на сирењето."
+    },
+    "specs": []
+  },
+  {
+    "key": "kackavalj-machine-tm350",
+    "num": "08",
+    "cat": { "en": "FORMING", "sr": "FORMIRANJE", "hu": "FORMÁZÁS", "mk": "ФОРМИРАЊЕ" },
+    "name": { "en": "Kačkavalj Machine TM350", "sr": "Mašina za pravljenje kačkavalja TM350", "hu": "Kaskaval készítő gép TM350", "mk": "Машина за правење кашкавал TM350" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "An industrial device for the thermal and mechanical processing (steaming, kneading and stretching) of the pasta-filata curd for kačkavalj and similar cheeses. The TM350 model features continuous operation, precise dosing of steam and water, and an optimised system of screw conveyors to achieve the ideal fibrous structure.",
+      "sr": "Industrijski uređaj namenjen za termičku i mehaničku obradu (parenje, mešenje i rastezanje) parenog testa za kačkavalj i slične sireve. Model TM350 odlikuje kontinualni rad, precizno doziranje pare i vode, kao i optimizovan sistem pužnih transportera za postizanje idealne vlaknaste strukture.",
+      "hu": "Ipari berendezés a kaskavalhoz és hasonló sajtokhoz készülő gőzölt tészta (pasta filata) hő- és mechanikus feldolgozására (gőzölés, dagasztás és nyújtás). A TM350 modellt a folyamatos üzem, a gőz és a víz pontos adagolása, valamint az optimalizált csigás szállítórendszer jellemzi az ideális rostos szerkezet eléréséhez.",
+      "mk": "Индустриски уред наменет за термичка и механичка обработка (парење, месење и растегнување) на пареното тесто за кашкавал и слични сирења. Моделот TM350 се одликува со континуирана работа, прецизно дозирање на пареа и вода, како и оптимизиран систем на полжави транспортери за постигнување на идеалната влакнеста структура."
+    },
+    "specs": []
+  },
+  {
+    "key": "dutch-cheese-vat",
+    "num": "09",
+    "cat": { "en": "COAGULATION", "sr": "KOAGULACIJA", "hu": "ALVASZTÁS", "mk": "КОАГУЛАЦИЈА" },
+    "name": { "en": "Dutch Cheese Vat", "sr": "Holandska kada za sir", "hu": "Holland sajtkád", "mk": "Холандска када за сирење" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A specialised closed or semi-closed vat for the mechanised production of semi-hard and hard cheeses. It features an automated system for cutting the curd, stirring, reheating and pre-pressing, achieving maximum yield and a consistent grain quality.",
+      "sr": "Specijalizovana zatvorena ili poluzatvorena kada za mehanizovanu proizvodnju polutvrdih i tvrdih sireva. Poseduje automatizovan sistem za sečenje gruša, mešanje, dogrevanje i predpresovanje, čime se postiže maksimalan prinos i ujednačen kvalitet zrna.",
+      "hu": "Speciális zárt vagy félig zárt kád félkemény és kemény sajtok gépesített gyártásához. Automatizált rendszerrel rendelkezik az alvadék vágására, keverésére, utómelegítésére és előpréselésére, maximális hozamot és egyenletes szemcseminőséget biztosítva.",
+      "mk": "Специјализирана затворена или полузатворена када за механизирано производство на полутврди и тврди сирења. Поседува автоматизиран систем за сечење на грутката, мешање, догревање и предпресување, со што се постигнува максимален принос и израмнет квалитет на зрното."
+    },
+    "specs": []
+  },
+  {
+    "key": "feta-packaging-machine",
+    "num": "10",
+    "cat": { "en": "PACKAGING", "sr": "PAKOVANJE", "hu": "CSOMAGOLÁS", "mk": "ПАКУВАЊЕ" },
+    "name": { "en": "Feta Packaging Machine", "sr": "Mašina za pakovanje feta sira", "hu": "Feta csomagológép", "mk": "Машина за пакување фета сирење" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "An automated line for loading, hermetic sealing and vacuum-packing of feta cheese into plastic containers or film. It ensures long-lasting product freshness, prevents contamination and optimises the packaging process.",
+      "sr": "Automatizovana linija za ulaganje, hermetičko zatvaranje i vakuumiranje feta sira u plastične posude ili folije. Obezbeđuje dugotrajnu svežinu proizvoda, sprečava kontaminaciju i optimizuje proces pakovanja.",
+      "hu": "Automatizált sor a feta sajt behelyezésére, hermetikus zárására és vákuumcsomagolására műanyag tálcákba vagy fóliába. Tartós termékfrissességet biztosít, megakadályozza a szennyeződést és optimalizálja a csomagolási folyamatot.",
+      "mk": "Автоматизирана линија за вложување, херметичко затворање и вакуумирање на фета сирење во пластични садови или фолии. Обезбедува долготрајна свежина на производот, спречува контаминација и го оптимизира процесот на пакување."
+    },
+    "specs": []
+  },
+  {
+    "key": "feta-dispenser",
+    "num": "11",
+    "cat": { "en": "PACKAGING", "sr": "PAKOVANJE", "hu": "CSOMAGOLÁS", "mk": "ПАКУВАЊЕ" },
+    "name": { "en": "Feta Dispenser", "sr": "Dozator za feta sir", "hu": "Feta adagoló", "mk": "Дозатор за фета сирење" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "A volumetric device for precise and hygienic dosing of the cheese mass and brine into packaging. Built with a pneumatic drive and advanced valves that prevent dripping and damage to the cheese structure.",
+      "sr": "Volumetrijski uređaj za precizno i higijensko doziranje sirne mase i slanog rastvora (salamure) u ambalažu. Izrađen sa pneumatskim pogonom i naprednim ventilima koji sprečavaju kapanje i oštećenje strukture sira.",
+      "hu": "Volumetrikus berendezés a sajtmassza és a sós lé (sólé) pontos és higiénikus adagolására a csomagolásba. Pneumatikus hajtással és fejlett szelepekkel készül, amelyek megakadályozzák a csöpögést és a sajt szerkezetének sérülését.",
+      "mk": "Волуметриски уред за прецизно и хигиенско дозирање на сирната маса и солениот раствор (саламура) во амбалажа. Изработен со пневматски погон и напредни вентили кои спречуваат капење и оштетување на структурата на сирењето."
+    },
+    "specs": []
+  },
+  {
+    "key": "cheese-vats",
+    "num": "12",
+    "cat": { "en": "COAGULATION", "sr": "KOAGULACIJA", "hu": "ALVASZTÁS", "mk": "КОАГУЛАЦИЈА" },
+    "name": { "en": "Cheese Vats", "sr": "Kade za sir", "hu": "Sajtkádak", "mk": "Кади за сирење" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "Open process vessels in stainless steel intended for milk coagulation, curd formation and processing. They are equipped with a double-jacket heating system and valves for controlled whey release.",
+      "sr": "Otvoreni procesni sudovi od nerđajućeg čelika namenjeni za koagulaciju mleka, formiranje i obradu gruša. Opremljene su sistemom za grejanje kroz dupli plašt i ventilima za kontrolisano ispuštanje surutke.",
+      "hu": "Nyitott feldolgozóedények inoxból a tej alvasztására, az alvadék képzésére és feldolgozására. Duplaköpenyes fűtőrendszerrel és a savó szabályozott leeresztésére szolgáló szelepekkel felszereltek.",
+      "mk": "Отворени процесни садови од нерѓосувачки челик наменети за коагулација на млекото, формирање и обработка на грутката. Опремени се со систем за греење преку двоен плашт и вентили за контролирано испуштање на сурутката."
+    },
+    "specs": []
+  },
+  {
+    "key": "pre-presses",
+    "num": "13",
+    "cat": { "en": "PRESSING", "sr": "PRESOVANJE", "hu": "PRÉSELÉS", "mk": "ПРЕСУВАЊЕ" },
+    "name": { "en": "Pre-presses", "sr": "Pred prese", "hu": "Előprések", "mk": "Пред-преси" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "Devices for the preliminary pressing of the cheese curd under gentle, controlled pressure before cutting and transfer into the final moulds. They allow the formation of a compact cheese mass and the efficient removal of the primary excess whey.",
+      "sr": "Uređaji za preliminarno presovanje sirnog gruša pod blagim, kontrolisanim pritiskom pre sečenja i prebacivanja u finalne kalupe. Omogućavaju formiranje kompaktne sirne mase i efikasno odstranjivanje primarnog viška surutke.",
+      "hu": "Berendezések a sajtalvadék előzetes préseléséhez enyhe, szabályozott nyomás alatt, a vágás és a végleges formákba történő áthelyezés előtt. Lehetővé teszik a kompakt sajtmassza kialakítását és az elsődleges savófelesleg hatékony eltávolítását.",
+      "mk": "Уреди за прелиминарно пресување на сирната грутка под благ, контролиран притисок пред сечење и префрлање во финалните калапи. Овозможуваат формирање на компактна сирна маса и ефикасно отстранување на примарниот вишок сурутка."
+    },
+    "specs": []
+  },
+  {
+    "key": "cup-packaging-machine",
+    "num": "14",
+    "cat": { "en": "PACKAGING", "sr": "PAKOVANJE", "hu": "CSOMAGOLÁS", "mk": "ПАКУВАЊЕ" },
+    "name": { "en": "Cup Packaging Machine", "sr": "Pakerica u čaše", "hu": "Pohárcsomagoló gép", "mk": "Машина за пакување во чаши" },
+    "tagline": "",
+    "blurb": "",
+    "tags": [],
+    "desc": {
+      "en": "An automatic rotary or in-line machine for filling liquid and pasty dairy products (yoghurt, sour milk, cream) into plastic cups. The system includes automatic cup placement, dosing, application and sealing of aluminium foil, as well as closing with a PVC lid.",
+      "sr": "Automatska rotaciona ili linijska mašina za punjenje tečnih i pastoznih mlečnih proizvoda (jogurt, kiselo mleko, pavlaka) u plastične čaše. Sistem obuhvata automatsko postavljanje čaša, doziranje, postavljanje i zavarivanje ALU-folije, kao i zatvaranje PVC poklopcem.",
+      "hu": "Automata rotációs vagy soros gép folyékony és pépes tejtermékek (joghurt, aludttej, tejföl) műanyag poharakba töltésére. A rendszer magában foglalja a poharak automatikus behelyezését, az adagolást, az alumíniumfólia felhelyezését és hegesztését, valamint a PVC-fedéllel való lezárást.",
+      "mk": "Автоматска ротациона или линиска машина за полнење на течни и пастозни млечни производи (јогурт, кисело млеко, павлака) во пластични чаши. Системот опфаќа автоматско поставување на чашите, дозирање, поставување и заварување на алу-фолија, како и затворање со PVC капак."
+    },
+    "specs": []
   }
 ]
