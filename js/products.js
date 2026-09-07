@@ -11,41 +11,30 @@
    that is the single source of truth. Translatable prose fields there are
    bilingual objects ({en, sr}); pick() selects the active language and
    plain strings (codes/units) pass through unchanged. The `key` field
-   doubles as the URL slug (e.g. /products/cheese-vat). The line-art icons
-   below are presentation-only, keyed by `key`; a product with no matching
-   icon shows an empty figure box. The view re-renders on tm:langchange. */
+   doubles as the URL slug (e.g. /products/cheese-vat). A product's figure
+   is its `image` photo when that field is set; otherwise it falls back to
+   the line-art icons below — presentation-only, keyed by `key` — and to an
+   empty figure box when neither exists. Re-renders on tm:langchange. */
 (function () {
   'use strict';
 
   // Inner SVG paths (viewBox 0 0 120 70), reused on catalogue + detail.
   var ICONS = {
-    // 01 — Kačkavalj moulds: two stacked round moulds.
-    'kackavalj-moulds': '<ellipse cx="60" cy="20" rx="26" ry="7" stroke="currentColor" stroke-width="1.6"/><path d="M34 20 V32 a26 7 0 0 0 52 0 V20" stroke="currentColor" stroke-width="1.6" fill="none"/><ellipse cx="60" cy="42" rx="26" ry="7" stroke="currentColor" stroke-width="1.2"/><path d="M34 42 V54 a26 7 0 0 0 52 0 V42" stroke="currentColor" stroke-width="1.2" fill="none"/>',
     // 02 — Duplicator: double-jacketed kettle with stirrer.
     'duplicator': '<line x1="60" y1="6" x2="60" y2="20" stroke="currentColor" stroke-width="1.6"/><ellipse cx="60" cy="22" rx="30" ry="8" stroke="currentColor" stroke-width="1.6"/><path d="M30 22 V34 a30 20 0 0 0 60 0 V22" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M24 22 V32 a36 24 0 0 0 72 0 V22" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4" fill="none"/><line x1="60" y1="14" x2="52" y2="22" stroke="currentColor" stroke-width="1.2"/><line x1="60" y1="14" x2="68" y2="22" stroke="currentColor" stroke-width="1.2"/>',
-    // 03 — Homogeniser: horizontal block with piston head and inlet pipe.
-    'homogeniser': '<rect x="30" y="26" width="46" height="24" rx="3" stroke="currentColor" stroke-width="1.6"/><rect x="76" y="20" width="14" height="36" rx="2" stroke="currentColor" stroke-width="1.6"/><line x1="83" y1="11" x2="83" y2="20" stroke="currentColor" stroke-width="1.6"/><circle cx="83" cy="9" r="3" stroke="currentColor" stroke-width="1.4"/><line x1="38" y1="34" x2="68" y2="34" stroke="currentColor" stroke-width="1.2"/><line x1="38" y1="42" x2="68" y2="42" stroke="currentColor" stroke-width="1.2"/><line x1="20" y1="38" x2="30" y2="38" stroke="currentColor" stroke-width="1.6"/>',
     // 04 — Cheese tables: draining table with legs and slotted top.
     'cheese-tables': '<rect x="20" y="26" width="80" height="10" stroke="currentColor" stroke-width="1.6"/><line x1="28" y1="36" x2="28" y2="58" stroke="currentColor" stroke-width="1.6"/><line x1="92" y1="36" x2="92" y2="58" stroke="currentColor" stroke-width="1.6"/><line x1="20" y1="31" x2="100" y2="31" stroke="currentColor" stroke-width="1"/><line x1="40" y1="26" x2="40" y2="36" stroke="currentColor" stroke-width="0.9"/><line x1="60" y1="26" x2="60" y2="36" stroke="currentColor" stroke-width="0.9"/><line x1="80" y1="26" x2="80" y2="36" stroke="currentColor" stroke-width="0.9"/>',
-    // 05 — Cutter: bowl cutter with blade set.
+    // 09 — Cutter: bowl cutter with blade set.
     'cutter': '<ellipse cx="60" cy="30" rx="34" ry="9" stroke="currentColor" stroke-width="1.6"/><path d="M26 30 a34 20 0 0 0 68 0" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="60" cy="32" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M60 32 L44 26 M60 32 L76 26 M60 32 L60 46" stroke="currentColor" stroke-width="1.2"/>',
     // 06 — Kačkavalj moulding machine: box unit with outlet chute.
     'kackavalj-moulder': '<rect x="30" y="16" width="44" height="34" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M74 30 h12 v6 h-12" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="80" y="40" width="14" height="8" stroke="currentColor" stroke-width="1.2"/><circle cx="52" cy="30" r="7" stroke="currentColor" stroke-width="1.2"/><line x1="34" y1="50" x2="34" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="70" y1="50" x2="70" y2="56" stroke="currentColor" stroke-width="1.6"/>',
-    // 07 — Mozzarella moulding machine: hopper, chamber and round outlet.
-    'mozzarella-moulder': '<path d="M32 16 H78 L66 34 H44 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect x="44" y="34" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="80" cy="42" r="7" stroke="currentColor" stroke-width="1.6"/><line x1="66" y1="42" x2="73" y2="42" stroke="currentColor" stroke-width="1.4"/><path d="M47 42 h16" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>',
-    // 08 — Kačkavalj machine TM350: tank, transfer arm and control head.
+    // 07 — Kačkavalj machine TM350: tank, transfer arm and control head.
     'kackavalj-machine-tm350': '<rect x="24" y="20" width="40" height="30" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M64 34 h22 a6 6 0 0 1 6 6 v4" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="92" cy="48" r="5" stroke="currentColor" stroke-width="1.4"/><line x1="32" y1="20" x2="32" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="56" y1="20" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="32" y1="12" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="30" y1="34" x2="58" y2="34" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><line x1="30" y1="50" x2="30" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="58" y1="50" x2="58" y2="56" stroke="currentColor" stroke-width="1.6"/>',
-    // 09 — Dutch cheese vat: enclosed horizontal vat.
+    // 03 — Dutch cheese vat: enclosed horizontal vat.
     'dutch-cheese-vat': '<path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><ellipse cx="60" cy="24" rx="40" ry="6" stroke="currentColor" stroke-width="1.2"/><line x1="22" y1="34" x2="98" y2="34" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"/>',
-    // 10 — Feta packaging machine: conveyor, product and sealing head.
-    'feta-packaging-machine': '<line x1="20" y1="48" x2="100" y2="48" stroke="currentColor" stroke-width="1.6"/><circle cx="26" cy="52" r="4" stroke="currentColor" stroke-width="1.2"/><circle cx="94" cy="52" r="4" stroke="currentColor" stroke-width="1.2"/><rect x="52" y="38" width="18" height="10" stroke="currentColor" stroke-width="1.4"/><rect x="46" y="14" width="30" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><line x1="61" y1="28" x2="61" y2="36" stroke="currentColor" stroke-width="1.4"/>',
-    // 11 — Feta dispenser: nozzle filling a tub.
-    'feta-dispenser': '<path d="M44 12 H76 L66 30 H54 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="60" y1="30" x2="60" y2="38" stroke="currentColor" stroke-width="1.4"/><path d="M58 40 l2 6 l2 -6 Z" fill="currentColor" opacity="0.5"/><path d="M42 46 h36 l-4 14 h-28 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
-    // 12 — Cheese vats: open vat with harp cutter.
-    'cheese-vats': '<path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="60" y1="9" x2="60" y2="42" stroke="currentColor" stroke-width="1.6"/><line x1="47" y1="42" x2="73" y2="42" stroke="currentColor" stroke-width="1.6"/><line x1="22" y1="33" x2="98" y2="33" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"/>',
-    // 13 — Pre-presses: trapezoidal under-whey pre-press.
+    // 05 — Pre-presses: trapezoidal under-whey pre-press.
     'pre-presses': '<path d="M16 16 H104 L90 52 H30 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="34" y1="30" x2="86" y2="30" stroke="currentColor" stroke-width="1.2"/><rect x="46" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"/><rect x="62" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"/>',
-    // 14 — Cup packaging machine: filler bar over a row of cups.
+    // 10 — Cup packaging machine: filler bar over a row of cups.
     'cup-packaging-machine': '<line x1="24" y1="20" x2="96" y2="20" stroke="currentColor" stroke-width="1.6"/><line x1="40" y1="20" x2="40" y2="28" stroke="currentColor" stroke-width="1.2"/><line x1="60" y1="20" x2="60" y2="28" stroke="currentColor" stroke-width="1.2"/><line x1="80" y1="20" x2="80" y2="28" stroke="currentColor" stroke-width="1.2"/><path d="M34 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M54 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M74 34 h12 l-2 20 h-8 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>'
   };
 
@@ -70,15 +59,38 @@
   // The product's route, e.g. cheese-vat → /products/cheese-vat
   function routeOf(p) { return '/products/' + encodeURIComponent(p.key); }
 
-  // A figure box with the product's line-art (or empty if no icon).
-  function figure(p, height, svgWidth) {
-    var inner = ICONS[p.key];
-    var svg = inner
-      ? '<svg width="' + svgWidth + '" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;">' + inner + '</svg>'
-      : '';
-    return '<div style="position:relative; width:100%; height:' + height + '; border:1px solid ' + HAIR + '; background:#EFEAE0; display:flex; align-items:center; justify-content:center;">' +
-      '<span style="position:absolute; top:12px; left:14px; font-family:' + MONO + '; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">FIG. ' + esc(p.num) + '</span>' +
-      svg + '</div>';
+  // A figure box holding the product photo when `image` is set in
+  // products.json, otherwise falling back to the line-art (or an empty
+  // box when the key has no icon either).
+  //
+  // The box is pinned to 16:9 rather than given a vh-based height, so its
+  // aspect ratio no longer swings with the window (it used to run 1.38–2.20
+  // across desktop sizes, which no single photo ratio could fill). Product
+  // photos are shot/extended to 16:9 to match it exactly — box and image
+  // agree at every viewport, so nothing is letterboxed or cropped.
+  var FIG_RATIO = '16 / 9';
+
+  function figure(p, svgWidth) {
+    var body, badge;
+    if (p.image) {
+      // Photos are supplied at 16:9 to match the box, so `cover` fills it
+      // edge to edge; the sub-percent crop it takes up on a source that is
+      // slightly off-ratio lands on the backdrop, never on the machine.
+      body = '<img src="' + esc(p.image) + '" alt="' + esc(pick(p.name)) + '" loading="lazy" decoding="async" ' +
+        'style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">';
+      // Over a photo the plate number needs its own ground to stay legible.
+      badge = 'background:rgba(239,234,224,0.9); padding:4px 8px; color:rgba(20,23,26,0.6);';
+    } else {
+      var inner = ICONS[p.key];
+      body = inner
+        ? '<svg width="' + svgWidth + '" viewBox="0 0 120 70" fill="none" style="color:#14171A; opacity:0.34;">' + inner + '</svg>'
+        : '';
+      badge = 'color:rgba(20,23,26,0.35);';
+    }
+    return '<div style="position:relative; overflow:hidden; width:100%; aspect-ratio:' + FIG_RATIO + '; border:1px solid ' + HAIR + '; background:#EFEAE0; display:flex; align-items:center; justify-content:center;">' +
+      body +
+      '<span style="position:absolute; top:12px; left:14px; font-family:' + MONO + '; font-size:10px; letter-spacing:0.18em; ' + badge + '">FIG. ' + esc(p.num) + '</span>' +
+      '</div>';
   }
 
   function plainBox(label, height) {
@@ -93,7 +105,7 @@
     var tags = (p.tags || []).map(function (tag) { return '<span>' + esc(pick(tag)) + '</span>'; }).join('');
     return '' +
       '<a href="' + routeOf(p) + '" class="tm-row tm-rise" style="display:flex; flex-wrap:wrap;' + reverse + ' gap:clamp(28px,4vw,64px); align-items:center; padding:clamp(36px,5.5vh,68px) 0; border-bottom:1px solid ' + HAIR + '; text-decoration:none; color:inherit;">' +
-        '<div style="flex:1 1 380px; min-width:280px;">' + figure(p, 'clamp(240px,34vh,360px)', '42%') + '</div>' +
+        '<div style="flex:1 1 380px; min-width:280px;">' + figure(p, '42%') + '</div>' +
         '<div style="flex:1 1 380px; min-width:280px;">' +
           '<div style="display:flex; align-items:center; gap:14px; font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em;"><span style="color:var(--tm-red);">' + esc(p.num) + '</span><span style="color:#76797e;">' + esc(pick(p.cat)) + '</span></div>' +
           '<h3 style="margin:16px 0 0; font-weight:800; font-size:clamp(28px,3.4vw,46px); line-height:1.0; letter-spacing:-0.025em;">' + esc(pick(p.name)) + '</h3>' +
@@ -129,7 +141,7 @@
         '<div style="margin-top:clamp(40px,6vh,72px); display:flex; flex-wrap:wrap; gap:clamp(36px,5vw,76px); align-items:flex-start;">' +
 
           '<div style="flex:1.4 1 460px; min-width:300px;">' +
-            figure(p, 'clamp(300px,46vh,460px)', '44%') +
+            figure(p, '44%') +
             '<div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">' +
               plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
               plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +

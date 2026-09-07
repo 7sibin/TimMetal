@@ -6,3 +6,6 @@ docs/superpowers/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Arhiva starih (uskih) fotografija proizvoda — ne ide u deploy
+images/products/_stare-uske/

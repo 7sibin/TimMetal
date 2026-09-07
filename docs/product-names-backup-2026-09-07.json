@@ -1,0 +1,159 @@
+{
+  "_note": "Originalni nazivi proizvoda iz products.json, snimljeni pre zamene naziva nazivima sa fotografija (2026-09-07). Za vracanje: prepisi \"name\" objekat natrag u products.json po \"key\". Sadrzi i nazive kartica sa naslovne (i18n/*.json + inline EN u index.html).",
+  "saved": "2026-09-07",
+  "source": "products.json",
+  "products": {
+    "kackavalj-moulds": {
+      "num": "01",
+      "name": {
+        "en": "Kačkavalj Moulds",
+        "sr": "Kalupi za kačkavalj",
+        "hu": "Kaskaval formák",
+        "mk": "Калапи за кашкавал"
+      }
+    },
+    "duplicator": {
+      "num": "02",
+      "name": {
+        "en": "Duplicator",
+        "sr": "Duplikator",
+        "hu": "Duplikátor",
+        "mk": "Дупликатор"
+      }
+    },
+    "homogeniser": {
+      "num": "03",
+      "name": {
+        "en": "Homogeniser",
+        "sr": "Homogenizator",
+        "hu": "Homogenizátor",
+        "mk": "Хомогенизатор"
+      }
+    },
+    "cheese-tables": {
+      "num": "04",
+      "name": {
+        "en": "Cheese Tables",
+        "sr": "Sirarski stolovi",
+        "hu": "Sajtasztalok",
+        "mk": "Сирарски маси"
+      }
+    },
+    "cutter": {
+      "num": "05",
+      "name": {
+        "en": "Cutter",
+        "sr": "Kuter",
+        "hu": "Kutter",
+        "mk": "Кутер"
+      }
+    },
+    "kackavalj-moulder": {
+      "num": "06",
+      "name": {
+        "en": "Kačkavalj Moulding Machine",
+        "sr": "Kalupirka za kačkavalj",
+        "hu": "Kaskaval formázó gép",
+        "mk": "Калапирка за кашкавал"
+      }
+    },
+    "mozzarella-moulder": {
+      "num": "07",
+      "name": {
+        "en": "Mozzarella Moulding Machine",
+        "sr": "Kalupirka za mocarelu",
+        "hu": "Mozzarella formázó gép",
+        "mk": "Калапирка за моцарела"
+      }
+    },
+    "kackavalj-machine-tm350": {
+      "num": "08",
+      "name": {
+        "en": "Kačkavalj Machine TM350",
+        "sr": "Mašina za pravljenje kačkavalja TM350",
+        "hu": "Kaskaval készítő gép TM350",
+        "mk": "Машина за правење кашкавал TM350"
+      }
+    },
+    "dutch-cheese-vat": {
+      "num": "09",
+      "name": {
+        "en": "Dutch Cheese Vat",
+        "sr": "Holandska kada za sir",
+        "hu": "Holland sajtkád",
+        "mk": "Холандска када за сирење"
+      }
+    },
+    "feta-packaging-machine": {
+      "num": "10",
+      "name": {
+        "en": "Feta Packaging Machine",
+        "sr": "Mašina za pakovanje feta sira",
+        "hu": "Feta csomagológép",
+        "mk": "Машина за пакување фета сирење"
+      }
+    },
+    "feta-dispenser": {
+      "num": "11",
+      "name": {
+        "en": "Feta Dispenser",
+        "sr": "Dozator za feta sir",
+        "hu": "Feta adagoló",
+        "mk": "Дозатор за фета сирење"
+      }
+    },
+    "cheese-vats": {
+      "num": "12",
+      "name": {
+        "en": "Cheese Vats",
+        "sr": "Kade za sir",
+        "hu": "Sajtkádak",
+        "mk": "Кади за сирење"
+      }
+    },
+    "pre-presses": {
+      "num": "13",
+      "name": {
+        "en": "Pre-presses",
+        "sr": "Pred prese",
+        "hu": "Előprések",
+        "mk": "Пред-преси"
+      }
+    },
+    "cup-packaging-machine": {
+      "num": "14",
+      "name": {
+        "en": "Cup Packaging Machine",
+        "sr": "Pakerica u čaše",
+        "hu": "Pohárcsomagoló gép",
+        "mk": "Машина за пакување во чаши"
+      }
+    }
+  },
+  "home_cards": {
+    "hu": {
+      "home.card1.name": "Duplikátor",
+      "home.card2.name": "Kutter",
+      "home.card3.name": "Kaskaval készítő gép TM350",
+      "home.card4.name": "Pohárcsomagoló gép"
+    },
+    "mk": {
+      "home.card1.name": "Дупликатор",
+      "home.card2.name": "Кутер",
+      "home.card3.name": "Машина за правење кашкавал TM350",
+      "home.card4.name": "Машина за пакување во чаши"
+    },
+    "sr": {
+      "home.card1.name": "Duplikator",
+      "home.card2.name": "Kuter",
+      "home.card3.name": "Mašina za uparavanje kačkavalja TM350",
+      "home.card4.name": "Pakerica u čaše"
+    },
+    "en (inline u index.html)": {
+      "home.card1.name": "Duplicator",
+      "home.card2.name": "Cutter",
+      "home.card3.name": "Kačkavalj Machine TM350",
+      "home.card4.name": "Cup Packaging Machine"
+    }
+  }
+}
