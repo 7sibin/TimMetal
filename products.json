@@ -34,19 +34,19 @@
     "specs": []
   },
   {
-    "key": "dutch-cheese-vat",
+    "key": "kezefertigen",
     "num": "03",
     "cat": { "en": "COAGULATION", "sr": "KOAGULACIJA", "hu": "ALVASZTÁS", "mk": "КОАГУЛАЦИЈА" },
     "name": { "en": "Kezefertigen Cheese Vat", "sr": "Kezefertigen", "hu": "Kezefertigen sajtkád", "mk": "Кезефертиген када за сирење" },
-    "image": "/images/products/dutch-cheese-vat.webp",
+    "image": "/images/products/kezefertigen.webp",
     "tagline": "",
     "blurb": "",
     "tags": [],
     "desc": {
-      "en": "A specialised vat for the mechanised production of semi-hard and hard cheeses. It has a driven tool for cutting and stirring the curd with a side-mounted gearbox, a double jacket for reheating and cooling, a hinged lid and a whey outlet assembly, giving an even grain quality and maximum yield.",
-      "sr": "Specijalizovana kada za mehanizovanu proizvodnju polutvrdih i tvrdih sireva. Poseduje pogonjen alat za sečenje gruša i mešanje sa bočnim reduktorom, dupli plašt za dogrevanje i hlađenje, poklopac na šarkama i izlaznu armaturu za surutku, čime se postiže ujednačen kvalitet zrna i maksimalan prinos.",
-      "hu": "Speciális kád félkemény és kemény sajtok gépesített gyártásához. Oldalsó hajtóművel működtetett vágó- és keverőszerszámmal, duplaköpennyel az utómelegítéshez és hűtéshez, csuklós fedéllel és savóelvezető szerelvénnyel rendelkezik, így egyenletes szemcseminőséget és maximális hozamot biztosít.",
-      "mk": "Специјализирана када за механизирано производство на полутврди и тврди сирења. Поседува погонуван алат за сечење на грутката и мешање со страничен редуктор, двоен плашт за догревање и ладење, капак на шарки и излезна арматура за сурутка, со што се постигнува израмнет квалитет на зрното и максимален принос."
+      "en": "An enclosed vat for the mechanised production of semi-hard and hard cheeses. A top-mounted geared motor drives the internal tool for cutting and stirring the curd, while the dimpled double jacket running the full height of the stainless-steel body allows indirect reheating and cooling. A hinged inspection manhole and sanitary fittings sit on the conical top, a side manhole gives access for emptying and cleaning, and the sloped bottom ends in a valved whey outlet — giving an even grain quality and maximum yield.",
+      "sr": "Zatvorena kada za mehanizovanu proizvodnju polutvrdih i tvrdih sireva. Reduktor sa motorom montiran na vrhu pogoni unutrašnji alat za sečenje gruša i mešanje, dok dupli plašt sa reljefnim oplaštenjem po celoj visini tela od nerđajućeg čelika omogućava posredno dogrevanje i hlađenje. Na konusnom vrhu su revizioni otvor na šarkama i sanitarna armatura, bočni otvor služi za pristup pri istovaru i pranju, a nagnuto dno završava izlaznim ventilom za surutku — čime se postiže ujednačen kvalitet zrna i maksimalan prinos.",
+      "hu": "Zárt kád félkemény és kemény sajtok gépesített gyártásához. A tetejére szerelt hajtóműves motor működteti a belső vágó- és keverőszerszámot, míg a rozsdamentes acél test teljes magasságán végigfutó bordázott duplaköpeny közvetett utómelegítést és hűtést tesz lehetővé. A kúpos tetőn csuklós ellenőrzőnyílás és higiénikus szerelvények találhatók, az oldalsó nyílás az ürítéshez és tisztításhoz biztosít hozzáférést, a ferde alj pedig szelepes savókivezetésben végződik — így egyenletes szemcseminőséget és maximális hozamot biztosít.",
+      "mk": "Затворена када за механизирано производство на полутврди и тврди сирења. Редуктор со мотор монтиран на врвот погонува внатрешниот алат за сечење на грутката и мешање, додека двојниот плашт со релјефно оплаштување по целата височина на телото од нерѓосувачки челик овозможува посредно догревање и ладење. На конусниот врв се ревизиониот отвор на шарки и санитарната арматура, страничниот отвор служи за пристап при истоварање и миење, а наведнатото дно завршува со излезен вентил за сурутка — со што се постигнува израмнет квалитет на зрното и максимален принос."
     },
     "specs": []
   },

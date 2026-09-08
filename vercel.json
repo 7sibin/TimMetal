@@ -1,5 +1,8 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/products/dutch-cheese-vat", "destination": "/products/kezefertigen", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },

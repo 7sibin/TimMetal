@@ -28,6 +28,20 @@
   .tm-fig-accent { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset .85s ease, opacity .45s ease; }
   .tm-pillar:hover .tm-fig-accent { stroke-dashoffset: 0; opacity: 1; }
   @media (prefers-reduced-motion: reduce) { .tm-fig-accent { transition: opacity .3s ease; stroke-dasharray: none; stroke-dashoffset: 0; } }
+
+  /* Plant-layout sheet - the red product path draws itself through the line once,
+     when the sheet scrolls in. The hidden state is scoped under .tm-motion, so with
+     JS off the path is simply there. */
+  .tm-plan-num { font-size: 9px; letter-spacing: 0.1em; }
+  @media (max-width: 720px) { .tm-plan-num { font-size: 14px; } }
+  .tm-motion .tm-plan .tm-plan-flow { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .tm-motion .tm-plan .tm-plan-tip  { opacity: 0; }
+  .tm-motion .tm-plan.is-in .tm-plan-flow { stroke-dashoffset: 0; transition: stroke-dashoffset 1.7s cubic-bezier(.35,0,.15,1) .25s; }
+  .tm-motion .tm-plan.is-in .tm-plan-tip  { opacity: 1; transition: opacity .5s ease 1.5s; }
+  @media (prefers-reduced-motion: reduce) {
+    .tm-motion .tm-plan .tm-plan-flow { stroke-dashoffset: 0 !important; transition: none !important; }
+    .tm-motion .tm-plan .tm-plan-tip  { opacity: 1 !important; transition: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -47,10 +61,109 @@
         <p style="flex:1 1 340px; min-width:280px; margin:0 0 8px; max-width:46ch; font-size:clamp(15px,1.35vw,19px); line-height:1.62; color:#4a4e53;" data-i18n="about.hero.body">Set in the heart of &Scaron;umadija, in the village of Vu&#269;kovica (municipality of Kni&#263;), Tim Metal designs and manufactures machinery and equipment for the food &amp; beverage industry &mdash; with a particular specialisation in the dairy sector.</p>
       </div>
 
-      <!-- Workshop hero — placeholder until real photography is supplied -->
-      <div style="position:relative; margin-top:clamp(40px,6vh,72px); width:100%; height:clamp(320px,52vh,560px); border:1px solid rgba(20,23,26,0.14); background:#EFEAE0; display:flex; align-items:center; justify-content:center;">
-        <span style="position:absolute; top:12px; left:14px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);" data-i18n="about.fig.workshop">FIG. — WORKSHOP</span>
-        <span style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.2em; color:rgba(20,23,26,0.4);" data-i18n="about.fig.caption">ARCHITECTURAL VIEW · FABRICATION FLOOR</span>
+      <!-- Plant layout - the process line drawn as a plan. Raw milk enters through the
+           upper break in the left wall and the finished product leaves through the lower
+           one; the red path is the product, running through all six stations.
+           The SVG carries geometry and callout numerals only - every word lives in the
+           HTML title block below it, so it translates and stays readable at any width. -->
+      <div class="tm-rise tm-plan" style="position:relative; width:100%; margin-top:clamp(40px,6vh,72px); border:1px solid rgba(20,23,26,0.14); background:#EFEAE0;">
+        <span style="position:absolute; top:12px; left:14px; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);" data-i18n="about.fig.workshop">FIG. 00 &mdash; PROCESS LINE</span>
+
+        <div style="padding:clamp(44px,5vw,64px) clamp(20px,3.5vw,52px) clamp(24px,3vw,40px);">
+          <svg viewBox="0 0 480 250" fill="none" role="img" style="display:block; width:100%; max-width:860px; margin:0 auto; color:#14171A;">
+            <title data-i18n="about.plan.alt">Plan view of a dairy process line: reception, pasteurisation, coagulation, draining, pressing and packaging, with the product path drawn in red.</title>
+
+            <!-- hall envelope; the left wall breaks twice - milk inlet, product outlet -->
+            <g stroke="currentColor" stroke-width="1.6" stroke-opacity="0.5">
+              <path d="M14 14 H466 V236 H14"/>
+              <path d="M14 14 V78 M14 98 V168 M14 188 V236"/>
+            </g>
+
+            <!-- column grid -->
+            <g stroke="currentColor" stroke-width="1.1" stroke-opacity="0.24">
+              <path d="M156 40 H164 M160 36 V44 M316 40 H324 M320 36 V44"/>
+              <path d="M156 222 H164 M160 218 V226 M316 222 H324 M320 218 V226"/>
+            </g>
+
+            <!-- the product: in from the yard, through the line, out to dispatch.
+                 Drawn before the machines so each one knocks the run out and the
+                 red reads as pipework between stations. -->
+            <path class="tm-plan-flow" pathLength="1" d="M6 88 H430 V178 H6" stroke="#C8102E" stroke-width="1.7"/>
+            <g class="tm-plan-tip" stroke="#C8102E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M33 83 L41 88 L33 93"/>
+              <path d="M425 143 L430 151 L435 143"/>
+              <path d="M31 173 L23 178 L31 183"/>
+            </g>
+
+            <!-- 01 reception - road tanker -->
+            <g stroke="currentColor" fill="none">
+              <rect x="48" y="70" width="64" height="36" rx="18" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <circle cx="80" cy="88" r="6" stroke-width="1" stroke-opacity="0.42"/>
+              <path d="M62 70 V106 M98 70 V106" stroke-width="0.9" stroke-dasharray="2 3" stroke-opacity="0.34"/>
+            </g>
+
+            <!-- 02 pasteurisation - jacketed vessel, shaft and paddles -->
+            <g stroke="currentColor" fill="none">
+              <circle cx="190" cy="88" r="23" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <circle cx="190" cy="88" r="16" stroke-width="0.9" stroke-dasharray="2 3" stroke-opacity="0.34"/>
+              <path d="M190 73 V103 M181 79 H199 M181 97 H199" stroke-width="1" stroke-opacity="0.44"/>
+            </g>
+
+            <!-- 03 coagulation - cheese vat, cutting harp and side drive -->
+            <g stroke="currentColor" fill="none">
+              <rect x="266" y="64" width="68" height="48" rx="10" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <rect x="274" y="72" width="52" height="32" rx="6" stroke-width="0.9" stroke-dasharray="2 3" stroke-opacity="0.32"/>
+              <path d="M286 72 V104 M300 72 V104 M314 72 V104" stroke-width="1" stroke-opacity="0.42"/>
+              <rect x="288" y="112" width="24" height="11" rx="2" fill="#EFEAE0" stroke-width="1.1" stroke-opacity="0.5"/>
+            </g>
+
+            <!-- 04 draining - cheese table, moulds either side of the run -->
+            <g stroke="currentColor" fill="none">
+              <rect x="346" y="154" width="68" height="48" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <g stroke-width="1" stroke-opacity="0.38">
+                <rect x="354" y="160" width="14" height="14"/><rect x="373" y="160" width="14" height="14"/><rect x="392" y="160" width="14" height="14"/>
+                <rect x="354" y="182" width="14" height="14"/><rect x="373" y="182" width="14" height="14"/><rect x="392" y="182" width="14" height="14"/>
+              </g>
+            </g>
+
+            <!-- 05 pressing - pre-press, platen and four cylinders -->
+            <g stroke="currentColor" fill="none">
+              <rect x="216" y="154" width="68" height="48" rx="3" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <rect x="226" y="163" width="48" height="30" rx="2" stroke-width="0.9" stroke-dasharray="2 3" stroke-opacity="0.32"/>
+              <g stroke-width="1" stroke-opacity="0.42">
+                <circle cx="228" cy="165" r="4"/><circle cx="272" cy="165" r="4"/>
+                <circle cx="228" cy="191" r="4"/><circle cx="272" cy="191" r="4"/>
+              </g>
+            </g>
+
+            <!-- 06 packaging - cup filler and outfeed conveyor -->
+            <g stroke="currentColor" fill="none">
+              <path d="M94 170 H46 M94 186 H46" stroke-width="1" stroke-opacity="0.45"/>
+              <path d="M56 170 V186 M68 170 V186 M80 170 V186" stroke-width="0.8" stroke-opacity="0.3"/>
+              <rect x="94" y="154" width="52" height="48" rx="3" fill="#EFEAE0" stroke-width="1.5" stroke-opacity="0.6"/>
+              <circle cx="120" cy="178" r="14" stroke-width="1" stroke-opacity="0.42"/>
+              <g stroke-width="0.9" stroke-opacity="0.38">
+                <circle cx="120" cy="167" r="3.4"/><circle cx="131" cy="178" r="3.4"/>
+                <circle cx="120" cy="189" r="3.4"/><circle cx="109" cy="178" r="3.4"/>
+              </g>
+            </g>
+
+            <g class="tm-plan-num" fill="currentColor" stroke="none" opacity="0.6" font-family="'Space Mono', monospace" text-anchor="middle">
+              <text x="80" y="60">01</text><text x="190" y="55">02</text><text x="300" y="56">03</text>
+              <text x="380" y="216">04</text><text x="250" y="216">05</text><text x="120" y="216">06</text>
+            </g>
+          </svg>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:9px 24px; padding:13px clamp(20px,3.5vw,52px); border-top:1px solid rgba(20,23,26,0.14); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#5a5e63;">
+          <span><span style="color:var(--tm-red);">01</span> <span data-i18n="about.plan.s1">RECEPTION</span></span>
+          <span><span style="color:var(--tm-red);">02</span> <span data-i18n="about.plan.s2">PASTEURISATION</span></span>
+          <span><span style="color:var(--tm-red);">03</span> <span data-i18n="about.plan.s3">COAGULATION</span></span>
+          <span><span style="color:var(--tm-red);">04</span> <span data-i18n="about.plan.s4">DRAINING</span></span>
+          <span><span style="color:var(--tm-red);">05</span> <span data-i18n="about.plan.s5">PRESSING</span></span>
+          <span><span style="color:var(--tm-red);">06</span> <span data-i18n="about.plan.s6">PACKAGING</span></span>
+          <span style="margin-left:auto; color:rgba(20,23,26,0.4);" data-i18n="about.fig.caption">PLAN VIEW &middot; NOT TO SCALE</span>
+        </div>
       </div>
 
       <!-- ============ MISSION ============ -->

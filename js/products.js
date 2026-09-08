@@ -30,8 +30,8 @@
     'kackavalj-moulder': '<rect x="30" y="16" width="44" height="34" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M74 30 h12 v6 h-12" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="80" y="40" width="14" height="8" stroke="currentColor" stroke-width="1.2"/><circle cx="52" cy="30" r="7" stroke="currentColor" stroke-width="1.2"/><line x1="34" y1="50" x2="34" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="70" y1="50" x2="70" y2="56" stroke="currentColor" stroke-width="1.6"/>',
     // 07 — Kačkavalj machine TM350: tank, transfer arm and control head.
     'kackavalj-machine-tm350': '<rect x="24" y="20" width="40" height="30" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M64 34 h22 a6 6 0 0 1 6 6 v4" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="92" cy="48" r="5" stroke="currentColor" stroke-width="1.4"/><line x1="32" y1="20" x2="32" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="56" y1="20" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="32" y1="12" x2="56" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="30" y1="34" x2="58" y2="34" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><line x1="30" y1="50" x2="30" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="58" y1="50" x2="58" y2="56" stroke="currentColor" stroke-width="1.6"/>',
-    // 03 — Dutch cheese vat: enclosed horizontal vat.
-    'dutch-cheese-vat': '<path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><ellipse cx="60" cy="24" rx="40" ry="6" stroke="currentColor" stroke-width="1.2"/><line x1="22" y1="34" x2="98" y2="34" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"/>',
+    // 03 — Kezefertigen: enclosed cheese vat.
+    'kezefertigen': '<path d="M20 24 H100 V46 a14 14 0 0 1 -14 14 H34 a14 14 0 0 1 -14 -14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><ellipse cx="60" cy="24" rx="40" ry="6" stroke="currentColor" stroke-width="1.2"/><line x1="22" y1="34" x2="98" y2="34" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 4"/>',
     // 05 — Pre-presses: trapezoidal under-whey pre-press.
     'pre-presses': '<path d="M16 16 H104 L90 52 H30 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="34" y1="30" x2="86" y2="30" stroke="currentColor" stroke-width="1.2"/><rect x="46" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"/><rect x="62" y="34" width="12" height="12" stroke="currentColor" stroke-width="1.4"/>',
     // 10 — Cup packaging machine: filler bar over a row of cups.
@@ -93,11 +93,6 @@
       '</div>';
   }
 
-  function plainBox(label, height) {
-    return '<div style="position:relative; width:100%; height:' + height + '; border:1px solid ' + HAIR + '; background:#EFEAE0;">' +
-      '<span style="position:absolute; top:12px; left:14px; font-family:' + MONO + '; font-size:10px; letter-spacing:0.18em; color:rgba(20,23,26,0.35);">' + label + '</span></div>';
-  }
-
   // ── Catalogue ──────────────────────────────────────────────────
   // Each row is an anchor to the product's own route.
   function catalogRow(p, i) {
@@ -117,14 +112,6 @@
   }
 
   // ── Detail ─────────────────────────────────────────────────────
-  function specRow(s) {
-    return '' +
-      '<div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:14px 0; border-bottom:1px solid rgba(20,23,26,0.12);">' +
-        '<span style="font-family:' + MONO + '; font-size:11px; letter-spacing:0.14em; color:#76797e; white-space:nowrap;">' + esc(pick(s.label)) + '</span>' +
-        '<span style="font-weight:600; font-size:14px; color:#14171A; text-align:right;">' + esc(pick(s.value)) + '</span>' +
-      '</div>';
-  }
-
   function detailHTML(list, i) {
     var p = list[i];
     var prev = list[(i + list.length - 1) % list.length];
@@ -142,17 +129,10 @@
 
           '<div style="flex:1.4 1 460px; min-width:300px;">' +
             figure(p, '44%') +
-            '<div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">' +
-              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
-              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
-              plainBox(t('products.detail', 'DETAIL'), 'clamp(90px,12vh,120px)') +
-            '</div>' +
           '</div>' +
 
           '<div data-sticky-col style="flex:1 1 340px; min-width:280px;">' +
             '<p style="margin:0; font-size:clamp(15px,1.25vw,17px); line-height:1.66; color:#4a4e53;">' + esc(pick(p.desc)) + '</p>' +
-            '<div style="margin-top:clamp(30px,4vh,44px); font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; color:var(--tm-red-deep);">' + t('products.specs', 'SPECIFICATIONS') + '</div>' +
-            '<div style="margin-top:16px; border-top:1px solid rgba(20,23,26,0.14);">' + (p.specs || []).map(specRow).join('') + '</div>' +
             '<a href="/#rfq" class="tm-submit" style="margin-top:32px; display:inline-flex; align-items:center; gap:14px; padding:16px 30px; background:#14171A; border:1px solid #14171A; text-decoration:none; font-family:' + MONO + '; font-size:12px; letter-spacing:0.24em; color:#fff;">' + t('products.quote', 'REQUEST A QUOTE') + ' <span style="font-size:14px;">&rarr;</span></a>' +
             '<p style="margin:16px 0 0; font-size:12px; line-height:1.55; color:#9a9da1;">' + t('products.leadtime', 'Custom configurations available &middot; 4&ndash;8 week lead time.') + '</p>' +
           '</div>' +
